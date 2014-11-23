@@ -1,0 +1,692 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css");
+/* line 5, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/************ FONTS IMPORT ************** */
+@font-face {
+  font-family: "Helvetica Neue Thin Ext";
+  src: url("../fonts/HelveticaNeueLTCom-ThEx.ttf");
+}
+@font-face {
+  font-family: "Helvetica Neue Thin";
+  src: url("../fonts/HelveticaNeueLTCom-Th.ttf");
+}
+@font-face {
+  font-family: "Helvetica Neue Light";
+  src: url("../fonts/HelveticaNeueLTCom-Lt.ttf");
+}
+/******** VARIABLES ******** */
+/**** Gen Reset *** */
+/* line 33, ../sass/screen.sass */
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+}
+
+/* line 37, ../sass/screen.sass */
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+}
+/* line 42, ../sass/screen.sass */
+body a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* line 45, ../sass/screen.sass */
+#bloc-page {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 48, ../sass/screen.sass */
+section {
+  height: 100%;
+  width: 100%;
+}
+
+/**** GENERAL ELEMENTS *** */
+/* line 55, ../sass/screen.sass */
+header a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+/* line 58, ../sass/screen.sass */
+header nav {
+  z-index: 1;
+  position: fixed;
+}
+/* line 61, ../sass/screen.sass */
+header nav .menu-item {
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  padding: 1.25rem;
+  -moz-transform: translateX(calc(-100% - 4rem));
+  -ms-transform: translateX(calc(-100% - 4rem));
+  -webkit-transform: translateX(calc(-100% - 4rem));
+  transform: translateX(calc(-100% - 4rem));
+}
+/* line 69, ../sass/screen.sass */
+header nav .menu-item:nth-child(2) {
+  -moz-transition: -moz-transform;
+  -o-transition: -o-transform;
+  -webkit-transition: -webkit-transform;
+  transition: transform;
+  -moz-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 69, ../sass/screen.sass */
+header nav .menu-item:nth-child(3) {
+  -moz-transition: -moz-transform;
+  -o-transition: -o-transform;
+  -webkit-transition: -webkit-transform;
+  transition: transform;
+  -moz-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 69, ../sass/screen.sass */
+header nav .menu-item:nth-child(4) {
+  -moz-transition: -moz-transform;
+  -o-transition: -o-transform;
+  -webkit-transition: -webkit-transform;
+  transition: transform;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 69, ../sass/screen.sass */
+header nav .menu-item:nth-child(5) {
+  -moz-transition: -moz-transform;
+  -o-transition: -o-transform;
+  -webkit-transition: -webkit-transform;
+  transition: transform;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 69, ../sass/screen.sass */
+header nav .menu-item:nth-child(6) {
+  -moz-transition: -moz-transform;
+  -o-transition: -o-transform;
+  -webkit-transition: -webkit-transform;
+  transition: transform;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 74, ../sass/screen.sass */
+header nav .menu-item:nth-child(2) {
+  width: 24rem;
+  background-color: #111111;
+}
+/* line 81, ../sass/screen.sass */
+header nav .menu-item:nth-child(2)::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 0;
+  border: 2rem solid #111111;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+  -moz-transition: border;
+  -o-transition: border;
+  -webkit-transition: border;
+  transition: border;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 93, ../sass/screen.sass */
+header nav .menu-item:nth-child(2):hover {
+  background-color: black;
+}
+/* line 95, ../sass/screen.sass */
+header nav .menu-item:nth-child(2):hover::after {
+  border: 2rem solid black;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+}
+/* line 74, ../sass/screen.sass */
+header nav .menu-item:nth-child(3) {
+  width: 20rem;
+  background-color: #252525;
+}
+/* line 81, ../sass/screen.sass */
+header nav .menu-item:nth-child(3)::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 0;
+  border: 2rem solid #252525;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+  -moz-transition: border;
+  -o-transition: border;
+  -webkit-transition: border;
+  transition: border;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 93, ../sass/screen.sass */
+header nav .menu-item:nth-child(3):hover {
+  background-color: #0c0c0c;
+}
+/* line 95, ../sass/screen.sass */
+header nav .menu-item:nth-child(3):hover::after {
+  border: 2rem solid #0c0c0c;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+}
+/* line 74, ../sass/screen.sass */
+header nav .menu-item:nth-child(4) {
+  width: 16rem;
+  background-color: #363636;
+}
+/* line 81, ../sass/screen.sass */
+header nav .menu-item:nth-child(4)::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 0;
+  border: 2rem solid #363636;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+  -moz-transition: border;
+  -o-transition: border;
+  -webkit-transition: border;
+  transition: border;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 93, ../sass/screen.sass */
+header nav .menu-item:nth-child(4):hover {
+  background-color: #1c1c1c;
+}
+/* line 95, ../sass/screen.sass */
+header nav .menu-item:nth-child(4):hover::after {
+  border: 2rem solid #1c1c1c;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+}
+/* line 74, ../sass/screen.sass */
+header nav .menu-item:nth-child(5) {
+  width: 12rem;
+  background-color: #464646;
+}
+/* line 81, ../sass/screen.sass */
+header nav .menu-item:nth-child(5)::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 0;
+  border: 2rem solid #464646;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+  -moz-transition: border;
+  -o-transition: border;
+  -webkit-transition: border;
+  transition: border;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 93, ../sass/screen.sass */
+header nav .menu-item:nth-child(5):hover {
+  background-color: #2d2d2d;
+}
+/* line 95, ../sass/screen.sass */
+header nav .menu-item:nth-child(5):hover::after {
+  border: 2rem solid #2d2d2d;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+}
+/* line 74, ../sass/screen.sass */
+header nav .menu-item:nth-child(6) {
+  width: 8rem;
+  background-color: #555555;
+}
+/* line 81, ../sass/screen.sass */
+header nav .menu-item:nth-child(6)::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 0;
+  border: 2rem solid #555555;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+  -moz-transition: border;
+  -o-transition: border;
+  -webkit-transition: border;
+  transition: border;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 93, ../sass/screen.sass */
+header nav .menu-item:nth-child(6):hover {
+  background-color: #3b3b3b;
+}
+/* line 95, ../sass/screen.sass */
+header nav .menu-item:nth-child(6):hover::after {
+  border: 2rem solid #3b3b3b;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+}
+/* line 102, ../sass/screen.sass */
+header nav input {
+  position: absolute;
+  left: -9999px;
+}
+/* line 105, ../sass/screen.sass */
+header nav .close-menu {
+  display: block;
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  cursor: pointer;
+  -moz-transform: translateY(-20rem);
+  -ms-transform: translateY(-20rem);
+  -webkit-transform: translateY(-20rem);
+  transform: translateY(-20rem);
+}
+/* line 112, ../sass/screen.sass */
+header nav .close-menu::before {
+  position: absolute;
+  color: #FFFFFF;
+  font-family: "FontAwesome";
+  font-size: 2rem;
+  content: "";
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 1;
+}
+/* line 121, ../sass/screen.sass */
+header nav .close-menu::after {
+  content: "";
+  position: absolute;
+  border: 4rem solid #636363;
+  border-right: 4rem solid transparent;
+  border-bottom: 4rem solid transparent;
+  -moz-transition: border;
+  -o-transition: border;
+  -webkit-transition: border;
+  transition: border;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 129, ../sass/screen.sass */
+header nav .close-menu:hover::after {
+  border: 4rem solid #4a4a4a;
+  border-right: 4rem solid transparent;
+  border-bottom: 4rem solid transparent;
+}
+/* line 133, ../sass/screen.sass */
+header nav input[type='checkbox']:checked ~ .close-menu {
+  -moz-transition: -moz-transform;
+  -o-transition: -o-transform;
+  -webkit-transition: -webkit-transform;
+  transition: transform;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/* line 137, ../sass/screen.sass */
+header nav input[type='checkbox']:checked ~ .close-menu::before {
+  content: "";
+}
+/* line 141, ../sass/screen.sass */
+header nav input[type='checkbox']:checked ~ .menu-item:nth-child(2) {
+  -moz-transition: -moz-transform, background-color;
+  -o-transition: -o-transform, background-color;
+  -webkit-transition: -webkit-transform, background-color;
+  transition: transform, background-color;
+  -moz-transition-duration: 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s;
+  -moz-transition-delay: 0.1s, 0s;
+  -o-transition-delay: 0.1s, 0s;
+  -webkit-transition-delay: 0.1s, 0s;
+  transition-delay: 0.1s, 0s;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 141, ../sass/screen.sass */
+header nav input[type='checkbox']:checked ~ .menu-item:nth-child(3) {
+  -moz-transition: -moz-transform, background-color;
+  -o-transition: -o-transform, background-color;
+  -webkit-transition: -webkit-transform, background-color;
+  transition: transform, background-color;
+  -moz-transition-duration: 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s;
+  -moz-transition-delay: 0.2s, 0s;
+  -o-transition-delay: 0.2s, 0s;
+  -webkit-transition-delay: 0.2s, 0s;
+  transition-delay: 0.2s, 0s;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 141, ../sass/screen.sass */
+header nav input[type='checkbox']:checked ~ .menu-item:nth-child(4) {
+  -moz-transition: -moz-transform, background-color;
+  -o-transition: -o-transform, background-color;
+  -webkit-transition: -webkit-transform, background-color;
+  transition: transform, background-color;
+  -moz-transition-duration: 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s;
+  -moz-transition-delay: 0.3s, 0s;
+  -o-transition-delay: 0.3s, 0s;
+  -webkit-transition-delay: 0.3s, 0s;
+  transition-delay: 0.3s, 0s;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 141, ../sass/screen.sass */
+header nav input[type='checkbox']:checked ~ .menu-item:nth-child(5) {
+  -moz-transition: -moz-transform, background-color;
+  -o-transition: -o-transform, background-color;
+  -webkit-transition: -webkit-transform, background-color;
+  transition: transform, background-color;
+  -moz-transition-duration: 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s;
+  -moz-transition-delay: 0.4s, 0s;
+  -o-transition-delay: 0.4s, 0s;
+  -webkit-transition-delay: 0.4s, 0s;
+  transition-delay: 0.4s, 0s;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 141, ../sass/screen.sass */
+header nav input[type='checkbox']:checked ~ .menu-item:nth-child(6) {
+  -moz-transition: -moz-transform, background-color;
+  -o-transition: -o-transform, background-color;
+  -webkit-transition: -webkit-transform, background-color;
+  transition: transform, background-color;
+  -moz-transition-duration: 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s;
+  -moz-transition-delay: 0.5s, 0s;
+  -o-transition-delay: 0.5s, 0s;
+  -webkit-transition-delay: 0.5s, 0s;
+  transition-delay: 0.5s, 0s;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 148, ../sass/screen.sass */
+header nav input[type='checkbox']:not(:checked) ~ .close-menu {
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+/* line 155, ../sass/screen.sass */
+.arian-content {
+  display: inline;
+}
+/* line 157, ../sass/screen.sass */
+.arian-content .arian-fill, .arian-content .arian-fill-accueil {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 30px;
+}
+/* line 161, ../sass/screen.sass */
+.arian-content .arian-fill .tip-arian, .arian-content .arian-fill-accueil .tip-arian, .arian-content .arian-fill-accueil .tip-arian-accueil {
+  height: 100%;
+  width: 20%;
+  border: 1px solid #000;
+}
+/* line 165, ../sass/screen.sass */
+.arian-content .arian-fill .tip-arian-1, .arian-content .arian-fill-accueil .tip-arian-1 {
+  background-color: #000;
+}
+/* line 167, ../sass/screen.sass */
+.arian-content .arian-fill-accueil {
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+}
+/* line 174, ../sass/screen.sass */
+.arian-content .arian-fill-accueil .tip-arian-1 {
+  background-color: #000;
+}
+
+/**** ACCUEIL *** */
+/* line 180, ../sass/screen.sass */
+#accueil {
+  height: 100%;
+  width: 100%;
+  font-size: 2em;
+  display: table;
+}
+/* line 185, ../sass/screen.sass */
+#accueil .main-wrapper-accueil {
+  font-family: "HELVETICA NEUE THIN EXT";
+  height: 100%;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+/* line 192, ../sass/screen.sass */
+#accueil .main-wrapper-accueil .title-accueil {
+  font-size: 1.8em;
+}
+/* line 194, ../sass/screen.sass */
+#accueil .main-wrapper-accueil .visit-site-button {
+  margin-top: 35px;
+  font-size: 0.8em;
+}
+/* line 197, ../sass/screen.sass */
+#accueil .main-wrapper-accueil .visit-site-button a {
+  display: block;
+  margin: auto;
+  width: 30%;
+  padding: 15px;
+  border: 1px solid #000;
+}
+
+/**** A Propos *** */
+/* line 206, ../sass/screen.sass */
+#apropos {
+  width: 100%;
+  height: 100%;
+  font-size: 2em;
+}
+/* line 210, ../sass/screen.sass */
+#apropos .main-wrapper-apropos {
+  font-family: "Helvetica Neue Thin";
+  text-align: right;
+  width: 100%;
+  height: 90%;
+}
+/* line 215, ../sass/screen.sass */
+#apropos .main-wrapper-apropos .main-text-bloc-apropos {
+  position: absolute;
+  margin: 10% 0 0 10%;
+  width: 20%;
+  height: 75%;
+}
+/* line 220, ../sass/screen.sass */
+#apropos .main-wrapper-apropos .main-text-bloc-apropos .title-bloc-apropos {
+  width: 100%;
+}
+/* line 222, ../sass/screen.sass */
+#apropos .main-wrapper-apropos .main-text-bloc-apropos .title-bloc-apropos h1 {
+  text-align: center;
+  font-size: 1.4em;
+}
+/* line 225, ../sass/screen.sass */
+#apropos .main-wrapper-apropos .main-text-bloc-apropos .line-up {
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  height: 10px;
+  background: url("../images/line-up.png");
+}
+/* line 232, ../sass/screen.sass */
+#apropos .main-wrapper-apropos .main-text-bloc-apropos .text-bloc-apropos {
+  width: 75%;
+  margin: auto;
+  font-size: 0.5em;
+  text-align: justify;
+}
+/* line 237, ../sass/screen.sass */
+#apropos img {
+  height: 40%;
+  width: 40%;
+}

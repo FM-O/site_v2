@@ -1,0 +1,239 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset"
+@import "compass"
+
+/************ FONTS IMPORT ***************/
+@font-face
+    font-family: "Helvetica Neue Thin Ext"
+    src: url('../fonts/HelveticaNeueLTCom-ThEx.ttf')
+
+@font-face
+    font-family: "Helvetica Neue Thin"
+    src: url('../fonts/HelveticaNeueLTCom-Th.ttf')
+
+@font-face
+    font-family: "Helvetica Neue Light"
+    src: url('../fonts/HelveticaNeueLTCom-Lt.ttf')
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css")
+
+
+/******** VARIABLES *********/
+
+$itemcount: 5
+$listColor: #111111, #252525, #363636, #464646, #555555
+$baseSize: 8rem
+
+/**** Gen Reset ****/
+
+html
+    height: 100%
+    width: 100%
+    font-size: 100%
+body
+    height: 100%
+    width: 100%
+    font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif
+    font-size: 100%
+    a
+        text-decoration: none
+        color: #000000
+#bloc-page
+    height: 100%
+    width: 100%
+section
+    height: 100%
+    width: 100%
+
+/**** GENERAL ELEMENTS ****/
+
+header
+    a
+        color: #FFFFFF
+        text-decoration: none
+    nav
+        z-index: 1
+        position: fixed
+        .menu-item
+            @include display-flex
+            position: relative
+            @include box-sizing(border-box)
+            font-size: 1.5rem
+            padding: 1.25rem
+            @include transform(translateX(calc(-100% - 4rem)))
+            @for $i from 1 through $itemcount
+                &:nth-child(#{$i + 1})
+                    @include transition(transform)
+                    @include transition-delay(($itemcount - $i)*0.1s)
+                    @include transition-duration(0.2s)
+            @for $i from 1 through $itemcount
+                &:nth-child(#{$i + 1})
+                    $tmp: $itemcount - $i
+                    $dec: $i
+                    $currentColor: nth($listColor, $dec)
+                    width: ($baseSize+($tmp*4rem))
+                    background-color: $currentColor
+
+                    &::after
+                        position: absolute
+                        content: ""
+                        width: 0
+                        height: 0
+                        left: 100%
+                        top: 0
+                        border: 2rem solid $currentColor
+                        border-right: 2rem solid transparent
+                        border-bottom: 2rem solid transparent
+                        @include transition(border)
+                        @include transition-duration(0.2s)
+                    &:hover
+                        background-color: darken($currentColor, 10%)
+                    &:hover::after
+                        border: 2rem solid darken($currentColor, 10%)
+                        border-right: 2rem solid transparent
+                        border-bottom: 2rem solid transparent
+
+
+
+        input
+            position: absolute
+            left: -9999px
+        .close-menu
+            display: block
+            position: relative
+            width: 2*($baseSize - 4rem)
+            height: 2*($baseSize - 4rem)
+            cursor: pointer
+            @include transform(translateY($itemcount*(-4rem)))
+            &::before
+                position: absolute
+                color: #FFFFFF
+                font-family: "FontAwesome"
+                font-size: 2rem
+                content: "\f0c9"
+                top: 1.2rem
+                left: 1.2rem
+                z-index: 1
+            &::after
+                content: ""
+                position: absolute
+                border: ($baseSize - 4rem) solid #636363
+                border-right: ($baseSize - 4rem) solid transparent
+                border-bottom: ($baseSize - 4rem) solid transparent
+                @include transition(border)
+                @include transition-duration(0.2s)
+            &:hover::after
+                border: ($baseSize - 4rem) solid darken(#636363, 10%)
+                border-right: ($baseSize - 4rem) solid transparent
+                border-bottom: ($baseSize - 4rem) solid transparent
+        input[type='checkbox']:checked ~ .close-menu
+            @include transition(transform)
+            @include transition-duration(($itemcount - 1)*0.1s)
+            @include transform(translateY(0))
+            &::before
+                content: "\f00d"
+        input[type='checkbox']:checked ~ .menu-item
+            @for $i from 1 through $itemcount
+                &:nth-child(#{$i + 1})
+                    $temp: $i*0.1s
+                    @include transition(transform, background-color)
+                    @include transition-duration(0.2s, 0.2s)
+                    @include transition-delay($temp, 0s)
+                    @include transform(translateX(0))
+
+        input[type='checkbox']:not(:checked) ~ .close-menu
+            @include transition-property(transform)
+            @include transition-delay(($itemcount)*0.1s)
+            @include transition-duration(0.2s)
+
+
+// ARIAN
+.arian-content
+    display: inline
+    .arian-fill
+        @include display-flex
+        width: 100%
+        height: 30px
+        .tip-arian
+            height: 100%
+            width: 20%
+            border: 1px solid #000
+        .tip-arian-1
+            background-color: #000
+    .arian-fill-accueil
+        @extend .arian-fill
+        position: absolute
+        left: 0
+        bottom: 5%
+        .tip-arian-accueil
+            @extend .tip-arian
+        .tip-arian-1
+            background-color: #000
+
+
+/**** ACCUEIL ****/
+
+#accueil
+    height: 100%
+    width: 100%
+    font-size: 2em
+    display: table
+    .main-wrapper-accueil
+        font-family: "HELVETICA NEUE THIN EXT"
+        height: 100%
+        width: 100%
+        display: table-cell
+        vertical-align: middle
+        text-align: center
+        .title-accueil
+            font-size: 1.8em
+        .visit-site-button
+            margin-top: 35px
+            font-size: 0.8em
+            a
+                display: block
+                margin: auto
+                width: 30%
+                padding: 15px
+                border: 1px solid #000
+
+/**** A Propos ****/
+
+#apropos
+    width: 100%
+    height: 100%
+    font-size: 2em
+    .main-wrapper-apropos
+        font-family: "Helvetica Neue Thin"
+        text-align: right
+        width: 100%
+        height: 90%
+        .main-text-bloc-apropos
+            position: absolute
+            margin: 10% 0 0 10%
+            width: 20%
+            height: 75%
+            .title-bloc-apropos
+                width: 100%
+                h1
+                    text-align: center
+                    font-size: 1.4em
+            .line-up
+                width: 90%
+                margin: auto
+                margin-top: 10px
+                margin-bottom: 15px
+                height: 10px
+                background: url("../images/line-up.png")
+            .text-bloc-apropos
+                width: 75%
+                margin: auto
+                font-size: 0.5em
+                text-align: justify
+    img
+        height: 40%
+        width: 40%
