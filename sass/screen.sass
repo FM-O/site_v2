@@ -28,6 +28,47 @@ $itemcount: 5
 $listColor: #111111, #252525, #363636, #464646, #555555
 $baseSize: 8rem
 
+
+/******** MIXINS *********/
+
+//DEFAULT SLIDE STYLE
+
+@mixin default-slide-style($slide-id, $current-class)
+    ##{$slide-id}
+        width: 100%
+        height: 100%
+        font-size: 2em
+    .main-wrapper-#{$current-class}
+        font-family: "Helvetica Neue Thin"
+        width: 100%
+        height: 90%
+    .main-text-bloc-#{$current-class}
+        position: absolute
+        padding: 10rem 0 0 15rem
+        width: 20rem
+        height: 75%
+        .title-bloc-#{$current-class}
+            width: 100%
+            h1
+                text-align: center
+                font-size: 1.4em
+        .line-up
+            width: 90%
+            margin: auto
+            margin-top: 10px
+            margin-bottom: 15px
+            height: 10px
+            background: url("../images/line-up.png")
+    .text-bloc-#{$current-class}
+        width: 75%
+        margin: auto
+        font-size: 0.5em
+        text-align: justify
+    .main-image-bloc-#{$current-class}
+        text-align: right
+        img
+            width: 40%
+
 /**** Gen Reset ****/
 
 html
@@ -203,37 +244,21 @@ header
 
 /**** A Propos ****/
 
-#apropos
-    width: 100%
-    height: 100%
-    font-size: 2em
-    .main-wrapper-apropos
-        font-family: "Helvetica Neue Thin"
-        text-align: right
-        width: 100%
-        height: 90%
-        .main-text-bloc-apropos
-            position: absolute
-            margin: 10% 0 0 10%
-            width: 20%
-            height: 75%
-            .title-bloc-apropos
-                width: 100%
-                h1
-                    text-align: center
-                    font-size: 1.4em
-            .line-up
-                width: 90%
-                margin: auto
-                margin-top: 10px
-                margin-bottom: 15px
-                height: 10px
-                background: url("../images/line-up.png")
-            .text-bloc-apropos
-                width: 75%
-                margin: auto
-                font-size: 0.5em
-                text-align: justify
+@include default-slide-style(apropos, apropos)
+
+.main-image-bloc-apropos
     img
-        height: 40%
+        position: absolute
+        top: 0
+        right: 0
         width: 40%
+
+
+/**** Competences ****/
+
+@include default-slide-style(competences, responsive)
+
+.text-bloc-responsive
+    text-align: left
+.main-image-bloc-responsive
+    padding: 15% 15% 0 0

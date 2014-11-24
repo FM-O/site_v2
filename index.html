@@ -5,6 +5,16 @@
     <meta http-equiv="content-type" charset="UTF-8" content="text/html">
 
     <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" />
+    <link rel="stylesheet" href="full-plug/jquery.fullPage.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="full-plug/vendors/jquery.easings.min.js"></script>
+    <script type="text/javascript" src="full-plug/vendors/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="full-plug/jquery.fullPage.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage();
+        });
+    </script>
 </head>
 <body>
     <div id="bloc-page">
@@ -19,60 +29,140 @@
                 <label class="close-menu" for="menu-button"></label>
             </nav>
         </header>
-        <section id="accueil">
-            <div class="main-wrapper-accueil">
-                <div class="title-accueil">
-                    <h1>Bienvenue sur florianmichel-online</h1>
-                </div>
-                <div class="visit-site-button">
-                    <a class="visit-button-link" title="commencer la visite" href="#apropos"><p>Commencer la visite</p></a>
-                </div>
-            </div>
-            <div class="arian-content">
-                <div class="arian-fill-accueil">
-                    <div class="tip-arian-accueil tip-arian-1"></div>
-                    <div class="tip-arian-accueil tip-arian-2"></div>
-                    <div class="tip-arian-accueil tip-arian-3"></div>
-                    <div class="tip-arian-accueil tip-arian-4"></div>
-                    <div class="tip-arian-accueil tip-arian-5"></div>
-                </div>
-            </div>
-        </section>
-        <section id="apropos">
-            <div class="main-wrapper-apropos">
-                <div class="main-text-bloc-apropos">
-                    <div class="title-bloc-apropos">
-                        <h1>Qui suis-je ?</h1>
+        <div id="fullpage">
+            <div class="section">
+                <section id="accueil">
+                    <div class="main-wrapper-accueil">
+                        <div class="title-accueil">
+                            <h1>Bienvenue sur florianmichel-online</h1>
+                        </div>
+                        <div class="visit-site-button">
+                            <a class="visit-button-link" title="commencer la visite" href="#apropos"><p>Commencer la visite</p></a>
+                        </div>
                     </div>
-                    <div class="line-up"></div>
-                    <div class="text-bloc-apropos">
-                        <p>
-                            This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                            nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                            ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
-                            erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
-                            conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
-                            dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin
-                            condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas
-                            quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
-                        </p>
+                    <div class="arian-content">
+                        <div class="arian-fill-accueil">
+                            <div class="tip-arian-accueil tip-arian-1"></div>
+                            <div class="tip-arian-accueil tip-arian-2"></div>
+                            <div class="tip-arian-accueil tip-arian-3"></div>
+                            <div class="tip-arian-accueil tip-arian-4"></div>
+                            <div class="tip-arian-accueil tip-arian-5"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="main-image-bloc-apropos">
-                    <img src="images/moon.png" title="moon" alt="moon" />
-                </div>
+                </section>
             </div>
-            <div class="arian-content">
-                <div class="arian-fill">
-                    <div class="tip-arian tip-arian-1"></div>
-                    <div class="tip-arian tip-arian-2"></div>
-                    <div class="tip-arian tip-arian-3"></div>
-                    <div class="tip-arian tip-arian-4"></div>
-                    <div class="tip-arian tip-arian-5"></div>
-                </div>
+            <div class="section">
+                <section id="apropos">
+                    <div class="main-wrapper-apropos">
+                        <div class="main-text-bloc-apropos">
+                            <div class="title-bloc-apropos">
+                                <h1>Qui suis-je ?</h1>
+                            </div>
+                            <div class="line-up"></div>
+                            <div class="text-bloc-apropos">
+                                <p>
+                                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                                    Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                                    nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
+                                    ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
+                                    erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
+                                    conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
+                                    dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin
+                                    condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas
+                                    quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="main-image-bloc-apropos">
+                            <img src="images/moon.png" title="moon" alt="moon" />
+                        </div>
+                    </div>
+                    <div class="arian-content">
+                        <div class="arian-fill">
+                            <div class="tip-arian tip-arian-1"></div>
+                            <div class="tip-arian tip-arian-2"></div>
+                            <div class="tip-arian tip-arian-3"></div>
+                            <div class="tip-arian tip-arian-4"></div>
+                            <div class="tip-arian tip-arian-5"></div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+            <div class="section">
+                <section id="competences">
+                    <div class="slide">
+                        <div class="main-wrapper-responsive">
+                            <div class="main-text-bloc-responsive">
+                                <div class="title-bloc-responsive">
+                                    <h1>Responsive design</h1>
+                                </div>
+                                <div class="line-up"></div>
+                                <div class="text-bloc-responsive">
+                                    <p>
+                                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                                        nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
+                                        ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
+                                        erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
+                                        conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
+                                        dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin
+                                        condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas
+                                        quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="main-image-bloc-responsive">
+                                <img src="images/imac.png" title="illustration i-mac" alt="illustration responsive" />
+                            </div>
+                        </div>
+                        <div class="arian-content">
+                            <div class="arian-fill">
+                                <div class="tip-arian tip-arian-1"></div>
+                                <div class="tip-arian tip-arian-2"></div>
+                                <div class="tip-arian tip-arian-3"></div>
+                                <div class="tip-arian tip-arian-4"></div>
+                                <div class="tip-arian tip-arian-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="main-wrapper-responsive">
+                            <div class="main-text-bloc-responsive">
+                                <div class="title-bloc-responsive">
+                                    <h1>LOLOLOL</h1>
+                                </div>
+                                <div class="line-up"></div>
+                                <div class="text-bloc-responsive">
+                                    <p>
+                                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                                        nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
+                                        ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
+                                        erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
+                                        conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
+                                        dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin
+                                        condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas
+                                        quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="main-image-bloc-responsive">
+                                <img src="images/imac.png" title="illustration i-mac" alt="illustration responsive" />
+                            </div>
+                        </div>
+                        <div class="arian-content">
+                            <div class="arian-fill">
+                                <div class="tip-arian tip-arian-1"></div>
+                                <div class="tip-arian tip-arian-2"></div>
+                                <div class="tip-arian tip-arian-3"></div>
+                                <div class="tip-arian tip-arian-4"></div>
+                                <div class="tip-arian tip-arian-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
 </body>
 </html>
