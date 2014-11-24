@@ -27,6 +27,7 @@
 $itemcount: 5
 $listColor: #111111, #252525, #363636, #464646, #555555
 $baseSize: 8rem
+$listWidth: 90%, 60%, 75%, 16%
 
 
 /******** MIXINS *********/
@@ -254,7 +255,7 @@ header
         width: 40%
 
 
-/**** Competences ****/
+/**** Competences ----> RESPONSIVE ****/
 
 @include default-slide-style(competences, responsive)
 
@@ -262,3 +263,92 @@ header
     text-align: left
 .main-image-bloc-responsive
     padding: 15% 15% 0 0
+
+/**** Competences ----> DEV ****/
+
+////////////////////////////////////////////// PIXELS ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+@include default-slide-style(competences, dev)
+
+.text-bloc-dev
+    text-align: left
+.main-image-bloc-dev
+    float: right
+    padding: 17rem 10rem 0 0
+    width: 50%
+    @for $i from 1 through 4
+        .skill-bar-#{$i}
+            width: 100%
+            margin-bottom: 4rem
+            .skill-empty
+                width: 100%
+                display: block
+                height: 25px
+                background-color: #ebebeb
+                overflow: hidden
+                .skill-progress
+                    display: block
+                    position: relative
+                    height: 25px
+                    width: nth($listWidth, $i)
+                    background-color: #898989
+            p
+                font-family: "Helvetica Neue Light"
+                font-size: 0.6em
+                text-align: left
+                padding-left: 5px
+    .more-skills-button
+        text-align: center
+        font-family: "helvetica neue light"
+        font-size: 1em
+        border: 1px solid #000
+        width: 150px
+        a
+            display: block
+            padding: 10px 15px 10px 15px
+
+/**** Competences ----> DESIGN ****/
+
+////////////////////////////////////////////// PIXELS ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+////////////////////////////////////////////// INLINE BLOCK USAGE (MIXIN TO CREATE)  IDEM FOR TABLE DISPLAYS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+@include default-slide-style(competences, design)
+
+.text-bloc-dev
+    text-align: left
+.main-image-bloc-design
+    text-align: center
+    float: right
+    padding: 20rem 10rem 0 0
+    width: 50%
+    @for $i from 1 through 3
+        .skill-circle-#{$i}
+            display: inline-block
+            .skill-empty
+                position: relative
+                width: 200px
+                height: 200px
+                display: table
+                p
+                    display: table-cell
+                    vertical-align: middle
+                    font-family: "Helvetica Neue Light"
+                    font-size: 1.2em
+                    text-align: center
+                    padding-left: 5px
+            .circle-skill-progress
+                position: absolute
+                top: 0
+                bottom: 0
+                left: 0
+                right: 0
+                canvas
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    left: 0
+                    right: 0
+        p
+            text-align: center
+        .skill-circle-#{$i - 1}
+            margin-right: 5rem
