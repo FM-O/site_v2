@@ -32,6 +32,21 @@ $listWidth: 90%, 60%, 75%, 16%
 
 /******** MIXINS *********/
 
+//Title default style
+@mixin title-default($current-class)
+    .title-bloc-#{$current-class}
+        width: 100%
+        h1
+            text-align: center
+            font-size: 1.4em
+    .line-up
+        width: 90%
+        margin: auto
+        margin-top: 10px
+        margin-bottom: 15px
+        height: 10px
+        background: url("../images/line-up.png")
+
 //DEFAULT SLIDE STYLE
 
 @mixin default-slide-style($slide-id, $current-class)
@@ -48,23 +63,13 @@ $listWidth: 90%, 60%, 75%, 16%
         padding: 10rem 0 0 15rem
         width: 20rem
         height: 75%
-        .title-bloc-#{$current-class}
-            width: 100%
-            h1
-                text-align: center
-                font-size: 1.4em
-        .line-up
-            width: 90%
-            margin: auto
-            margin-top: 10px
-            margin-bottom: 15px
-            height: 10px
-            background: url("../images/line-up.png")
+        @include title-default($current-class)
+
     .text-bloc-#{$current-class}
         width: 75%
         margin: auto
         font-size: 0.5em
-        text-align: justify
+        text-align: left
     .main-image-bloc-#{$current-class}
         text-align: right
         img
@@ -100,6 +105,7 @@ header
     nav
         z-index: 1
         position: fixed
+        width: 0
         .menu-item
             @include display-flex
             position: relative
@@ -219,6 +225,8 @@ header
 
 /**** ACCUEIL ****/
 
+////////////////////////////////////////////// TABLES DISPLAY ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 #accueil
     height: 100%
     width: 100%
@@ -247,6 +255,9 @@ header
 
 @include default-slide-style(apropos, apropos)
 
+.text-bloc-apropos
+    text-align: justify
+
 .main-image-bloc-apropos
     img
         position: absolute
@@ -270,8 +281,6 @@ header
 
 @include default-slide-style(competences, dev)
 
-.text-bloc-dev
-    text-align: left
 .main-image-bloc-dev
     float: right
     padding: 17rem 10rem 0 0
@@ -314,8 +323,6 @@ header
 
 @include default-slide-style(competences, design)
 
-.text-bloc-dev
-    text-align: left
 .main-image-bloc-design
     text-align: center
     float: right
@@ -352,3 +359,75 @@ header
             text-align: center
         .skill-circle-#{$i - 1}
             margin-right: 5rem
+
+
+/**** Realisations ****/
+
+////////////////////////////////////////////// DISPLAYS TABLES + INLINE-BLOCKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+#realisations
+    width: 100%
+    height: 100%
+    font-size: 2em
+
+.main-wrapper-rea
+    display: table
+    width: 100%
+    height: 90%
+    text-align: center
+    font-family: "Helvetica Neue Thin"
+    overflow: hidden
+
+.main-text-bloc-rea
+    display: table-row
+    width: 100%
+    //padding: 3rem 40rem 0 40rem
+    @include title-default(rea)
+    .line-up
+        width: 20rem
+
+.container-rea
+    position: relative
+    z-index: 2
+    @for $i from 1 through 3
+        .rea-#{$i}
+            display: inline-block
+            width: 20rem
+            height: 20rem
+            border: 1px solid #000
+            padding: 10px
+            overflow: hidden
+            .inner-rea
+                position: relative
+                height: 100%
+                width: 100%
+                img
+                    position: absolute
+                    width: 100%
+                    top: 0
+                    left: 0
+                .content-rea
+                    position: relative
+                    height: 100%
+                    width: 100%
+                    top: 105%
+                    font-family: "helvetica neue light"
+                    font-size: 0.6em
+                    color: #ffffff
+                    background-color: rgba(0, 0, 0, 0.85)
+                    @include transition-property(top)
+                    @include transition-duration(0.5s)
+            &:hover
+                .content-rea
+                    top: 0
+                    cursor: pointer
+
+
+.main-image-bloc-rea
+    position: absolute
+    z-index: 0
+    top: 0
+    right: 0
+    img
+        float: right
+        width: 80%
