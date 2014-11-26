@@ -28,6 +28,7 @@ $itemcount: 5
 $listColor: #111111, #252525, #363636, #464646, #555555
 $baseSize: 8rem
 $listWidth: 90%, 60%, 75%, 16%
+$red-default: #7d0f00
 
 
 /******** MIXINS *********/
@@ -58,6 +59,7 @@ $listWidth: 90%, 60%, 75%, 16%
         font-family: "Helvetica Neue Thin"
         width: 100%
         height: 90%
+        overflow: hidden
     .main-text-bloc-#{$current-class}
         position: absolute
         padding: 10rem 0 0 15rem
@@ -381,10 +383,12 @@ header
 .main-text-bloc-rea
     display: table-row
     width: 100%
-    //padding: 3rem 40rem 0 40rem
     @include title-default(rea)
-    .line-up
-        width: 20rem
+    .title-bloc-rea
+        position: relative
+        top: 80px
+        .line-up
+            width: 20rem
 
 .container-rea
     position: relative
@@ -395,6 +399,7 @@ header
             width: 20rem
             height: 20rem
             border: 1px solid #000
+            background-color: #ffffff
             padding: 10px
             overflow: hidden
             .inner-rea
@@ -408,19 +413,39 @@ header
                     left: 0
                 .content-rea
                     position: relative
+                    display: table
                     height: 100%
                     width: 100%
-                    top: 105%
+                    top: 115%
                     font-family: "helvetica neue light"
-                    font-size: 0.6em
+                    font-size: 0.5em
                     color: #ffffff
                     background-color: rgba(0, 0, 0, 0.85)
                     @include transition-property(top)
                     @include transition-duration(0.5s)
+                    .test
+                        display: table-cell
+                        vertical-align: middle
+                        p
+                            padding: 20px
+                        .button-more-rea
+                            border: 1px solid #ffffff
+                            width: 50%
+                            margin: auto
+                            a
+                                display: block
+                                color: #ffffff
+                                padding: 10px 0 10px 0
+                            &:hover
+                                background-color: #ffffff
+                                a
+                                    color: $red-default
             &:hover
                 .content-rea
                     top: 0
-                    cursor: pointer
+        .rea-#{$i - 1}
+            margin-right: 10rem
+
 
 
 .main-image-bloc-rea
@@ -431,3 +456,107 @@ header
     img
         float: right
         width: 80%
+
+/**** Contact ****/
+
+////////////////////////////////////////////// DISPLAYS INLINE-BLOCKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+#contact
+    width: 100%
+    height: 100%
+    font-size: 2em
+
+.main-wrapper-contact
+    display: block
+    width: 100%
+    height: 90%
+    text-align: center
+    font-family: "Helvetica Neue Thin"
+    overflow: hidden
+    .main-text-bloc-contact
+        @include title-default(contact)
+        .title-bloc-contact
+            position: relative
+            top: 80px
+            .line-up
+                width: 20rem
+.main-container-contact
+    position: relative
+    overflow: hidden
+    top: 80px
+    .form-container
+        float: left
+        width: 50%
+        form
+            width: 75%
+            margin: auto
+            overflow: hidden
+            .form-input
+                display: block
+                width: 98%
+                height: 35px
+                margin-top: 50px
+                border: 1px solid #000
+                padding: 0 0 0 5px
+        ::-webkit-input-placeholder
+            color: #000
+            font-family: "helvetica neue light"
+        &:-moz-placeholder  /* Firefox 18- */
+            color: #000
+            font-family: "helvetica neue light"
+        ::-moz-placeholder   /* Firefox 19+ */
+            color: #000
+            font-family: "helvetica neue light"
+        &:-ms-input-placeholder
+            color: #000
+            font-family: "helvetica neue light"
+#user_mess
+    height: 150px
+    padding-top: 5px
+#reset_button
+    display: block
+    font-size: 1em
+    font-family: "helvetica neue thin"
+    width: 45%
+    margin-top: 20px
+    background-color: inherit
+    height: 45px
+    float: left
+    &:hover
+        cursor: pointer
+#submit_button
+    @extend #reset_button
+    float: right
+    margin-right: 5px
+
+.ending-container
+    float: right
+    width: 50%
+    .end-text-content
+        margin-top: 100px
+        h4
+            font-size: 1.8em
+        p
+            margin-top: 20%
+    .socials
+        width: 100%
+        margin-top: 50px
+        @for $i from 1 through 3
+            .social-icon-#{$i}
+                display: inline-block
+                height: 5rem
+                width: 5rem
+                border: 1px solid #000
+                border-radius: 100%
+                padding: 15px
+                img
+                    width: 100%
+                a
+                    position: relative
+                    bottom: 100%
+                    display: block
+                    height: 100%
+                    width: 100%
+
+            .social-icon-#{$i - 1}
+                margin-right: 40px
