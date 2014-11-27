@@ -30,8 +30,79 @@ $baseSize: 8rem
 $listWidth: 90%, 60%, 75%, 16%
 $red-default: #7d0f00
 
+// PADDING BLOC-TEXT
+
+$bloc-text-padding: 5rem 0 0 7rem
+//$bloc-text-padding: 10rem 0 0 15rem
+
+// HEIGHT, WIDTH AND MARGIN/PADDING SKILLS DEV
+
+// normal
+    $padding-main-image: 17rem 10rem 0 0
+    $height-skills-bar: 25px
+    $margin-skills-bar: 4rem
+    $width-skills-bar: 100%
+    $width-more-button: 150px
+    $width-more-button: 150px
+    $font-size-more-button: 1em
+    $padding-more-button: 10px 15px 10px 15px
+
+// respons
+$padding-main-image: 17rem 3rem 0 0
+$height-skills-bar: 10px
+$margin-skills-bar: 2rem
+$width-skills-bar: 90%
+$width-more-button: 75px
+$font-size-more-button: 0.6em
+$padding-more-button: 5px 7px 5px 7px
+
+// DESIGN-SKILLS-VARIABLES
+
+// normal
+    $width-rea: 20rem
+    $margin-rea: 10rem
+    $font-size-rea-content: 0.5em
+
+
+// respons
+$width-rea: 17rem
+$margin-rea: 3rem
+$font-size-rea-content: 0.4em
+
+// REA-CONTENT-VARIABLES
+
+// normal
+    $padding-main-content: 20rem 10rem 0 0
+    $width-skill-box: 200px
+    $font-size-design-skill: 1.2em
+    $margin-design-skills: 5rem
+// respons
+$padding-main-content: 20rem 5rem 0 0
+$width-skill-box: 125px
+$font-size-design-skill: 0.8em
+$margin-design-skills: 2rem
+
+// CONTACT-VARIABLES
+
+// normal
+    $margin-form: 50px
+    $font-size-endText: 1.8em
+    $font-size-social: 1em
+// respons
+$margin-form: 35px
+$font-size-endText: 1.3em
+$font-size-social: 0.7em
+
 
 /******** MIXINS *********/
+
+//MORE-button-skillPage
+@mixin repsonsive-style-button
+    font-size: $font-size-more-button
+    width: $width-more-button
+    a
+        display: block
+        padding: $padding-more-button
 
 //Title default style
 @mixin title-default($current-class)
@@ -62,7 +133,7 @@ $red-default: #7d0f00
         overflow: hidden
     .main-text-bloc-#{$current-class}
         position: absolute
-        padding: 10rem 0 0 15rem
+        padding: $bloc-text-padding
         width: 20rem
         height: 75%
         @include title-default($current-class)
@@ -285,22 +356,22 @@ header
 
 .main-image-bloc-dev
     float: right
-    padding: 17rem 10rem 0 0
+    padding: $padding-main-image
     width: 50%
     @for $i from 1 through 4
         .skill-bar-#{$i}
-            width: 100%
-            margin-bottom: 4rem
+            width: $width-skills-bar
+            margin-bottom: $margin-skills-bar
             .skill-empty
-                width: 100%
+                width: $width-skills-bar
                 display: block
-                height: 25px
+                height: $height-skills-bar
                 background-color: #ebebeb
                 overflow: hidden
                 .skill-progress
                     display: block
                     position: relative
-                    height: 25px
+                    height: $height-skills-bar
                     width: nth($listWidth, $i)
                     background-color: #898989
             p
@@ -311,12 +382,9 @@ header
     .more-skills-button
         text-align: center
         font-family: "helvetica neue light"
-        font-size: 1em
         border: 1px solid #000
-        width: 150px
-        a
-            display: block
-            padding: 10px 15px 10px 15px
+        @include repsonsive-style-button
+
 
 /**** Competences ----> DESIGN ****/
 
@@ -328,21 +396,21 @@ header
 .main-image-bloc-design
     text-align: center
     float: right
-    padding: 20rem 10rem 0 0
+    padding: $padding-main-content
     width: 50%
     @for $i from 1 through 3
         .skill-circle-#{$i}
             display: inline-block
             .skill-empty
                 position: relative
-                width: 200px
-                height: 200px
+                width: $width-skill-box
+                height: $width-skill-box
                 display: table
                 p
                     display: table-cell
                     vertical-align: middle
                     font-family: "Helvetica Neue Light"
-                    font-size: 1.2em
+                    font-size: $font-size-design-skill
                     text-align: center
                     padding-left: 5px
             .circle-skill-progress
@@ -358,9 +426,10 @@ header
                     left: 0
                     right: 0
         p
+            font-size: 0.8em
             text-align: center
         .skill-circle-#{$i - 1}
-            margin-right: 5rem
+            margin-right: $margin-design-skills
 
 
 /**** Realisations ****/
@@ -396,8 +465,8 @@ header
     @for $i from 1 through 3
         .rea-#{$i}
             display: inline-block
-            width: 20rem
-            height: 20rem
+            width: $width-rea
+            height: $width-rea
             border: 1px solid #000
             background-color: #ffffff
             padding: 10px
@@ -418,7 +487,7 @@ header
                     width: 100%
                     top: 115%
                     font-family: "helvetica neue light"
-                    font-size: 0.5em
+                    font-size: $font-size-rea-content
                     color: #ffffff
                     background-color: rgba(0, 0, 0, 0.85)
                     @include transition-property(top)
@@ -444,7 +513,7 @@ header
                 .content-rea
                     top: 0
         .rea-#{$i - 1}
-            margin-right: 10rem
+            margin-right: $margin-rea
 
 
 
@@ -495,7 +564,7 @@ header
                 display: block
                 width: 98%
                 height: 35px
-                margin-top: 50px
+                margin-top: $margin-form
                 border: 1px solid #000
                 padding: 0 0 0 5px
         ::-webkit-input-placeholder
@@ -535,8 +604,9 @@ header
     .end-text-content
         margin-top: 100px
         h4
-            font-size: 1.8em
+            font-size: $font-size-endText
         p
+            font-size: $font-size-social
             margin-top: 20%
     .socials
         width: 100%

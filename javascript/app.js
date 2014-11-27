@@ -12,20 +12,34 @@ $(document).ready(function() {
 
         $('.circle-skill-progress').each(function(){
 
+            var $height = window.innerHeight,
+                $width = window.innerWidth;
+            var $canvasFull,
+                $responsiveRatio;
+
+            if($height <= 768 && $width <= 1024){
+                $canvasFull = $('<canvas width="125px" height="125px" />');
+                $responsiveRatio = 1.60;
+            }
+            else{
+                $canvasFull = $('<canvas width="200px" height="200px" />');
+                $responsiveRatio = 1;
+            }
+
             var $test = $(this),
                 $progress = $(this).data('progress'),
                 $progress_final = $(this).data('progressfinal');
 
-            $circle1 = $('<canvas width="200px" height="200px" />');
-            $color = $('<canvas width="200px" height="200px" />');
+            $circle1 = $canvasFull;
+            $color = $canvasFull;
             $test.append($circle1);
             $test.append($color);
 
             var ctx = $circle1[0].getContext('2d');
 
             ctx.beginPath();
-            ctx.arc(100,100,80,0,2*Math.PI);
-            ctx.lineWidth = 20;
+            ctx.arc(100/$responsiveRatio,100/$responsiveRatio,80/$responsiveRatio,0,2*Math.PI);
+            ctx.lineWidth = 20/$responsiveRatio;
             ctx.strokeStyle = '#ebebeb';
             ctx.stroke();
 
@@ -33,8 +47,8 @@ $(document).ready(function() {
             ctx = $color[0].getContext('2d');
 
             ctx.beginPath();
-            ctx.arc(100,100,80,-$progress*Math.PI,-$progress_final*Math.PI);
-            ctx.lineWidth = 20;
+            ctx.arc(100/$responsiveRatio,100/$responsiveRatio,80/$responsiveRatio,-$progress*Math.PI,-$progress_final*Math.PI);
+            ctx.lineWidth = 20/$responsiveRatio;
             ctx.strokeStyle = '#898989';
             ctx.stroke();
 
@@ -43,7 +57,7 @@ $(document).ready(function() {
     })(jQuery);
 
 
-    });
+});
 
 
 
