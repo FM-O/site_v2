@@ -30,79 +30,31 @@ $baseSize: 8rem
 $listWidth: 90%, 60%, 75%, 16%
 $red-default: #7d0f00
 
-// PADDING BLOC-TEXT
+//---------------------------------------\\
 
-$bloc-text-padding: 5rem 0 0 7rem
-//$bloc-text-padding: 10rem 0 0 15rem
-
-// HEIGHT, WIDTH AND MARGIN/PADDING SKILLS DEV
-
-// normal
-    $padding-main-image: 17rem 10rem 0 0
-    $height-skills-bar: 25px
-    $margin-skills-bar: 4rem
-    $width-skills-bar: 100%
-    $width-more-button: 150px
-    $width-more-button: 150px
-    $font-size-more-button: 1em
-    $padding-more-button: 10px 15px 10px 15px
-
-// respons
-$padding-main-image: 17rem 3rem 0 0
-$height-skills-bar: 10px
-$margin-skills-bar: 2rem
-$width-skills-bar: 90%
-$width-more-button: 75px
-$font-size-more-button: 0.6em
-$padding-more-button: 5px 7px 5px 7px
-
-// DESIGN-SKILLS-VARIABLES
-
-// normal
-    $width-rea: 20rem
-    $margin-rea: 10rem
-    $font-size-rea-content: 0.5em
-
-
-// respons
-$width-rea: 17rem
-$margin-rea: 3rem
-$font-size-rea-content: 0.4em
-
-// REA-CONTENT-VARIABLES
-
-// normal
-    $padding-main-content: 20rem 10rem 0 0
-    $width-skill-box: 200px
-    $font-size-design-skill: 1.2em
-    $margin-design-skills: 5rem
-// respons
-$padding-main-content: 20rem 5rem 0 0
-$width-skill-box: 125px
-$font-size-design-skill: 0.8em
-$margin-design-skills: 2rem
-
-// CONTACT-VARIABLES
-
-// normal
-    $margin-form: 50px
-    $font-size-endText: 1.8em
-    $font-size-social: 1em
-// respons
-$margin-form: 35px
-$font-size-endText: 1.3em
-$font-size-social: 0.7em
 
 
 /******** MIXINS *********/
 
+//MEDIA QUERIES
+@mixin respond-to($media)
+    @if $media == IPAD
+        @media only screen and (max-width: 1024px)
+            @content
+
 //MORE-button-skillPage
 @mixin repsonsive-style-button
-    font-size: $font-size-more-button
-    width: $width-more-button
+    font-size: 1em
+    @include respond-to(IPAD)
+        font-size: 0.6em
+    width: 150px
+    @include respond-to(IPAD)
+        width: 75px
     a
         display: block
-        padding: $padding-more-button
+        padding: 10px 15px 10px 15px
+        @include respond-to(IPAD)
+            padding: 5px 7px 5px 7px
 
 //Title default style
 @mixin title-default($current-class)
@@ -133,7 +85,9 @@ $font-size-social: 0.7em
         overflow: hidden
     .main-text-bloc-#{$current-class}
         position: absolute
-        padding: $bloc-text-padding
+        padding: 10rem 0 0 15rem
+        @include respond-to(IPAD)
+            padding: 5rem 0 0 7rem
         width: 20rem
         height: 75%
         @include title-default($current-class)
@@ -151,23 +105,17 @@ $font-size-social: 0.7em
 /**** Gen Reset ****/
 
 html
-    height: 100%
-    width: 100%
     font-size: 100%
 body
-    height: 100%
-    width: 100%
     font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif
     font-size: 100%
     a
         text-decoration: none
         color: #000000
 #bloc-page
-    height: 100%
-    width: 100%
-section
-    height: 100%
-    width: 100%
+    max-width: 1920px
+    max-height: 1080px
+
 
 /**** GENERAL ELEMENTS ****/
 
@@ -356,22 +304,34 @@ header
 
 .main-image-bloc-dev
     float: right
-    padding: $padding-main-image
+    padding: 17rem 10rem 0 0
+    @include respond-to(IPAD)
+        padding: 17rem 3rem 0 0
     width: 50%
     @for $i from 1 through 4
         .skill-bar-#{$i}
-            width: $width-skills-bar
-            margin-bottom: $margin-skills-bar
+            width: 100%
+            @include respond-to(IPAD)
+                width: 90%
+            margin-bottom: 4rem
+            @include respond-to(IPAD)
+                margin-bottom: 2rem
             .skill-empty
-                width: $width-skills-bar
+                width: 100%
+                @include respond-to(IPAD)
+                    width: 90%
                 display: block
-                height: $height-skills-bar
+                height: 25px
+                @include respond-to(IPAD)
+                    height: 10px
                 background-color: #ebebeb
                 overflow: hidden
                 .skill-progress
                     display: block
                     position: relative
-                    height: $height-skills-bar
+                    height: 25px
+                    @include respond-to(IPAD)
+                        height: 10px
                     width: nth($listWidth, $i)
                     background-color: #898989
             p
@@ -396,21 +356,29 @@ header
 .main-image-bloc-design
     text-align: center
     float: right
-    padding: $padding-main-content
+    padding: 20rem 10rem 0 0
+    @include respond-to(IPAD)
+        padding: 20rem 5rem 0 0
     width: 50%
     @for $i from 1 through 3
         .skill-circle-#{$i}
             display: inline-block
             .skill-empty
                 position: relative
-                width: $width-skill-box
-                height: $width-skill-box
+                width: 200px
+                @include respond-to(IPAD)
+                    width: 125px
+                height: 200px
+                @include respond-to(IPAD)
+                    height: 125px
                 display: table
                 p
                     display: table-cell
                     vertical-align: middle
                     font-family: "Helvetica Neue Light"
-                    font-size: $font-size-design-skill
+                    font-size: 1.2em
+                    @include respond-to(IPAD)
+                        font-size: 0.8em
                     text-align: center
                     padding-left: 5px
             .circle-skill-progress
@@ -429,7 +397,9 @@ header
             font-size: 0.8em
             text-align: center
         .skill-circle-#{$i - 1}
-            margin-right: $margin-design-skills
+            margin-right: 5rem
+            @include respond-to(IPAD)
+                margin-right: 2rem
 
 
 /**** Realisations ****/
@@ -465,8 +435,12 @@ header
     @for $i from 1 through 3
         .rea-#{$i}
             display: inline-block
-            width: $width-rea
-            height: $width-rea
+            width: 20rem
+            @include respond-to(IPAD)
+                width: 17rem
+            height: 20rem
+            @include respond-to(IPAD)
+                height: 17rem
             border: 1px solid #000
             background-color: #ffffff
             padding: 10px
@@ -487,7 +461,9 @@ header
                     width: 100%
                     top: 115%
                     font-family: "helvetica neue light"
-                    font-size: $font-size-rea-content
+                    font-size: 0.5em
+                    @include respond-to(IPAD)
+                        font-size: 0.4em
                     color: #ffffff
                     background-color: rgba(0, 0, 0, 0.85)
                     @include transition-property(top)
@@ -513,7 +489,9 @@ header
                 .content-rea
                     top: 0
         .rea-#{$i - 1}
-            margin-right: $margin-rea
+            margin-right: 10rem
+            @include respond-to(IPAD)
+                margin-right: 3rem
 
 
 
@@ -564,7 +542,9 @@ header
                 display: block
                 width: 98%
                 height: 35px
-                margin-top: $margin-form
+                margin-top: 50px
+                @include respond-to(IPAD)
+                    margin-top: 35px
                 border: 1px solid #000
                 padding: 0 0 0 5px
         ::-webkit-input-placeholder
@@ -604,9 +584,13 @@ header
     .end-text-content
         margin-top: 100px
         h4
-            font-size: $font-size-endText
+            font-size: 1.8em
+            @include respond-to(IPAD)
+                font-size: 1.3em
         p
-            font-size: $font-size-social
+            font-size: 1em
+            @include respond-to(IPAD)
+                font-size: 0.7em
             margin-top: 20%
     .socials
         width: 100%

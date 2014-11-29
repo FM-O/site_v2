@@ -5,7 +5,10 @@
 /**** FUNCTION init plugin fullpage ****/
 
 $(document).ready(function() {
-    $('#fullpage').fullpage();
+    $('#fullpage').fullpage({
+        anchors: ['home', 'about', 'skills', 'achievements', 'end'],
+        menu: 'MyMenu'
+    });
 
 
     (function($){
