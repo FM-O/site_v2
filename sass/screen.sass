@@ -444,6 +444,8 @@ header
     .title-bloc-rea
         position: relative
         top: 80px
+        @include respond-to(genBook)
+            top: 40px
         .line-up
             width: 20rem
 
@@ -543,12 +545,16 @@ header
         .title-bloc-contact
             position: relative
             top: 80px
+            @include respond-to(genBook)
+                top: 60px
             .line-up
                 width: 20rem
 .main-container-contact
     position: relative
     overflow: hidden
     top: 80px
+    @include respond-to(genBook)
+        top: 60px
     .form-container
         float: left
         width: 50%
@@ -579,6 +585,8 @@ header
             font-family: "helvetica neue light"
 #user_mess
     height: 150px
+    @include respond-to(genBook)
+        height: 120px
     padding-top: 5px
 #reset_button
     display: block
@@ -601,6 +609,8 @@ header
     width: 50%
     .end-text-content
         margin-top: 100px
+        @include respond-to(genBook)
+            margin-top: 80px
         h4
             font-size: 1.8em
             @include respond-to(genBook)
