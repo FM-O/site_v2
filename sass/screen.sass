@@ -93,7 +93,7 @@ $progress-bar-color: #898989
         position: absolute
         padding: 10rem 0 0 15rem
         @include respond-to(genBook)
-            padding: 5rem 0 0 7rem
+            padding: 2.5rem 0 0 7rem
         width: 20rem
         height: 75%
         @include title-default($current-class)
@@ -304,6 +304,8 @@ header
 
 .main-image-bloc-responsive
     padding: 15% 15% 0 0
+    @include respond-to(genBook)
+        padding: 10% 15% 0 0
 
 /**** Competences ----> DEV ****/
 
@@ -315,7 +317,7 @@ header
     float: right
     padding: 17rem 10rem 0 0
     @include respond-to(genBook)
-        padding: 12rem 7rem 0 0
+        padding: 10rem 7rem 0 0
     @include respond-to(IPAD)
         padding: 17rem 3rem 0 0
     width: 50%
@@ -371,7 +373,7 @@ header
     float: right
     padding: 20rem 10rem 0 0
     @include respond-to(genBook)
-        padding: 16rem 5rem 0 0
+        padding: 13rem 5rem 0 0
         width: 60%
     @include respond-to(IPAD)
         padding: 20rem 3rem 0 0
