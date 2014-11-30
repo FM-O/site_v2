@@ -12,9 +12,53 @@
     <script type="text/javascript" src="javascript/full-plug/vendors/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="javascript/full-plug/jquery.fullPage.js"></script>
     <script type="text/javascript" src="javascript/app.js"></script>
+
+    <!-- STYLE FOR NO JS -->
+    <style>
+        .text-box-no-js{
+            position: absolute;
+            z-index: 2;
+            width: 50%;
+            top: 40%;
+            left: 20%;
+            font-size: 40px;
+            background-color: #FFFFFF;
+            color: #c8151f;
+            text-align: center;
+            padding: 20px;
+        }
+        .text-box-no-js p:last-of-type{
+            font-size: 20px;
+            margin:10px 0 10px 0;
+            color: #000;
+        }
+
+        .text-box-no-js img{
+            width: 150px;
+        }
+
+        .filter-no-js{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            opacity: 0.6
+        }
+
+    </style>
 </head>
 <body>
     <div id="bloc-page">
+        <noscript>
+            <div class="filter-no-js"></div>
+            <div class="text-box-no-js">
+                <p>Votre navigateur ne supporte pas javascript</p>
+                <p>Vous pouvez télécharger un des navigateurs suivants qui utilisent cette technologie</p>
+                <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
+                <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger google chrome" alt="google chrome"/></a>
+                <a href="http://windows.microsoft.com/fr-fr/internet-explorer/download-ie" target="_blank"><img src="http://www.criticmatters.com/wp-content/uploads/2014/09/ie9-10.png" title="télécharger google chrome" alt="google chrome"/></a>
+            </div>
+        </noscript>
         <header>
             <nav id="myMenu">
                 <input id="menu-button" type="checkbox" />
