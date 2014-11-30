@@ -42,10 +42,10 @@ $progress-bar-color: #898989
 //MEDIA QUERIES
 @mixin respond-to($media)
     @if $media == IPAD
-        @media only screen and (max-width: 1024px)
+        @media only screen and (max-width: 1024px) // TARGET ALL TABLETS (IPAD & CO)
             @content
-    @else if $media == genBook
-        @media only screen and (max-width: 1500px)
+    @else if $media == genBook // TARGET ALL HD 1366 WIDTH + GENERIC BOOKS 1280 WIDTH
+        @media only screen and (max-width: 1400px)
             @content
 
 //MORE-button-skillPage
