@@ -892,7 +892,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 @media only screen and (max-width: 1366px) {
   /* line 325, ../sass/screen.sass */
   .main-image-bloc-dev .skill-bar-1 {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -956,7 +956,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 @media only screen and (max-width: 1366px) {
   /* line 325, ../sass/screen.sass */
   .main-image-bloc-dev .skill-bar-2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -1020,7 +1020,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 @media only screen and (max-width: 1366px) {
   /* line 325, ../sass/screen.sass */
   .main-image-bloc-dev .skill-bar-3 {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -1084,7 +1084,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 @media only screen and (max-width: 1366px) {
   /* line 325, ../sass/screen.sass */
   .main-image-bloc-dev .skill-bar-4 {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 }
 @media only screen and (max-width: 1024px) {
