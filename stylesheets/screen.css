@@ -2088,13 +2088,11 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 }
 /* line 652, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 a {
-  position: relative;
-  bottom: 100%;
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 659, ../sass/screen.sass */
+/* line 657, ../sass/screen.sass */
 .ending-container .socials .social-icon-0 {
   margin-right: 40px;
 }
@@ -2113,13 +2111,11 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 }
 /* line 652, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 a {
-  position: relative;
-  bottom: 100%;
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 659, ../sass/screen.sass */
+/* line 657, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 {
   margin-right: 40px;
 }
@@ -2138,13 +2134,11 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 }
 /* line 652, ../sass/screen.sass */
 .ending-container .socials .social-icon-3 a {
-  position: relative;
-  bottom: 100%;
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 659, ../sass/screen.sass */
+/* line 657, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 {
   margin-right: 40px;
 }
