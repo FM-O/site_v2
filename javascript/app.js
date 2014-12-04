@@ -89,6 +89,28 @@ $(document).ready(function() {
         });
 
     })(jQuery);
+
+    (function($){
+
+        $('.more-skills-button').click(function(){
+
+            var sector = $('.main-image-bloc-dev');
+            var $error = $('<p>Ce lien n\'est pas encore disponible</p>');
+
+            $error.addClass('error-mess');
+
+            $(sector).append($error);
+
+            setTimeout(function(){
+                $error.fadeOut(500);
+            }, 700);
+
+            setTimeout(function(){
+                $error.remove();
+            }, 1400)
+        });
+
+    })(jQuery);
 });
 
 

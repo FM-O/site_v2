@@ -29,13 +29,14 @@
 /******** VARIABLES *********/
 
 $itemcount: 5
-$listColor: #989797, #a9a8a8, #b9b8b8, #c8c7c7, #CCCBCB
-$button-nav-color: #CCCBCB
+$listColor: #86afaf, #8ab6b6, #90bebe, #95c6c6, #99CCCC
+$button-nav-color: #99CCCC
 $baseSize: 8rem
 $listWidth: 90%, 60%, 75%, 16%
 $red-default: #7d0f00
 
 $color-theme: #696868
+$color-theme-2: #99CCCC
 
 //---------------------------------------\\
 
@@ -56,7 +57,9 @@ $arian-color: #989797
     @else if $media == genBook // TARGET ALL HD 1366 WIDTH + GENERIC BOOKS 1280 WIDTH
         @media only screen and (max-width: 1400px)
             @content
-
+    @else if $media == very-wide // TARGET ALL SCREEN OVER 1680 WIDTH
+        @media only screen and (min-width: 1800px)
+            @content
 //MORE-button-skillPage
 @mixin repsonsive-style-button
     font-size: 1em
@@ -78,6 +81,10 @@ $arian-color: #989797
         h1
             text-align: center
             font-size: 1.4em
+        h2
+            @extend h1
+        h3
+            @extend h1
     .line-up
         width: 90%
         margin: auto
@@ -101,6 +108,8 @@ $arian-color: #989797
     .main-text-bloc-#{$current-class}
         position: absolute
         padding: 10rem 0 0 15rem
+        @include respond-to(very-wide)
+            padding: 10rem 0 0 17rem
         @include respond-to(genBook)
             padding: 2.5rem 0 0 7rem
         width: 20rem
@@ -117,7 +126,7 @@ $arian-color: #989797
         img
             width: 40%
 
-/**** Gen Reset ****/
+//////////////////////////////////////////////////**** Gen Reset ****//////////////////////////////////////////////////
 
 html
     font-size: 100%
@@ -134,7 +143,18 @@ body
     max-height: 1080px
 
 
-/**** GENERAL ELEMENTS ****/
+//////////////////////////////////////////////////**** GENERAL ELEMENTS ****//////////////////////////////////////////////////
+
+.em-style
+    color: #000
+    a
+        color: $color-theme-2
+.error-mess
+    font-size: 0.5em
+    color: #ffffff
+    padding: 5px 0 5px 0
+    background-color: rgba(#ff0000, 0.7)
+    text-align: center
 
 header
     a
@@ -243,7 +263,7 @@ header
             @include transition-duration(0.2s)
 
 
-// ARIAN
+/////////////////////////////////////////////////// ARIAN /////////////////////////////////////////////////
 .arian-content
     display: inline
     .arian-fill
@@ -273,9 +293,7 @@ header
 .active-tip
     background-color: $arian-color
 
-/**** ACCUEIL ****/
-
-////////////////////////////////////////////// TABLES DISPLAY ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////**** ACCUEIL ****//////////////////////////////////////////////////
 
 #accueil
     height: 100%
@@ -292,7 +310,8 @@ header
         .title-accueil
             font-size: 1.8em
             .bold-font
-                font-family: "helvetica neue light ext"
+                font-family: "helvetica neue light ext", 'Lato', Arial, sans-serif
+                font-weight: 400
         .visit-site-button
             margin-top: 35px
             font-size: 0.8em
@@ -302,8 +321,30 @@ header
                 width: 30%
                 padding: 15px
                 border: 1px solid $color-theme
+                p
+                    display: inline
+                .content-triangle
+                    float: right
+                    margin-right: 2rem
+                    display: inline
+                    vertical-align: baseline
+                    height: 0px
+                    width: 0px
+                    &::after
+                        content: ""
+                        position: absolute
+                        border: 0.8rem solid transparent
+                        border-left: 0.8rem solid $color-theme
+                        margin-top: 0.1rem
+                @include respond-to(IPAD)
+                    p
+                        display: block
+                    .content-triangle
+                        display: none
 
-/**** A Propos ****/
+
+
+//////////////////////////////////////////////////**** A Propos ****//////////////////////////////////////////////////
 
 @include default-slide-style(apropos, apropos)
 
@@ -319,16 +360,20 @@ header
         width: 40%
 
 
-/**** Competences ----> RESPONSIVE ****/
+//////////////////////////////////////////////////**** Competences ----> RESPONSIVE ****//////////////////////////////////////////////////
 
 @include default-slide-style(competences, responsive)
 
-.main-image-bloc-responsive
-    padding: 15% 15% 0 0
-    @include respond-to(genBook)
-        padding: 10% 15% 0 0
+.main-text-bloc-responsive
+    @include respond-to(very-wide)
+        padding: 10rem 0 0 25rem
 
-/**** Competences ----> DEV ****/
+.main-image-bloc-responsive
+    padding: 12% 20% 0 0
+    @include respond-to(IPAD)
+        padding: 20% 15% 0 0
+
+//////////////////////////////////////////////////**** Competences ----> DEV ****//////////////////////////////////////////////////
 
 ////////////////////////////////////////////// PIXELS ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -337,6 +382,8 @@ header
 .main-image-bloc-dev
     float: right
     padding: 17rem 10rem 0 0
+    @include respond-to(very-wide)
+        padding: 17rem 13rem 0 0
     @include respond-to(genBook)
         padding: 10rem 7rem 0 0
     @include respond-to(IPAD)
@@ -381,26 +428,30 @@ header
         border: 1px solid $color-theme
         @include repsonsive-style-button
 
-/**** Competences ----> DESIGN ****/
+////////////////////////////////////**** Competences ----> DESIGN ****/////////////////////////////////////////////////
 
 ////////////////////////////////////////////// PIXELS ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////////////////////////// INLINE BLOCK USAGE (MIXIN TO CREATE)  IDEM FOR TABLE DISPLAYS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 @include default-slide-style(competences, design)
 
+.main-text-bloc-design
+    @include respond-to(very-wide)
+        padding: 10rem 0 0 22rem
 .main-image-bloc-design
     text-align: center
     float: right
     padding: 20rem 10rem 0 0
+    @include respond-to(very-wide)
+        padding: 20rem 15rem 0 0
     @include respond-to(genBook)
         padding: 13rem 5rem 0 0
         width: 60%
     @include respond-to(IPAD)
-        padding: 20rem 3rem 0 0
+        padding: 17rem 3rem 0 0
     width: 50%
     @for $i from 1 through 3
         .skill-circle-#{$i}
-            display: inline-block
+            @include inline-block
             .skill-empty
                 position: relative
                 width: 200px
@@ -439,9 +490,7 @@ header
             @include respond-to(genBook)
                 margin-right: 2rem
 
-/**** Realisations ****/
-
-////////////////////////////////////////////// DISPLAYS TABLES + INLINE-BLOCKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////////////////////////////////////**** Realisations ****///////////////////////////////////////////////
 
 #realisations
     width: 100%
@@ -473,7 +522,7 @@ header
     z-index: 2
     @for $i from 1 through 3
         .rea-#{$i}
-            display: inline-block
+            @include inline-block
             width: 20rem
             @include respond-to(genBook)
                 width: 17rem
@@ -543,9 +592,7 @@ header
         float: right
         width: 80%
 
-/**** Contact ****/
-
-////////////////////////////////////////////// DISPLAYS INLINE-BLOCKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////////////////////////////////////**** Contact ****///////////////////////////////////////////////
 
 #contact
     width: 100%
@@ -651,18 +698,22 @@ header
         margin-top: 50px
         @for $i from 1 through 3
             .social-icon-#{$i}
-                display: inline-block
+                @include inline-block
                 height: 5rem
                 width: 5rem
-                border: 1px solid $color-theme
+                border: 1px solid #99CCCC
                 border-radius: 100%
                 padding: 15px
+                @include transition(background-color)
+                @include transition-duration(0.2s)
                 img
                     width: 100%
                 a
                     display: block
                     height: 100%
                     width: 100%
+                &:hover
+                    background-color: #99CCCC
 
             .social-icon-#{$i - 1}
                 margin-right: 40px
