@@ -19,23 +19,32 @@
     font-family: "Helvetica Neue Light"
     src: url('../fonts/HelveticaNeueLTCom-Lt.ttf')
 
+@font-face
+    font-family: "Helvetica Neue Light Ext"
+    src: url('../fonts/HelveticaNeueLTCom-LtEx.ttf')
+
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css")
 
 
 /******** VARIABLES *********/
 
 $itemcount: 5
-$listColor: #111111, #252525, #363636, #464646, #555555
+$listColor: #989797, #a9a8a8, #b9b8b8, #c8c7c7, #CCCBCB
+$button-nav-color: #CCCBCB
 $baseSize: 8rem
 $listWidth: 90%, 60%, 75%, 16%
 $red-default: #7d0f00
 
+$color-theme: #696868
+
 //---------------------------------------\\
 
-//SKILLS BAR / CIRCLES COLORS
+//SKILLS BAR / CIRCLES COLORS / ARIAN COLORS
 
 $bar-color: #ebebeb
-$progress-bar-color: #898989
+$progress-bar-color: #99CCCC
+$line-up-color: #99CCCC
+$arian-color: #989797
 
 /******** MIXINS *********/
 
@@ -75,7 +84,7 @@ $progress-bar-color: #898989
         margin-top: 10px
         margin-bottom: 15px
         height: 10px
-        background: url("../images/line-up.png")
+        background-color: $line-up-color
 
 //DEFAULT SLIDE STYLE
 
@@ -112,13 +121,14 @@ $progress-bar-color: #898989
 
 html
     font-size: 100%
+    color: $color-theme
 body
     font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
     font-weight: 300
     font-size: 100%
     a
         text-decoration: none
-        color: #000000
+        color: $color-theme
 #bloc-page
     max-width: 1920px
     max-height: 1080px
@@ -203,13 +213,13 @@ header
             &::after
                 content: ""
                 position: absolute
-                border: ($baseSize - 4rem) solid #636363
+                border: ($baseSize - 4rem) solid $button-nav-color
                 border-right: ($baseSize - 4rem) solid transparent
                 border-bottom: ($baseSize - 4rem) solid transparent
                 @include transition(border)
                 @include transition-duration(0.2s)
             &:hover::after
-                border: ($baseSize - 4rem) solid darken(#636363, 10%)
+                border: ($baseSize - 4rem) solid darken($button-nav-color, 10%)
                 border-right: ($baseSize - 4rem) solid transparent
                 border-bottom: ($baseSize - 4rem) solid transparent
         input[type='checkbox']:checked ~ .close-menu
@@ -247,7 +257,7 @@ header
         .tip-arian
             height: 100%
             width: 20%
-            border: 1px solid #000
+            border: 1px solid $arian-color
     .arian-fill-accueil
         z-index: 99
         @extend .arian-fill
@@ -261,7 +271,7 @@ header
                 width: 100%
                 height: 100%
 .active-tip
-    background-color: #000
+    background-color: $arian-color
 
 /**** ACCUEIL ****/
 
@@ -281,6 +291,8 @@ header
         text-align: center
         .title-accueil
             font-size: 1.8em
+            .bold-font
+                font-family: "helvetica neue light ext"
         .visit-site-button
             margin-top: 35px
             font-size: 0.8em
@@ -289,7 +301,7 @@ header
                 margin: auto
                 width: 30%
                 padding: 15px
-                border: 1px solid #000
+                border: 1px solid $color-theme
 
 /**** A Propos ****/
 
@@ -366,9 +378,8 @@ header
     .more-skills-button
         text-align: center
         font-family: "helvetica neue light", 'Lato', Arial, sans-serif
-        border: 1px solid #000
+        border: 1px solid $color-theme
         @include repsonsive-style-button
-
 
 /**** Competences ----> DESIGN ****/
 
@@ -428,7 +439,6 @@ header
             @include respond-to(genBook)
                 margin-right: 2rem
 
-
 /**** Realisations ****/
 
 ////////////////////////////////////////////// DISPLAYS TABLES + INLINE-BLOCKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -470,7 +480,7 @@ header
             height: 20rem
             @include respond-to(genBook)
                 height: 17rem
-            border: 1px solid #000
+            border: 1px solid $color-theme
             background-color: #ffffff
             padding: 10px
             overflow: hidden
@@ -513,7 +523,7 @@ header
                             &:hover
                                 background-color: #ffffff
                                 a
-                                    color: $red-default
+                                    color: #99CCCC
             &:hover
                 .content-rea
                     top: 0
@@ -578,19 +588,19 @@ header
                 margin-top: 50px
                 @include respond-to(genBook)
                     margin-top: 35px
-                border: 1px solid #000
+                border: 1px solid $color-theme
                 padding: 0 0 0 5px
         ::-webkit-input-placeholder
-            color: #000
+            color: $color-theme
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
         &:-moz-placeholder  /* Firefox 18- */
-            color: #000
+            color: $color-theme
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
         ::-moz-placeholder   /* Firefox 19+ */
-            color: #000
+            color: $color-theme
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
         &:-ms-input-placeholder
-            color: #000
+            color: $color-theme
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
 #user_mess
     height: 150px
@@ -644,7 +654,7 @@ header
                 display: inline-block
                 height: 5rem
                 width: 5rem
-                border: 1px solid #000
+                border: 1px solid $color-theme
                 border-radius: 100%
                 padding: 15px
                 img

@@ -49,7 +49,7 @@ $(document).ready(function() {
             var $canvasFull,
                 $responsiveRatio;
             var $colorFullCircle = '#ebebeb',
-                $colorProgressCircle = '#898989';
+                $colorProgressCircle = '#99CCCC';
 
             if($height <= 768 && $width <= 1024){
                 $canvasFull = $('<canvas width="125px" height="125px" />');
