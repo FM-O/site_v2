@@ -1742,7 +1742,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 /* line 570, ../sass/screen.sass */
 .container-rea .rea-1 .inner-rea .content-rea .test h4 {
   font-size: 1.2em;
-  width: 40%;
+  width: 50%;
   margin: auto;
   padding-bottom: 10px;
   border-bottom: 1px solid #ffffff;
@@ -1864,7 +1864,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 /* line 570, ../sass/screen.sass */
 .container-rea .rea-2 .inner-rea .content-rea .test h4 {
   font-size: 1.2em;
-  width: 40%;
+  width: 50%;
   margin: auto;
   padding-bottom: 10px;
   border-bottom: 1px solid #ffffff;
@@ -1986,7 +1986,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 /* line 570, ../sass/screen.sass */
 .container-rea .rea-3 .inner-rea .content-rea .test h4 {
   font-size: 1.2em;
-  width: 40%;
+  width: 50%;
   margin: auto;
   padding-bottom: 10px;
   border-bottom: 1px solid #ffffff;
