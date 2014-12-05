@@ -43,8 +43,6 @@ $color-theme-2: #99CCCC
 //SKILLS BAR / CIRCLES COLORS / ARIAN COLORS
 
 $bar-color: #ebebeb
-$progress-bar-color: #99CCCC
-$line-up-color: #99CCCC
 $arian-color: #989797
 
 /******** MIXINS *********/
@@ -91,7 +89,7 @@ $arian-color: #989797
         margin-top: 10px
         margin-bottom: 15px
         height: 10px
-        background-color: $line-up-color
+        background-color: $color-theme-2
 
 //DEFAULT SLIDE STYLE
 
@@ -160,6 +158,11 @@ body
         width: 50%
         bottom: 40px
         left: 25%
+    @include respond-to(IPAD)
+        position: initial
+        width: initial
+        bottom: initial
+        left: initial
 
 header
     a
@@ -392,7 +395,7 @@ header
     @include respond-to(genBook)
         padding: 10rem 7rem 0 0
     @include respond-to(IPAD)
-        padding: 17rem 3rem 0 0
+        padding: 13rem 3rem 0 0
     width: 50%
     @for $i from 1 through 4
         .skill-bar-#{$i}
@@ -421,7 +424,7 @@ header
                     @include respond-to(IPAD)
                         height: 10px
                     width: nth($listWidth, $i)
-                    background-color: $progress-bar-color
+                    background-color: $color-theme-2
             p
                 font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
                 font-size: 0.6em
@@ -564,6 +567,12 @@ header
                     .test
                         display: table-cell
                         vertical-align: middle
+                        h4
+                            font-size: 1.2em
+                            width: 40%
+                            margin: auto
+                            padding-bottom: 10px
+                            border-bottom: 1px solid #ffffff
                         p
                             padding: 20px
                         .button-more-rea
@@ -577,7 +586,7 @@ header
                             &:hover
                                 background-color: #ffffff
                                 a
-                                    color: #99CCCC
+                                    color: $color-theme-2
             &:hover
                 .content-rea
                     top: 0
@@ -706,7 +715,7 @@ header
                 @include inline-block
                 height: 5rem
                 width: 5rem
-                border: 1px solid #99CCCC
+                border: 1px solid $color-theme-2
                 border-radius: 100%
                 padding: 15px
                 @include transition(background-color)
@@ -718,7 +727,7 @@ header
                     height: 100%
                     width: 100%
                 &:hover
-                    background-color: #99CCCC
+                    background-color: $color-theme-2
 
             .social-icon-#{$i - 1}
                 margin-right: 40px
