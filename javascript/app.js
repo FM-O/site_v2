@@ -5,6 +5,16 @@
 /**** FUNCTION init plugin fullpage ****/
 
 $(document).ready(function() {
+
+    function skillProg(){
+
+        var $current = $('.tip-arian-3');
+
+        if($current.hasClass("active-tip")){
+            $('.skill-progress').css('left', '0');
+        }
+    }
+
     $('#fullpage').fullpage({
         anchors: ['home', 'about', 'skills', 'achievements', 'end'],
         menu: 'MyMenu',
@@ -27,6 +37,9 @@ $(document).ready(function() {
             else if(anchorLink == 'skills'){
                 $allTips.removeClass('active-tip');
                 $tip3.addClass('active-tip');
+                setTimeout(function(){
+                    skillProg();
+                }, 350);
             }
             else if(anchorLink == 'achievements'){
                 $allTips.removeClass('active-tip');
@@ -38,6 +51,9 @@ $(document).ready(function() {
             }
         }
     });
+
+
+
 
 
     (function($){

@@ -425,6 +425,9 @@ header
                     @include respond-to(IPAD)
                         height: 10px
                     width: nth($listWidth, $i)
+                    left: -100%
+                    @include transition(left)
+                    @include transition-duration(2s)
                     background-color: $color-theme-2
             p
                 font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
