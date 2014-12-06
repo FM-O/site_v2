@@ -2227,7 +2227,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 /* line 701, ../sass/screen.sass */
 .ending-container .end-text-content p {
   font-size: 1em;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 @media only screen and (max-width: 1400px) {
   /* line 701, ../sass/screen.sass */
@@ -2235,16 +2235,16 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
     font-size: 0.8em;
   }
 }
-@media only screen and (max-width: 1400px) {
-  /* line 701, ../sass/screen.sass */
-  .ending-container .end-text-content p {
-    margin-top: 10%;
-  }
-}
 @media only screen and (max-width: 1024px) {
   /* line 701, ../sass/screen.sass */
   .ending-container .end-text-content p {
     font-size: 0.7em;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  /* line 701, ../sass/screen.sass */
+  .ending-container .end-text-content p {
+    margin-top: 5%;
   }
 }
 /* line 711, ../sass/screen.sass */
@@ -2368,4 +2368,24 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 /* line 733, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 {
   margin-right: 40px;
+}
+/* line 735, ../sass/screen.sass */
+.ending-container .policy {
+  font-size: 0.7em;
+  margin-top: 25px;
+}
+/* line 738, ../sass/screen.sass */
+.ending-container .policy p:last-child {
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+/* line 741, ../sass/screen.sass */
+.ending-container .policy p:last-child a {
+  color: #99CCCC;
+}
+@media only screen and (max-width: 1400px) {
+  /* line 735, ../sass/screen.sass */
+  .ending-container .policy {
+    font-size: 0.5em;
+  }
 }
