@@ -39,7 +39,7 @@ $(document).ready(function() {
                 $tip3.addClass('active-tip');
                 setTimeout(function(){
                     skillProg();
-                }, 350);
+                }, 200);
             }
             else if(anchorLink == 'achievements'){
                 $allTips.removeClass('active-tip');
