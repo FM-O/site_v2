@@ -7,11 +7,30 @@
 $(document).ready(function() {
 
     function skillProg(){
+        //.tip-arian-3
+        if(arguments.length == 1){
+            var $modif = arguments[0];
+            for(var i=0; i<$modif.length; i++){
+                var $current = $($modif[i].slide);
 
-        var $current = $('.tip-arian-3');
+                if($current.hasClass("active-tip")){
+                    $($modif[i].element).css($modif[i].property, $modif[i].value);
+                }
+            }
+        }
+        else{
+            var $slide = arguments[0],
+                $element = arguments[1],
+                $property = arguments[2],
+                $value = arguments[3];
+            var $current = $($slide);
 
-        if($current.hasClass("active-tip")){
-            $('.skill-progress').css('left', '0');
+            console.log(arguments);
+
+
+            if($current.hasClass("active-tip")){
+                $($element).css($property, $value);
+            }
         }
     }
 
@@ -29,25 +48,95 @@ $(document).ready(function() {
             if(anchorLink == 'home'){
                 $allTips.removeClass('active-tip');
                 $tip1.addClass('active-tip');
+                skillProg([
+                    {
+                        slide: '.tip-arian-1',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
+                        slide:'.tip-arian-1',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: 'inherit'
+                    }
+                ]);
             }
             else if(anchorLink == 'about'){
                 $allTips.removeClass('active-tip');
                 $tip2.addClass('active-tip');
+                skillProg([
+                    {
+                        slide: '.tip-arian-2',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: '#FFFFFF'
+                    },
+                    {
+                        slide:'.tip-arian-2',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: '#99CCCC'
+                    }
+                ]);
             }
             else if(anchorLink == 'skills'){
                 $allTips.removeClass('active-tip');
                 $tip3.addClass('active-tip');
                 setTimeout(function(){
-                    skillProg();
+                    skillProg('.tip-arian-3', '.skill-progress', 'left', '0');
                 }, 200);
+                skillProg([
+                    {
+                        slide: '.tip-arian-3',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
+                        slide:'.tip-arian-3',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: 'inherit'
+                    }
+                ]);
             }
             else if(anchorLink == 'achievements'){
                 $allTips.removeClass('active-tip');
                 $tip4.addClass('active-tip');
+                skillProg([
+                    {
+                        slide: '.tip-arian-4',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: '#FFFFFF'
+                    },
+                    {
+                        slide:'.tip-arian-4',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: '#99CCCC'
+                    }
+                ]);
             }
             else if(anchorLink == 'end'){
                 $allTips.removeClass('active-tip');
                 $tip5.addClass('active-tip');
+                skillProg([
+                    {
+                        slide: '.tip-arian-5',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
+                        slide:'.tip-arian-5',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: 'inherit'
+                    }
+                ]);
             }
         }
     });
