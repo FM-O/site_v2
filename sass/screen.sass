@@ -122,7 +122,9 @@ $arian-color: #989797
             overflow: hidden
         @else
             font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
-            width: 50%
+            width: 100%
+            @include respond-to(handhelds)
+                width: 50%
             height: 90%
             overflow: hidden
     .main-text-bloc-#{$current-class}
@@ -797,9 +799,10 @@ header
     display: block
     font-size: 1em
     font-family: "helvetica neue thin", 'Lato', Arial, sans-serif
+    font-weight: 300
     width: 45%
     margin-top: 20px
-    background-color: inherit
+    background-color: #ffffff
     height: 45px
     float: left
     @include respond-to(handhelds)
