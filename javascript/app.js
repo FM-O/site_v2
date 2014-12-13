@@ -165,14 +165,14 @@ $(document).ready(function() {
                 $responsiveRatio = 1;
             }
 
-            var $test = $(this),
+            var $currentElem = $(this),
                 $progress = $(this).data('progress'),
                 $progress_final = $(this).data('progressfinal');
 
             $circle1 = $canvasFull;
             $color = $canvasFull;
-            $test.append($circle1);
-            $test.append($color);
+            $currentElem.append($circle1);
+            $currentElem.append($color);
 
             var ctx = $circle1[0].getContext('2d');
 
