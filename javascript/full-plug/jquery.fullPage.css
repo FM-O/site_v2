@@ -74,11 +74,23 @@ html, body {
     border-width: 38px 34px 38px 0;
     border-color: transparent #000 transparent transparent;
 }
+
 .fp-controlArrow.fp-next {
     right: 15px;
     border-width: 38px 0 38px 34px;
     border-color: transparent transparent transparent #000;
 }
+/******************************* MEDIA QUERY ARROWS **********************************/
+@media only screen and (max-width: 980px){
+    .fp-controlArrow.fp-prev{
+        border-width: 19px 17px 19px 0;
+    }
+    .fp-controlArrow.fp-next{
+        border-width: 19px 0 19px 17px;
+    }
+}
+
+
 .fp-scrollable {
     overflow: scroll;
 

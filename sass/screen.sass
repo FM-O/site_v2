@@ -49,7 +49,13 @@ $arian-color: #989797
 
 //MEDIA QUERIES
 @mixin respond-to($media)
-    @if $media == IPAD
+    @if $media == handhelds
+        @media only screen and (max-width: 980px) // TARGET ALL PHONES
+            @content
+    @else if $media == high-handhelds
+        @media only screen and (max-width: 980px) and (min-height: 500px)
+            @content
+    @else if $media == IPAD
         @media only screen and (max-width: 1024px) // TARGET ALL TABLETS (IPAD & CO)
             @content
     @else if $media == genBook // TARGET ALL HD 1366 WIDTH + GENERIC BOOKS 1280 WIDTH
@@ -79,6 +85,8 @@ $arian-color: #989797
         h1
             text-align: center
             font-size: 1.4em
+            @include respond-to(handhelds)
+                font-size: 1em
         h2
             @extend h1
         h3
@@ -90,6 +98,8 @@ $arian-color: #989797
         margin-bottom: 15px
         height: 10px
         background-color: $color-theme-2
+        @include respond-to(handhelds)
+            margin: 5px auto 5px auto
 
 //DEFAULT SLIDE STYLE
 
@@ -98,21 +108,38 @@ $arian-color: #989797
         width: 100%
         height: 100%
         font-size: 2em
+        @include respond-to(handhelds)
+            font-size: 2.5em
+            display: table
+            .main-wrapper-#{$current-class}
+                display: table-cell
+                vertical-align: middle
     .main-wrapper-#{$current-class}
-        font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
-        width: 100%
-        height: 90%
-        overflow: hidden
+        @if $current-class == main-wrapper-apropos
+            font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
+            width: 100%
+            height: 90%
+            overflow: hidden
+        @else
+            font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
+            width: 50%
+            height: 90%
+            overflow: hidden
     .main-text-bloc-#{$current-class}
         position: absolute
         padding: 10rem 0 0 15rem
+        width: 20rem
+        height: 75%
+        @include title-default($current-class)
         @include respond-to(very-wide)
             padding: 10rem 0 0 17rem
         @include respond-to(genBook)
             padding: 2.5rem 0 0 7rem
-        width: 20rem
-        height: 75%
-        @include title-default($current-class)
+        @include respond-to(handhelds)
+            width: 25rem
+            padding: 0
+            position: static
+            margin: auto
 
     .text-bloc-#{$current-class}
         width: 75%
@@ -130,6 +157,8 @@ html
     font-size: 100%
     -webkit-font-smoothing: antialiased
     color: $color-theme
+    @include respond-to(handhelds)
+        font-size: 60%
 body
     font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
     font-weight: 300
@@ -283,6 +312,8 @@ header
         display: -webkit-box
         width: 100%
         height: 30px
+        @include respond-to(handhelds)
+            height: 10px
         .tip-arian
             height: 100%
             width: 20%
@@ -316,6 +347,11 @@ header
     border-radius: 100%
     border: 1px solid $color-theme-2
     color: $color-theme
+    @include respond-to(handhelds)
+        right: 10px
+        top: 10px
+        width: 40px
+        height: 40px
     a
         text-align: center
         font-size: 1.8em
@@ -381,6 +417,10 @@ header
 .main-text-bloc-apropos
     @include respond-to(genBook)
         padding: 7rem 0 0 12rem
+    @include respond-to(handhelds)
+        position: relative
+        margin: 0
+        padding: 8rem 0 0 1.5rem
 
 .main-image-bloc-apropos
     img
@@ -397,11 +437,17 @@ header
 .main-text-bloc-responsive
     @include respond-to(very-wide)
         padding: 10rem 0 0 25rem
+    @include respond-to(handhelds)
+        padding: 0
+        position: static
+        margin: auto
 
 .main-image-bloc-responsive
     padding: 12% 20% 0 0
     @include respond-to(IPAD)
         padding: 20% 15% 0 0
+    @include respond-to(handhelds)
+        display: none
 
 //////////////////////////////////////////////////**** Competences ----> DEV ****//////////////////////////////////////////////////
 
@@ -418,6 +464,8 @@ header
         padding: 10rem 7rem 0 0
     @include respond-to(IPAD)
         padding: 13rem 3rem 0 0
+    @include respond-to(handhelds)
+        display: none
     width: 50%
     @for $i from 1 through 4
         .skill-bar-#{$i}
@@ -470,6 +518,8 @@ header
 .main-text-bloc-design
     @include respond-to(very-wide)
         padding: 10rem 0 0 22rem
+    @include respond-to(handhelds)
+        padding: 0
 .main-image-bloc-design
     text-align: center
     float: right
@@ -481,6 +531,8 @@ header
         width: 60%
     @include respond-to(IPAD)
         padding: 17rem 3rem 0 0
+    @include respond-to(handhelds)
+        display: none
     width: 50%
     @for $i from 1 through 3
         .skill-circle-#{$i}
@@ -488,10 +540,9 @@ header
             .skill-empty
                 position: relative
                 width: 200px
-                @include respond-to(IPAD)
-                    width: 125px
                 height: 200px
                 @include respond-to(IPAD)
+                    width: 125px
                     height: 125px
                 display: table
                 p
@@ -529,6 +580,8 @@ header
     width: 100%
     height: 100%
     font-size: 2em
+    @include respond-to(high-handhelds)
+        display: table
 
 .main-wrapper-rea
     display: table
@@ -537,35 +590,54 @@ header
     text-align: center
     font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
     overflow: hidden
+    @include respond-to(high-handhelds)
+        display: table-cell
+        vertical-align: middle
 
 .main-text-bloc-rea
     display: table-row
     width: 100%
     @include title-default(rea)
+    @include respond-to(handhelds)
+        display: block
     .title-bloc-rea
         position: relative
         top: 80px
         @include respond-to(genBook)
             top: 40px
+        @include respond-to(handhelds)
+            top: 10px
+        @include respond-to(high-handhelds)
+            top: 0
         .line-up
             width: 20rem
 
 .container-rea
     position: relative
     z-index: 2
+    @include respond-to(handhelds)
+        top: 20px
+        margin: auto
+        @include display-flex
+        @include flex-wrap(wrap)
+    @include respond-to(high-handhelds)
+        padding: 0 0 0 10px
     @for $i from 1 through 3
         .rea-#{$i}
             @include inline-block
             width: 20rem
-            @include respond-to(genBook)
-                width: 17rem
             height: 20rem
-            @include respond-to(genBook)
-                height: 17rem
             border: 1px solid $color-theme
             background-color: #ffffff
             padding: 10px
             overflow: hidden
+            @include respond-to(genBook)
+                width: 17rem
+                height: 17rem
+            @include respond-to(handhelds)
+                width: 15rem
+                height: 15rem
+                padding: 0
             .inner-rea
                 position: relative
                 height: 100%
@@ -589,7 +661,7 @@ header
                     background-color: rgba(0, 0, 0, 0.85)
                     @include transition-property(top)
                     @include transition-duration(0.5s)
-                    .test
+                    .rea-desc
                         display: table-cell
                         vertical-align: middle
                         h4
@@ -598,8 +670,12 @@ header
                             margin: auto
                             padding-bottom: 10px
                             border-bottom: 1px solid #ffffff
+                            @include respond-to(handhelds)
+                                padding-bottom: 2px
                         p
                             padding: 20px
+                            @include respond-to(handhelds)
+                                padding: 5px 10px 5px 10px
                         .button-more-rea
                             border: 1px solid #ffffff
                             width: 50%
@@ -608,6 +684,8 @@ header
                                 display: block
                                 color: #ffffff
                                 padding: 10px 0 10px 0
+                                @include respond-to(handhelds)
+                                    padding: 2px 0 2px 0
                             &:hover
                                 background-color: #ffffff
                                 a
@@ -621,6 +699,8 @@ header
                 margin-right: 5rem
             @include respond-to(IPAD)
                 margin-right: 3rem
+            @include respond-to(handhelds)
+                margin: 0
 
 .main-image-bloc-rea
     position: absolute
@@ -637,6 +717,8 @@ header
     width: 100%
     height: 100%
     font-size: 2em
+    @include respond-to(high-handhelds)
+        display: table
 
 .main-wrapper-contact
     display: block
@@ -645,6 +727,9 @@ header
     text-align: center
     font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
     overflow: hidden
+    @include respond-to(high-handhelds)
+        display: table-cell
+        vertical-align: middle
     .main-text-bloc-contact
         @include title-default(contact)
         .title-bloc-contact
@@ -652,6 +737,8 @@ header
             top: 80px
             @include respond-to(genBook)
                 top: 60px
+            @include respond-to(handhelds)
+                top: 10px
             .line-up
                 width: 20rem
 .main-container-contact
@@ -660,13 +747,21 @@ header
     top: 80px
     @include respond-to(genBook)
         top: 60px
+    @include respond-to(handhelds)
+        top: 5px
     .form-container
         float: left
         width: 50%
+        @include respond-to(handhelds)
+            float: inherit !important
+            width: 80%
+            margin: auto
         form
             width: 75%
             margin: auto
             overflow: hidden
+            @include respond-to(handhelds)
+            overflow: inherit !important
             .form-input
                 display: block
                 width: 98%
@@ -674,6 +769,9 @@ header
                 margin-top: 50px
                 @include respond-to(genBook)
                     margin-top: 35px
+                @include respond-to(handhelds)
+                    margin-top: 10px
+                    height: 20px
                 border: 1px solid $color-theme
                 padding: 0 0 0 5px
         ::-webkit-input-placeholder
@@ -692,6 +790,8 @@ header
     height: 150px
     @include respond-to(genBook)
         height: 120px
+    @include respond-to(handhelds)
+        height: 50px
     padding-top: 5px
 #reset_button
     display: block
@@ -702,6 +802,10 @@ header
     background-color: inherit
     height: 45px
     float: left
+    @include respond-to(handhelds)
+        height: 20px
+        font-size: 0.8em
+        margin-top: 5px
     &:hover
         cursor: pointer
 #submit_button
@@ -712,10 +816,16 @@ header
 .ending-container
     float: right
     width: 50%
+    @include respond-to(handhelds)
+        width: 80%
+        float: inherit !important
+        margin: auto
     .end-text-content
         margin-top: 100px
         @include respond-to(genBook)
             margin-top: 80px
+        @include respond-to(handhelds)
+            display: none
         h4
             font-size: 1.8em
             @include respond-to(genBook)
@@ -735,6 +845,8 @@ header
     .socials
         width: 100%
         margin-top: 50px
+        @include respond-to(handhelds)
+            margin-top: 30px
         @for $i from 1 through 3
             .social-icon-#{$i}
                 @include inline-block
@@ -745,6 +857,9 @@ header
                 padding: 15px
                 @include transition(background-color)
                 @include transition-duration(0.2s)
+                @include respond-to(handhelds)
+                    height: 2rem
+                    width: 2rem
                 img
                     width: 100%
                 a
@@ -756,9 +871,13 @@ header
 
             .social-icon-#{$i - 1}
                 margin-right: 40px
+                @include respond-to(handhelds)
+                    margin-right: 10px
     .policy
         font-size: 0.7em
         margin-top: 25px
+        @include respond-to(handhelds)
+            margin-top: 10px
         p:last-child
             font-size: 0.9em
             margin-top: 10px
