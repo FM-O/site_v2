@@ -889,7 +889,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   .main-text-bloc-apropos {
     position: relative;
     margin: 0;
-    padding: 8rem 0 0 1.5rem;
+    padding: 3rem 0 0 1.5rem;
   }
 }
 
