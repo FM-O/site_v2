@@ -460,6 +460,10 @@ header
 
 @include default-slide-style(competences, dev)
 
+.text-display
+    @include respond-to(handhelds)
+        display: none
+
 .main-image-bloc-dev
     float: right
     padding: 17rem 10rem 0 0
