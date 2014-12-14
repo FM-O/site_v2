@@ -6,8 +6,8 @@
 
 $(document).ready(function() {
 
-    function skillProg(){
-        //.tip-arian-3
+    function animateOnActive(){
+
         if(arguments.length == 1){
             var $modif = arguments[0];
             for(var i=0; i<$modif.length; i++){
@@ -24,9 +24,6 @@ $(document).ready(function() {
                 $property = arguments[2],
                 $value = arguments[3];
             var $current = $($slide);
-
-            console.log(arguments);
-
 
             if($current.hasClass("active-tip")){
                 $($element).css($property, $value);
@@ -48,7 +45,7 @@ $(document).ready(function() {
             if(anchorLink == 'home'){
                 $allTips.removeClass('active-tip');
                 $tip1.addClass('active-tip');
-                skillProg([
+                animateOnActive([
                     {
                         slide: '.tip-arian-1',
                         element: '.circle-cv a',
@@ -66,7 +63,7 @@ $(document).ready(function() {
             else if(anchorLink == 'about'){
                 $allTips.removeClass('active-tip');
                 $tip2.addClass('active-tip');
-                skillProg([
+                animateOnActive([
                     {
                         slide: '.tip-arian-2',
                         element: '.circle-cv a',
@@ -85,9 +82,9 @@ $(document).ready(function() {
                 $allTips.removeClass('active-tip');
                 $tip3.addClass('active-tip');
                 setTimeout(function(){
-                    skillProg('.tip-arian-3', '.skill-progress', 'left', '0');
+                    animateOnActive('.tip-arian-3', '.skill-progress', 'left', '0');
                 }, 200);
-                skillProg([
+                animateOnActive([
                     {
                         slide: '.tip-arian-3',
                         element: '.circle-cv a',
@@ -105,7 +102,7 @@ $(document).ready(function() {
             else if(anchorLink == 'achievements'){
                 $allTips.removeClass('active-tip');
                 $tip4.addClass('active-tip');
-                skillProg([
+                animateOnActive([
                     {
                         slide: '.tip-arian-4',
                         element: '.circle-cv a',
@@ -123,7 +120,7 @@ $(document).ready(function() {
             else if(anchorLink == 'end'){
                 $allTips.removeClass('active-tip');
                 $tip5.addClass('active-tip');
-                skillProg([
+                animateOnActive([
                     {
                         slide: '.tip-arian-5',
                         element: '.circle-cv a',
