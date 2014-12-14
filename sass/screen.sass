@@ -3,6 +3,8 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+//IS COMPRESSED
+
 @import "compass/reset"
 @import "compass"
 
@@ -417,6 +419,7 @@ header
 @include default-slide-style(apropos, apropos)
 
 .main-text-bloc-apropos
+    z-index: 98
     @include respond-to(genBook)
         padding: 7rem 0 0 12rem
     @include respond-to(handhelds)
