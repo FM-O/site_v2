@@ -66,6 +66,9 @@ $arian-color: #989797
     @else if $media == very-wide // TARGET ALL SCREEN OVER 1680 WIDTH
         @media only screen and (min-width: 1800px)
             @content
+    @else if $media == height-less // TARGET SCREENS LESS THAN 900
+        @media only screen and (min-height: 800px)
+            @content
 //MORE-button-skillPage
 @mixin repsonsive-style-button
     font-size: 1em
@@ -135,6 +138,8 @@ $arian-color: #989797
         width: 20rem
         height: 75%
         @include title-default($current-class)
+        @include respond-to(height-less)
+            padding: 5rem 0 0 17rem
         @include respond-to(very-wide)
             padding: 10rem 0 0 17rem
         @include respond-to(genBook)
@@ -449,6 +454,8 @@ header
 
 .main-image-bloc-responsive
     padding: 12% 20% 0 0
+    @include respond-to(height-less)
+        padding: 10% 15% 0 0
     @include respond-to(IPAD)
         padding: 20% 15% 0 0
     @include respond-to(handhelds)
@@ -466,7 +473,9 @@ header
 
 .main-image-bloc-dev
     float: right
-    padding: 17rem 10rem 0 0
+    padding: 17rem 10rem 0
+    @include respond-to(height-less)
+        padding: 10rem 13rem 0 0
     @include respond-to(very-wide)
         padding: 17rem 13rem 0 0
     @include respond-to(genBook)
@@ -533,6 +542,8 @@ header
     text-align: center
     float: right
     padding: 20rem 10rem 0 0
+    @include respond-to(height-less)
+        padding: 15rem 15rem 0 0
     @include respond-to(very-wide)
         padding: 20rem 15rem 0 0
     @include respond-to(genBook)
@@ -612,6 +623,7 @@ header
     .title-bloc-rea
         position: relative
         top: 80px
+        z-index: 99
         @include respond-to(genBook)
             top: 40px
         @include respond-to(handhelds)
