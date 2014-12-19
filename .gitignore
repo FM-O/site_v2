@@ -1,0 +1,3 @@
+# Created by .gitignore support plugin (hsz.mobi)
+# Ignorer tous les fichiers nommés foo.txt
+Database.php
