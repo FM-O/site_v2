@@ -219,6 +219,7 @@ header
             display: -moz-box-flex
             -moz-box-orient: horizontal
             //SAFARI FIX
+            display: -webkit-flex !important
             display: -webkit-box
             position: relative
             @include box-sizing(border-box)
@@ -321,6 +322,7 @@ header
         //IE FIX
         display: -ms-flexbox
         //SAFARI FIX
+        display: -webkit-flex !important
         display: -webkit-box
         //OLD FIREFOX FIX
         display: -moz-box-flex
@@ -642,20 +644,21 @@ header
 .container-rea
     position: relative
     z-index: 2
+    @include respond-to(high-handhelds)
+        padding: 0 0 0 10px
     @include respond-to(handhelds)
         top: 20px
         margin: auto
         @include display-flex
         //IE FIX
         display: -ms-flexbox
-        //SAFARI FIX
+        //OLD SAFARI FIX
+        display: -webkit-flex !important
         display: -webkit-box
         //OLD FIREFOX FIX
         display: -moz-box-flex
         -moz-box-orient: horizontal
         @include flex-wrap(wrap)
-    @include respond-to(high-handhelds)
-        padding: 0 0 0 10px
     @for $i from 1 through 3
         .rea-#{$i}
             @include inline-block
