@@ -52,10 +52,13 @@ $arian-color: #989797
 //MEDIA QUERIES
 @mixin respond-to($media)
     @if $media == handhelds
-        @media only screen and (max-width: 980px) // TARGET ALL PHONES
+        @media only screen and (max-width: 500px) // TARGET ALL PHONES
             @content
     @else if $media == high-handhelds
-        @media only screen and (max-width: 980px) and (min-height: 500px)
+        @media only screen and (max-width: 980px) and (min-height: 500px) // TARGET ALL HIGHER PHONES
+            @content
+    @else if $media == touch-pad-portrait
+        @media only screen and (max-width: 800px) and (max-height: 1100px)
             @content
     @else if $media == IPAD
         @media only screen and (max-width: 1024px) // TARGET ALL TABLETS (IPAD & CO)
@@ -144,6 +147,8 @@ $arian-color: #989797
             padding: 10rem 0 0 17rem
         @include respond-to(genBook)
             padding: 2.5rem 0 0 7rem
+        @include respond-to(touch-pad-portrait)
+            padding: 5rem 0 0 0
         @include respond-to(handhelds)
             width: 25rem
             padding: 0
@@ -216,7 +221,7 @@ header
             //IE FIX
             display: -ms-flexbox
             //OLD FIREFOX FIX
-            display: -moz-flex
+            display: -moz-flexbox
             //SAFARI FIX
             display: -webkit-box
             position: relative
@@ -322,7 +327,7 @@ header
         //SAFARI FIX
         display: -webkit-box
         //OLD FIREFOX FIX
-        display: -moz-flex
+        display: -moz-flexbox
         width: 100%
         height: 30px
         @include respond-to(handhelds)
@@ -431,6 +436,8 @@ header
     z-index: 98
     @include respond-to(genBook)
         padding: 7rem 0 0 12rem
+    @include respond-to(touch-pad-portrait)
+        padding: 7rem 0 0 4rem
     @include respond-to(handhelds)
         position: relative
         margin: 0
@@ -462,6 +469,8 @@ header
         padding: 10% 15% 0 0
     @include respond-to(IPAD)
         padding: 20% 15% 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 50% 15% 0 0
     @include respond-to(handhelds)
         display: none
 
@@ -478,6 +487,7 @@ header
 .main-image-bloc-dev
     float: right
     padding: 17rem 10rem 0
+    width: 50%
     @include respond-to(height-less)
         padding: 10rem 13rem 0 0
     @include respond-to(very-wide)
@@ -486,9 +496,11 @@ header
         padding: 10rem 7rem 0 0
     @include respond-to(IPAD)
         padding: 13rem 3rem 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 15rem 0rem 0 0
+        display: initial
     @include respond-to(handhelds)
         display: none
-    width: 50%
     @for $i from 1 through 4
         .skill-bar-#{$i}
             width: 100%
@@ -555,12 +567,18 @@ header
         width: 60%
     @include respond-to(IPAD)
         padding: 17rem 3rem 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 8rem 0 0 0
     @include respond-to(handhelds)
         display: none
     width: 50%
     @for $i from 1 through 3
         .skill-circle-#{$i}
             @include inline-block
+            @include respond-to(touch-pad-portrait)
+                display: block
+                margin: auto
+                width: 125px
             .skill-empty
                 position: relative
                 width: 200px
@@ -597,6 +615,8 @@ header
             margin-right: 5rem
             @include respond-to(genBook)
                 margin-right: 2rem
+            @include respond-to(touch-pad-portrait)
+                margin: auto
 
 ///////////////////////////////////////////////**** Realisations ****///////////////////////////////////////////////
 
@@ -640,6 +660,13 @@ header
 .container-rea
     position: relative
     z-index: 2
+    @include respond-to(touch-pad-portrait)
+        @include display-flex
+        //IE FIX
+        display: -ms-flexbox
+        //OLD FIREFOX FIX
+        display: -moz-flexbox
+        @include flex-wrap(wrap)
     @include respond-to(handhelds)
         top: 20px
         margin: auto
@@ -649,7 +676,7 @@ header
         //SAFARI FIX
         display: -webkit-box
         //OLD FIREFOX FIX
-        display: -moz-flex
+        display: -moz-flexbox
         @include flex-wrap(wrap)
     @include respond-to(high-handhelds)
         padding: 0 0 0 10px
@@ -665,6 +692,9 @@ header
             @include respond-to(genBook)
                 width: 17rem
                 height: 17rem
+            @include respond-to(touch-pad-portrait)
+                width: 15rem
+                height: 15rem
             @include respond-to(handhelds)
                 width: 15rem
                 height: 15rem
@@ -768,6 +798,8 @@ header
             top: 80px
             @include respond-to(genBook)
                 top: 60px
+            @include respond-to(touch-pad-portrait)
+                top: 20px
             @include respond-to(handhelds)
                 top: 10px
             .line-up
@@ -778,11 +810,17 @@ header
     top: 80px
     @include respond-to(genBook)
         top: 60px
+    @include respond-to(touch-pad-portrait)
+        top: 10px
     @include respond-to(handhelds)
         top: 5px
     .form-container
         float: left
         width: 50%
+        @include respond-to(touch-pad-portrait)
+            float: inherit !important
+            width: 80%
+            margin: auto
         @include respond-to(handhelds)
             float: inherit !important
             width: 80%
@@ -791,8 +829,10 @@ header
             width: 75%
             margin: auto
             overflow: hidden
+            @include respond-to(touch-pad-portrait)
+                overflow: inherit !important
             @include respond-to(handhelds)
-            overflow: inherit !important
+                overflow: inherit !important
             .form-input
                 display: block
                 width: 98%
@@ -800,6 +840,8 @@ header
                 margin-top: 50px
                 @include respond-to(genBook)
                     margin-top: 35px
+                @include respond-to(touch-pad-portrait)
+                    margin-top: 10px
                 @include respond-to(handhelds)
                     margin-top: 10px
                     height: 20px
@@ -848,6 +890,10 @@ header
 .ending-container
     float: right
     width: 50%
+    @include respond-to(touch-pad-portrait)
+        width: 80%
+        float: inherit !important
+        margin: auto
     @include respond-to(handhelds)
         width: 80%
         float: inherit !important
@@ -856,6 +902,8 @@ header
         margin-top: 100px
         @include respond-to(genBook)
             margin-top: 80px
+        @include respond-to(touch-pad-portrait)
+            display: none
         @include respond-to(handhelds)
             display: none
         h4
@@ -877,6 +925,8 @@ header
     .socials
         width: 100%
         margin-top: 50px
+        @include respond-to(touch-pad-portrait)
+            margin-top: 80px
         @include respond-to(handhelds)
             margin-top: 30px
         @for $i from 1 through 3
@@ -889,6 +939,9 @@ header
                 padding: 15px
                 @include transition(background-color)
                 @include transition-duration(0.2s)
+                @include respond-to(touch-pad-portrait)
+                    height: 3rem
+                    width: 3rem
                 @include respond-to(handhelds)
                     height: 2rem
                     width: 2rem
