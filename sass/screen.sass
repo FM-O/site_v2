@@ -52,16 +52,19 @@ $arian-color: #989797
 //MEDIA QUERIES
 @mixin respond-to($media)
     @if $media == handhelds
-        @media only screen and (max-width: 980px) // TARGET ALL PHONES
+        @media only screen and (max-width: 500px) // TARGET ALL PHONES
             @content
     @else if $media == high-handhelds
-        @media only screen and (max-width: 980px) and (min-height: 500px)
+        @media only screen and (max-width: 500px) and (min-height: 500px)
             @content
-    @else if $media == IPAD
-        @media only screen and (max-width: 1024px) // TARGET ALL TABLETS (IPAD & CO)
+    @else if $media == touch-pad-portrait
+        @media only screen and (max-width: 800px) and (max-height: 1100px)
+            @content
+    @else if $media == touch-pad-landscape
+        @media only screen and (max-width: 1024px) // TARGET ALL TABLETS (touch-pad-landscape & CO)
             @content
     @else if $media == genBook // TARGET ALL HD 1366 WIDTH + GENERIC BOOKS 1280 WIDTH
-        @media only screen and (max-width: 1400px)
+        @media only screen and (max-width: 1550px)
             @content
     @else if $media == very-wide // TARGET ALL SCREEN OVER 1680 WIDTH
         @media only screen and (min-width: 1800px)
@@ -72,15 +75,15 @@ $arian-color: #989797
 //MORE-button-skillPage
 @mixin repsonsive-style-button
     font-size: 1em
-    @include respond-to(IPAD)
+    @include respond-to(touch-pad-landscape)
         font-size: 0.6em
     width: 150px
-    @include respond-to(IPAD)
+    @include respond-to(touch-pad-landscape)
         width: 75px
     a
         display: block
         padding: 10px 15px 10px 15px
-        @include respond-to(IPAD)
+        @include respond-to(touch-pad-landscape)
             padding: 5px 7px 5px 7px
 
 //Title default style
@@ -120,6 +123,10 @@ $arian-color: #989797
                 display: table-cell
                 vertical-align: middle
     .main-wrapper-#{$current-class}
+        @include respond-to(touch-pad-portrait)
+            font-size: 3rem
+        @include respond-to(handhelds)
+            font-size: 2.5rem
         @if $current-class == main-wrapper-apropos
             font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
             width: 100%
@@ -144,6 +151,9 @@ $arian-color: #989797
             padding: 10rem 0 0 17rem
         @include respond-to(genBook)
             padding: 2.5rem 0 0 7rem
+        @include respond-to(touch-pad-portrait)
+            padding: 5rem 0 0 2rem
+            width: 25rem
         @include respond-to(handhelds)
             width: 25rem
             padding: 0
@@ -166,6 +176,10 @@ html
     font-size: 100%
     -webkit-font-smoothing: antialiased
     color: $color-theme
+    @include respond-to(touch-pad-landscape)
+        font-size: 80%
+    @include respond-to(touch-pad-portrait)
+        font-size: 65%
     @include respond-to(handhelds)
         font-size: 60%
 body
@@ -197,7 +211,7 @@ body
         width: 50%
         bottom: 40px
         left: 25%
-    @include respond-to(IPAD)
+    @include respond-to(touch-pad-landscape)
         position: initial
         width: initial
         bottom: initial
@@ -325,6 +339,8 @@ header
         display: -moz-flex
         width: 100%
         height: 30px
+        @include respond-to(touch-pad-portrait)
+            height: 15px
         @include respond-to(handhelds)
             height: 10px
         .tip-arian
@@ -415,7 +431,7 @@ header
                         border: 0.8rem solid transparent
                         border-left: 0.8rem solid $color-theme
                         margin-top: 0.1rem
-                @include respond-to(IPAD)
+                @include respond-to(touch-pad-landscape)
                     p
                         display: block
                     .content-triangle
@@ -431,10 +447,14 @@ header
     z-index: 98
     @include respond-to(genBook)
         padding: 7rem 0 0 12rem
+    @include respond-to(touch-pad-portrait)
+        width: 30rem
+        padding: 7rem 0 0 6rem
     @include respond-to(handhelds)
         position: relative
+        width: 25rem
         margin: 0
-        padding: 3rem 0 0 1.5rem
+        padding: 2rem 0 0 1.5rem
 
 .main-image-bloc-apropos
     img
@@ -460,8 +480,10 @@ header
     padding: 12% 20% 0 0
     @include respond-to(height-less)
         padding: 10% 15% 0 0
-    @include respond-to(IPAD)
+    @include respond-to(touch-pad-landscape)
         padding: 20% 15% 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 50% 15% 0 0
     @include respond-to(handhelds)
         display: none
 
@@ -484,28 +506,30 @@ header
         padding: 17rem 13rem 0 0
     @include respond-to(genBook)
         padding: 10rem 7rem 0 0
-    @include respond-to(IPAD)
+    @include respond-to(touch-pad-landscape)
         padding: 13rem 3rem 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 25rem 1rem 0 0
     @include respond-to(handhelds)
         display: none
     width: 50%
     @for $i from 1 through 4
         .skill-bar-#{$i}
             width: 100%
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 width: 90%
             margin-bottom: 4rem
             @include respond-to(genBook)
                 margin-bottom: 2.5rem
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 margin-bottom: 2rem
             .skill-empty
                 width: 100%
-                @include respond-to(IPAD)
+                @include respond-to(touch-pad-landscape)
                     width: 90%
                 display: block
                 height: 25px
-                @include respond-to(IPAD)
+                @include respond-to(touch-pad-landscape)
                     height: 10px
                 background-color: $bar-color
                 overflow: hidden
@@ -513,13 +537,16 @@ header
                     display: block
                     position: relative
                     height: 25px
-                    @include respond-to(IPAD)
-                        height: 10px
                     width: nth($listWidth, $i)
                     left: -100%
                     @include transition(left)
                     @include transition-duration(2s)
                     background-color: $color-theme-2
+                    @include respond-to(touch-pad-landscape)
+                        height: 10px
+                        left: 0
+                    @include respond-to(touch-pad-portrait)
+                        left: 0
             p
                 font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
                 font-size: 0.6em
@@ -553,8 +580,10 @@ header
     @include respond-to(genBook)
         padding: 13rem 5rem 0 0
         width: 60%
-    @include respond-to(IPAD)
+    @include respond-to(touch-pad-landscape)
         padding: 17rem 3rem 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 22rem 1rem 0 0
     @include respond-to(handhelds)
         display: none
     width: 50%
@@ -565,7 +594,7 @@ header
                 position: relative
                 width: 200px
                 height: 200px
-                @include respond-to(IPAD)
+                @include respond-to(touch-pad-landscape)
                     width: 125px
                     height: 125px
                 display: table
@@ -574,7 +603,7 @@ header
                     vertical-align: middle
                     font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
                     font-size: 1.2em
-                    @include respond-to(IPAD)
+                    @include respond-to(touch-pad-landscape)
                         font-size: 0.8em
                     text-align: center
                     padding-left: 5px
@@ -597,6 +626,8 @@ header
             margin-right: 5rem
             @include respond-to(genBook)
                 margin-right: 2rem
+            @include respond-to(touch-pad-portrait)
+                margin-right: 0
 
 ///////////////////////////////////////////////**** Realisations ****///////////////////////////////////////////////
 
@@ -640,7 +671,7 @@ header
 .container-rea
     position: relative
     z-index: 2
-    @include respond-to(handhelds)
+    @include respond-to(touch-pad-landscape)
         top: 20px
         margin: auto
         @include display-flex
@@ -728,8 +759,10 @@ header
             margin-right: 10rem
             @include respond-to(genBook)
                 margin-right: 5rem
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 margin-right: 3rem
+            @include respond-to(touch-pad-portrait)
+                margin: 0
             @include respond-to(handhelds)
                 margin: 0
 
@@ -783,6 +816,10 @@ header
     .form-container
         float: left
         width: 50%
+        @include respond-to(touch-pad-portrait)
+            float: inherit !important
+            width: 80%
+            margin: auto
         @include respond-to(handhelds)
             float: inherit !important
             width: 80%
@@ -791,8 +828,10 @@ header
             width: 75%
             margin: auto
             overflow: hidden
+            @include respond-to(touch-pad-portrait)
+                overflow: inherit !important
             @include respond-to(handhelds)
-            overflow: inherit !important
+                overflow: inherit !important
             .form-input
                 display: block
                 width: 98%
@@ -848,6 +887,10 @@ header
 .ending-container
     float: right
     width: 50%
+    @include respond-to(touch-pad-portrait)
+        width: 80%
+        float: inherit !important
+        margin: auto
     @include respond-to(handhelds)
         width: 80%
         float: inherit !important
@@ -856,27 +899,31 @@ header
         margin-top: 100px
         @include respond-to(genBook)
             margin-top: 80px
+        @include respond-to(touch-pad-portrait)
+            display: none
         @include respond-to(handhelds)
             display: none
         h4
             font-size: 1.8em
             @include respond-to(genBook)
                 font-size: 1.5em
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 font-size: 1.3em
         p
             font-size: 1em
+            margin-top: 10%
             @include respond-to(genBook)
                 font-size: 0.8em
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 font-size: 0.7em
-            margin-top: 10%
             @include respond-to(genBook)
                 margin-top: 5%
 
     .socials
         width: 100%
         margin-top: 50px
+        @include respond-to(touch-pad-portrait)
+            margin-top: 80px
         @include respond-to(handhelds)
             margin-top: 30px
         @for $i from 1 through 3
@@ -908,6 +955,8 @@ header
     .policy
         font-size: 0.7em
         margin-top: 25px
+        @include respond-to(touch-pad-portrait)
+            margin-top: 10px
         @include respond-to(handhelds)
             margin-top: 10px
         p:last-child

@@ -35,6 +35,8 @@ $(document).ready(function() {
         anchors: ['home', 'about', 'skills', 'achievements', 'end'],
         menu: 'MyMenu',
         afterLoad: function(anchorLink){
+            var $height = window.innerHeight,
+                $width = window.innerWidth;
             var $tip1 = $('.tip-arian-1'),
             $tip2 = $('.tip-arian-2'),
             $tip3 = $('.tip-arian-3'),
@@ -81,9 +83,11 @@ $(document).ready(function() {
             else if(anchorLink == 'skills'){
                 $allTips.removeClass('active-tip');
                 $tip3.addClass('active-tip');
-                setTimeout(function(){
-                    animateOnActive('.tip-arian-3', '.skill-progress', 'left', '0');
-                }, 200);
+                if($width >= 1024 && $height >= 768){
+                    setTimeout(function(){
+                        animateOnActive('.tip-arian-3', '.skill-progress', 'left', '0');
+                    }, 200);
+                }
                 animateOnActive([
                     {
                         slide: '.tip-arian-3',
