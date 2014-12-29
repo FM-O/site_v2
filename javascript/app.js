@@ -83,11 +83,11 @@ $(document).ready(function() {
             else if(anchorLink == 'skills'){
                 $allTips.removeClass('active-tip');
                 $tip3.addClass('active-tip');
-                if($width >= 1024 && $height >= 768){
+                //if($width >= 1024 && $height >= 768){ (have to find a fix for IE)
                     setTimeout(function(){
                         animateOnActive('.tip-arian-3', '.skill-progress', 'left', '0');
                     }, 200);
-                }
+                //}
                 animateOnActive([
                     {
                         slide: '.tip-arian-3',
