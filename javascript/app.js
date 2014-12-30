@@ -5,10 +5,38 @@
 /**** FUNCTION init plugin fullpage ****/
 
 $(document).ready(function() {
+
+    function animateOnActive(){
+
+        if(arguments.length == 1){
+            var $modif = arguments[0];
+            for(var i=0; i<$modif.length; i++){
+                var $current = $($modif[i].slide);
+
+                if($current.hasClass("active-tip")){
+                    $($modif[i].element).css($modif[i].property, $modif[i].value);
+                }
+            }
+        }
+        else{
+            var $slide = arguments[0],
+                $element = arguments[1],
+                $property = arguments[2],
+                $value = arguments[3];
+            var $current = $($slide);
+
+            if($current.hasClass("active-tip")){
+                $($element).css($property, $value);
+            }
+        }
+    }
+
     $('#fullpage').fullpage({
         anchors: ['home', 'about', 'skills', 'achievements', 'end'],
         menu: 'MyMenu',
         afterLoad: function(anchorLink){
+            var $height = window.innerHeight,
+                $width = window.innerWidth;
             var $tip1 = $('.tip-arian-1'),
             $tip2 = $('.tip-arian-2'),
             $tip3 = $('.tip-arian-3'),
@@ -19,25 +47,103 @@ $(document).ready(function() {
             if(anchorLink == 'home'){
                 $allTips.removeClass('active-tip');
                 $tip1.addClass('active-tip');
+                animateOnActive([
+                    {
+                        slide: '.tip-arian-1',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
+                        slide:'.tip-arian-1',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: 'inherit'
+                    }
+                ]);
             }
             else if(anchorLink == 'about'){
                 $allTips.removeClass('active-tip');
                 $tip2.addClass('active-tip');
+                animateOnActive([
+                    {
+                        slide: '.tip-arian-2',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: '#FFFFFF'
+                    },
+                    {
+                        slide:'.tip-arian-2',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: '#99CCCC'
+                    }
+                ]);
             }
             else if(anchorLink == 'skills'){
                 $allTips.removeClass('active-tip');
                 $tip3.addClass('active-tip');
+                if($width >= 800 && $height >= 500){
+                    setTimeout(function(){
+                        animateOnActive('.tip-arian-3', '.skill-progress', 'left', '0');
+                    }, 200);
+                }
+                animateOnActive([
+                    {
+                        slide: '.tip-arian-3',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
+                        slide:'.tip-arian-3',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: 'inherit'
+                    }
+                ]);
             }
             else if(anchorLink == 'achievements'){
                 $allTips.removeClass('active-tip');
                 $tip4.addClass('active-tip');
+                animateOnActive([
+                    {
+                        slide: '.tip-arian-4',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: '#FFFFFF'
+                    },
+                    {
+                        slide:'.tip-arian-4',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: '#99CCCC'
+                    }
+                ]);
             }
             else if(anchorLink == 'end'){
                 $allTips.removeClass('active-tip');
                 $tip5.addClass('active-tip');
+                animateOnActive([
+                    {
+                        slide: '.tip-arian-5',
+                        element: '.circle-cv a',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
+                        slide:'.tip-arian-5',
+                        element:'.circle-cv',
+                        property: 'background-color',
+                        value: 'inherit'
+                    }
+                ]);
             }
         }
     });
+
+
+
 
 
     (function($){
@@ -49,9 +155,9 @@ $(document).ready(function() {
             var $canvasFull,
                 $responsiveRatio;
             var $colorFullCircle = '#ebebeb',
-                $colorProgressCircle = '#898989';
+                $colorProgressCircle = '#99CCCC';
 
-            if($height <= 768 && $width <= 1024){
+            if(($height <= 768 && $width <= 1024) || ($height <= 1024 && $width <= 768)){
                 $canvasFull = $('<canvas width="125px" height="125px" />');
                 $responsiveRatio = 1.60;
             }
@@ -60,14 +166,14 @@ $(document).ready(function() {
                 $responsiveRatio = 1;
             }
 
-            var $test = $(this),
+            var $currentElem = $(this),
                 $progress = $(this).data('progress'),
                 $progress_final = $(this).data('progressfinal');
 
             $circle1 = $canvasFull;
             $color = $canvasFull;
-            $test.append($circle1);
-            $test.append($color);
+            $currentElem.append($circle1);
+            $currentElem.append($color);
 
             var ctx = $circle1[0].getContext('2d');
 
@@ -86,6 +192,28 @@ $(document).ready(function() {
             ctx.strokeStyle = $colorProgressCircle;
             ctx.stroke();
 
+        });
+
+    })(jQuery);
+
+    (function($){
+
+        $('.more-skills-button').click(function(){
+
+            var sector = $('.main-image-bloc-dev');
+            var $error = $('<p>Ce lien n\'est pas encore disponible</p>');
+
+            $error.addClass('error-mess');
+
+            $(sector).append($error);
+
+            setTimeout(function(){
+                $error.fadeOut(500);
+            }, 700);
+
+            setTimeout(function(){
+                $error.remove();
+            }, 1400)
         });
 
     })(jQuery);

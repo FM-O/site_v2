@@ -3,8 +3,12 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+<<<<<<< HEAD
 
 //MASTER DEV --
+=======
+//IS COMPRESSED
+>>>>>>> 37def5c6aac8604285235d1794974ddfe923a9c0
 
 @import "compass/reset"
 @import "compass"
@@ -22,47 +26,69 @@
     font-family: "Helvetica Neue Light"
     src: url('../fonts/HelveticaNeueLTCom-Lt.ttf')
 
+@font-face
+    font-family: "Helvetica Neue Light Ext"
+    src: url('../fonts/HelveticaNeueLTCom-LtEx.ttf')
+
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css")
 
 
 /******** VARIABLES *********/
 
 $itemcount: 5
-$listColor: #111111, #252525, #363636, #464646, #555555
+$listColor: #86afaf, #8ab6b6, #90bebe, #95c6c6, #99CCCC
+$button-nav-color: #99CCCC
 $baseSize: 8rem
 $listWidth: 90%, 60%, 75%, 16%
 $red-default: #7d0f00
 
+$color-theme: #696868
+$color-theme-2: #99CCCC
+
 //---------------------------------------\\
 
-//SKILLS BAR / CIRCLES COLORS
+//SKILLS BAR / CIRCLES COLORS / ARIAN COLORS
 
 $bar-color: #ebebeb
-$progress-bar-color: #898989
+$arian-color: #989797
 
 /******** MIXINS *********/
 
 //MEDIA QUERIES
 @mixin respond-to($media)
-    @if $media == IPAD
-        @media only screen and (max-width: 1024px) // TARGET ALL TABLETS (IPAD & CO)
+    @if $media == handhelds
+        @media only screen and (max-width: 500px) // TARGET ALL PHONES
+            @content
+    @else if $media == high-handhelds
+        @media only screen and (max-width: 500px) and (min-height: 500px)
+            @content
+    @else if $media == touch-pad-portrait
+        @media only screen and (max-width: 800px) and (max-height: 1100px)
+            @content
+    @else if $media == touch-pad-landscape
+        @media only screen and (max-width: 1024px) // TARGET ALL TABLETS (touch-pad-landscape & CO)
             @content
     @else if $media == genBook // TARGET ALL HD 1366 WIDTH + GENERIC BOOKS 1280 WIDTH
-        @media only screen and (max-width: 1400px)
+        @media only screen and (max-width: 1550px)
             @content
-
+    @else if $media == very-wide // TARGET ALL SCREEN OVER 1680 WIDTH
+        @media only screen and (min-width: 1800px)
+            @content
+    @else if $media == height-less // TARGET SCREENS LESS THAN 900
+        @media only screen and (max-height: 600px)
+            @content
 //MORE-button-skillPage
 @mixin repsonsive-style-button
     font-size: 1em
-    @include respond-to(IPAD)
+    @include respond-to(touch-pad-landscape)
         font-size: 0.6em
     width: 150px
-    @include respond-to(IPAD)
+    @include respond-to(touch-pad-landscape)
         width: 75px
     a
         display: block
         padding: 10px 15px 10px 15px
-        @include respond-to(IPAD)
+        @include respond-to(touch-pad-landscape)
             padding: 5px 7px 5px 7px
 
 //Title default style
@@ -72,13 +98,21 @@ $progress-bar-color: #898989
         h1
             text-align: center
             font-size: 1.4em
+            @include respond-to(handhelds)
+                font-size: 1em
+        h2
+            @extend h1
+        h3
+            @extend h1
     .line-up
         width: 90%
         margin: auto
         margin-top: 10px
         margin-bottom: 15px
         height: 10px
-        background: url("../images/line-up.png")
+        background-color: $color-theme-2
+        @include respond-to(handhelds)
+            margin: 5px auto 5px auto
 
 //DEFAULT SLIDE STYLE
 
@@ -87,19 +121,50 @@ $progress-bar-color: #898989
         width: 100%
         height: 100%
         font-size: 2em
+        @include respond-to(handhelds)
+            font-size: 2.5em
+            display: table
+            .main-wrapper-#{$current-class}
+                display: table-cell
+                vertical-align: middle
     .main-wrapper-#{$current-class}
-        font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
-        width: 100%
-        height: 90%
-        overflow: hidden
+        @include respond-to(touch-pad-portrait)
+            font-size: 3rem
+        @include respond-to(handhelds)
+            font-size: 2.5rem
+        @if $current-class == main-wrapper-apropos
+            font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
+            width: 100%
+            height: 90%
+            overflow: hidden
+        @else
+            font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
+            width: 100%
+            @include respond-to(handhelds)
+                width: 50%
+            height: 90%
+            overflow: hidden
     .main-text-bloc-#{$current-class}
         position: absolute
         padding: 10rem 0 0 15rem
-        @include respond-to(genBook)
-            padding: 2.5rem 0 0 7rem
         width: 20rem
         height: 75%
         @include title-default($current-class)
+        @include respond-to(very-wide)
+            padding: 10rem 0 0 17rem
+        @include respond-to(genBook)
+            padding: 2.5rem 0 0 7rem
+        @include respond-to(touch-pad-portrait)
+            padding: 5rem 0 0 2rem
+            width: 25rem
+        @include respond-to(height-less)
+            padding: 0 0 0 7rem
+            width: 22.5rem
+        @include respond-to(handhelds)
+            width: 25rem
+            padding: 0
+            position: static
+            margin: auto
 
     .text-bloc-#{$current-class}
         width: 75%
@@ -111,23 +176,52 @@ $progress-bar-color: #898989
         img
             width: 40%
 
-/**** Gen Reset ****/
+//////////////////////////////////////////////////**** Gen Reset ****//////////////////////////////////////////////////
 
 html
     font-size: 100%
+    -webkit-font-smoothing: antialiased
+    color: $color-theme
+    @include respond-to(touch-pad-landscape)
+        font-size: 80%
+    @include respond-to(touch-pad-portrait)
+        font-size: 65%
+    @include respond-to(handhelds)
+        font-size: 60%
 body
     font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
     font-weight: 300
     font-size: 100%
     a
         text-decoration: none
-        color: #000000
+        color: $color-theme
 #bloc-page
     max-width: 1920px
     max-height: 1080px
 
 
-/**** GENERAL ELEMENTS ****/
+//////////////////////////////////////////////////**** GENERAL ELEMENTS ****//////////////////////////////////////////////////
+
+.em-style
+    color: #000
+    a
+        color: $color-theme-2
+.error-mess
+    font-size: 0.5em
+    color: #ffffff
+    padding: 5px 0 5px 0
+    background-color: rgba(#ff0000, 0.7)
+    text-align: center
+    @include respond-to(genBook)
+        position: relative
+        width: 50%
+        bottom: 40px
+        left: 25%
+    @include respond-to(touch-pad-landscape)
+        position: initial
+        width: initial
+        bottom: initial
+        left: initial
 
 header
     a
@@ -141,6 +235,10 @@ header
             @include display-flex
             //IE FIX
             display: -ms-flexbox
+            //OLD FIREFOX FIX
+            display: -moz-flex
+            //SAFARI FIX
+            display: -webkit-box
             position: relative
             @include box-sizing(border-box)
             font-size: 1.5rem
@@ -204,13 +302,13 @@ header
             &::after
                 content: ""
                 position: absolute
-                border: ($baseSize - 4rem) solid #636363
+                border: ($baseSize - 4rem) solid $button-nav-color
                 border-right: ($baseSize - 4rem) solid transparent
                 border-bottom: ($baseSize - 4rem) solid transparent
                 @include transition(border)
                 @include transition-duration(0.2s)
             &:hover::after
-                border: ($baseSize - 4rem) solid darken(#636363, 10%)
+                border: ($baseSize - 4rem) solid darken($button-nav-color, 10%)
                 border-right: ($baseSize - 4rem) solid transparent
                 border-bottom: ($baseSize - 4rem) solid transparent
         input[type='checkbox']:checked ~ .close-menu
@@ -234,19 +332,27 @@ header
             @include transition-duration(0.2s)
 
 
-// ARIAN
+/////////////////////////////////////////////////// ARIAN /////////////////////////////////////////////////
 .arian-content
     display: inline
     .arian-fill
         @include display-flex
         //IE FIX
         display: -ms-flexbox
+        //SAFARI FIX
+        display: -webkit-box
+        //OLD FIREFOX FIX
+        display: -moz-flex
         width: 100%
         height: 30px
+        @include respond-to(touch-pad-portrait)
+            height: 15px
+        @include respond-to(handhelds)
+            height: 10px
         .tip-arian
             height: 100%
             width: 20%
-            border: 1px solid #000
+            border: 1px solid $arian-color
     .arian-fill-accueil
         z-index: 99
         @extend .arian-fill
@@ -260,11 +366,34 @@ header
                 width: 100%
                 height: 100%
 .active-tip
-    background-color: #000
+    background-color: $arian-color
 
-/**** ACCUEIL ****/
+/////////////////////////////////////////////////// ADDONS /////////////////////////////////////////////////
 
-////////////////////////////////////////////// TABLES DISPLAY ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+.circle-cv
+    position: absolute
+    right: 50px
+    top: 20px
+    z-index: 99
+    display: table
+    width: 80px
+    height: 80px
+    margin: auto
+    border-radius: 100%
+    border: 1px solid $color-theme-2
+    color: $color-theme
+    @include respond-to(handhelds)
+        right: 10px
+        top: 10px
+        width: 40px
+        height: 40px
+    a
+        text-align: center
+        font-size: 1.8em
+        display: table-cell
+        vertical-align: middle
+
+//////////////////////////////////////////////////**** ACCUEIL ****//////////////////////////////////////////////////
 
 #accueil
     height: 100%
@@ -280,6 +409,9 @@ header
         text-align: center
         .title-accueil
             font-size: 1.8em
+            .bold-font
+                font-family: "helvetica neue light ext", 'Lato', Arial, sans-serif
+                font-weight: 400
         .visit-site-button
             margin-top: 35px
             font-size: 0.8em
@@ -288,15 +420,49 @@ header
                 margin: auto
                 width: 30%
                 padding: 15px
-                border: 1px solid #000
+                border: 1px solid $color-theme
+                background-color: #ffffff
+                p
+                    display: inline
+                .content-triangle
+                    float: right
+                    margin-right: 2rem
+                    display: inline
+                    vertical-align: baseline
+                    height: 0px
+                    width: 0px
+                    &::after
+                        content: ""
+                        position: absolute
+                        border: 0.8rem solid transparent
+                        border-left: 0.8rem solid $color-theme
+                        margin-top: 0.1rem
+                @include respond-to(touch-pad-landscape)
+                    p
+                        display: block
+                    .content-triangle
+                        display: none
 
-/**** A Propos ****/
+
+
+//////////////////////////////////////////////////**** A Propos ****//////////////////////////////////////////////////
 
 @include default-slide-style(apropos, apropos)
 
 .main-text-bloc-apropos
+    z-index: 98
     @include respond-to(genBook)
         padding: 7rem 0 0 12rem
+    @include respond-to(touch-pad-portrait)
+        width: 30rem
+        padding: 7rem 0 0 6rem
+    @include respond-to(height-less)
+        padding: 0 0 0 12rem
+    @include respond-to(handhelds)
+        position: relative
+        width: 25rem
+        margin: 0
+        padding: 2rem 0 0 1.5rem
 
 .main-image-bloc-apropos
     img
@@ -306,46 +472,72 @@ header
         width: 40%
 
 
-/**** Competences ----> RESPONSIVE ****/
+//////////////////////////////////////////////////**** Competences ----> RESPONSIVE ****//////////////////////////////////////////////////
 
 @include default-slide-style(competences, responsive)
 
-.main-image-bloc-responsive
-    padding: 15% 15% 0 0
-    @include respond-to(genBook)
-        padding: 10% 15% 0 0
+.main-text-bloc-responsive
+    @include respond-to(very-wide)
+        padding: 10rem 0 0 25rem
+    @include respond-to(handhelds)
+        padding: 0
+        position: static
+        margin: auto
 
-/**** Competences ----> DEV ****/
+.main-image-bloc-responsive
+    padding: 12% 20% 0 0
+    @include respond-to(touch-pad-landscape)
+        padding: 20% 15% 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 50% 15% 0 0
+    @include respond-to(height-less)
+        padding: 10% 15% 0 0
+    @include respond-to(handhelds)
+        display: none
+
+//////////////////////////////////////////////////**** Competences ----> DEV ****//////////////////////////////////////////////////
 
 ////////////////////////////////////////////// PIXELS ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 @include default-slide-style(competences, dev)
 
+.text-display
+    @include respond-to(handhelds)
+        display: none
+
 .main-image-bloc-dev
     float: right
-    padding: 17rem 10rem 0 0
+    padding: 17rem 10rem 0
+    @include respond-to(very-wide)
+        padding: 17rem 13rem 0 0
     @include respond-to(genBook)
         padding: 10rem 7rem 0 0
-    @include respond-to(IPAD)
-        padding: 17rem 3rem 0 0
+    @include respond-to(touch-pad-landscape)
+        padding: 13rem 3rem 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 25rem 1rem 0 0
+    @include respond-to(height-less)
+        padding: 8rem 3rem 0 0
+    @include respond-to(handhelds)
+        display: none
     width: 50%
     @for $i from 1 through 4
         .skill-bar-#{$i}
             width: 100%
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 width: 90%
             margin-bottom: 4rem
             @include respond-to(genBook)
                 margin-bottom: 2.5rem
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 margin-bottom: 2rem
             .skill-empty
                 width: 100%
-                @include respond-to(IPAD)
+                @include respond-to(touch-pad-landscape)
                     width: 90%
                 display: block
                 height: 25px
-                @include respond-to(IPAD)
+                @include respond-to(touch-pad-landscape)
                     height: 10px
                 background-color: $bar-color
                 overflow: hidden
@@ -353,10 +545,16 @@ header
                     display: block
                     position: relative
                     height: 25px
-                    @include respond-to(IPAD)
-                        height: 10px
                     width: nth($listWidth, $i)
-                    background-color: $progress-bar-color
+                    left: -100%
+                    @include transition(left)
+                    @include transition-duration(2s)
+                    background-color: $color-theme-2
+                    @include respond-to(touch-pad-landscape)
+                        height: 10px
+                        left: 0
+                    @include respond-to(touch-pad-portrait)
+                        left: 0
             p
                 font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
                 font-size: 0.6em
@@ -365,37 +563,47 @@ header
     .more-skills-button
         text-align: center
         font-family: "helvetica neue light", 'Lato', Arial, sans-serif
-        border: 1px solid #000
+        border: 1px solid $color-theme
         @include repsonsive-style-button
 
-
-/**** Competences ----> DESIGN ****/
+////////////////////////////////////**** Competences ----> DESIGN ****/////////////////////////////////////////////////
 
 ////////////////////////////////////////////// PIXELS ELEMENTS HERE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-////////////////////////////////////////////// INLINE BLOCK USAGE (MIXIN TO CREATE)  IDEM FOR TABLE DISPLAYS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 @include default-slide-style(competences, design)
 
+.main-text-bloc-design
+    @include respond-to(very-wide)
+        padding: 10rem 0 0 22rem
+    @include respond-to(handhelds)
+        padding: 0
 .main-image-bloc-design
     text-align: center
     float: right
     padding: 20rem 10rem 0 0
+    @include respond-to(very-wide)
+        padding: 20rem 15rem 0 0
     @include respond-to(genBook)
         padding: 13rem 5rem 0 0
         width: 60%
-    @include respond-to(IPAD)
-        padding: 20rem 3rem 0 0
+    @include respond-to(touch-pad-landscape)
+        padding: 17rem 3rem 0 0
+    @include respond-to(touch-pad-portrait)
+        padding: 22rem 1rem 0 0
+    @include respond-to(height-less)
+        padding: 11rem 3rem 0 0
+    @include respond-to(handhelds)
+        display: none
     width: 50%
     @for $i from 1 through 3
         .skill-circle-#{$i}
-            display: inline-block
+            @include inline-block
             .skill-empty
                 position: relative
                 width: 200px
-                @include respond-to(IPAD)
-                    width: 125px
                 height: 200px
-                @include respond-to(IPAD)
+                @include respond-to(touch-pad-landscape)
+                    width: 125px
                     height: 125px
                 display: table
                 p
@@ -403,7 +611,7 @@ header
                     vertical-align: middle
                     font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
                     font-size: 1.2em
-                    @include respond-to(IPAD)
+                    @include respond-to(touch-pad-landscape)
                         font-size: 0.8em
                     text-align: center
                     padding-left: 5px
@@ -426,16 +634,17 @@ header
             margin-right: 5rem
             @include respond-to(genBook)
                 margin-right: 2rem
+            @include respond-to(touch-pad-portrait)
+                margin-right: 0
 
-
-/**** Realisations ****/
-
-////////////////////////////////////////////// DISPLAYS TABLES + INLINE-BLOCKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////////////////////////////////////**** Realisations ****///////////////////////////////////////////////
 
 #realisations
     width: 100%
     height: 100%
     font-size: 2em
+    @include respond-to(high-handhelds)
+        display: table
 
 .main-wrapper-rea
     display: table
@@ -444,35 +653,61 @@ header
     text-align: center
     font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
     overflow: hidden
+    @include respond-to(high-handhelds)
+        display: table-cell
+        vertical-align: middle
 
 .main-text-bloc-rea
     display: table-row
     width: 100%
     @include title-default(rea)
+    @include respond-to(handhelds)
+        display: block
     .title-bloc-rea
         position: relative
         top: 80px
+        z-index: 99
         @include respond-to(genBook)
             top: 40px
+        @include respond-to(handhelds)
+            top: 10px
+        @include respond-to(high-handhelds)
+            top: 0
         .line-up
             width: 20rem
 
 .container-rea
     position: relative
     z-index: 2
+    @include respond-to(touch-pad-landscape)
+        top: 20px
+        margin: auto
+        @include display-flex
+        //IE FIX
+        display: -ms-flexbox
+        //SAFARI FIX
+        display: -webkit-box
+        //OLD FIREFOX FIX
+        display: -moz-flex
+        @include flex-wrap(wrap)
+    @include respond-to(high-handhelds)
+        padding: 0 0 0 10px
     @for $i from 1 through 3
         .rea-#{$i}
-            display: inline-block
+            @include inline-block
             width: 20rem
-            @include respond-to(genBook)
-                width: 17rem
             height: 20rem
-            @include respond-to(genBook)
-                height: 17rem
-            border: 1px solid #000
+            border: 1px solid $color-theme
             background-color: #ffffff
             padding: 10px
             overflow: hidden
+            @include respond-to(genBook)
+                width: 17rem
+                height: 17rem
+            @include respond-to(handhelds)
+                width: 15rem
+                height: 15rem
+                padding: 0
             .inner-rea
                 position: relative
                 height: 100%
@@ -496,11 +731,21 @@ header
                     background-color: rgba(0, 0, 0, 0.85)
                     @include transition-property(top)
                     @include transition-duration(0.5s)
-                    .test
+                    .rea-desc
                         display: table-cell
                         vertical-align: middle
+                        h4
+                            font-size: 1.2em
+                            width: 50%
+                            margin: auto
+                            padding-bottom: 10px
+                            border-bottom: 1px solid #ffffff
+                            @include respond-to(handhelds)
+                                padding-bottom: 2px
                         p
                             padding: 20px
+                            @include respond-to(handhelds)
+                                padding: 5px 10px 5px 10px
                         .button-more-rea
                             border: 1px solid #ffffff
                             width: 50%
@@ -509,10 +754,12 @@ header
                                 display: block
                                 color: #ffffff
                                 padding: 10px 0 10px 0
+                                @include respond-to(handhelds)
+                                    padding: 2px 0 2px 0
                             &:hover
                                 background-color: #ffffff
                                 a
-                                    color: $red-default
+                                    color: $color-theme-2
             &:hover
                 .content-rea
                     top: 0
@@ -520,8 +767,12 @@ header
             margin-right: 10rem
             @include respond-to(genBook)
                 margin-right: 5rem
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 margin-right: 3rem
+            @include respond-to(touch-pad-portrait)
+                margin: 0
+            @include respond-to(handhelds)
+                margin: 0
 
 .main-image-bloc-rea
     position: absolute
@@ -532,14 +783,14 @@ header
         float: right
         width: 80%
 
-/**** Contact ****/
-
-////////////////////////////////////////////// DISPLAYS INLINE-BLOCKS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////////////////////////////////////**** Contact ****///////////////////////////////////////////////
 
 #contact
     width: 100%
     height: 100%
     font-size: 2em
+    @include respond-to(high-handhelds)
+        display: table
 
 .main-wrapper-contact
     display: block
@@ -548,6 +799,9 @@ header
     text-align: center
     font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
     overflow: hidden
+    @include respond-to(high-handhelds)
+        display: table-cell
+        vertical-align: middle
     .main-text-bloc-contact
         @include title-default(contact)
         .title-bloc-contact
@@ -555,6 +809,10 @@ header
             top: 80px
             @include respond-to(genBook)
                 top: 60px
+            @include respond-to(height-less)
+                top: 0
+            @include respond-to(handhelds)
+                top: 10px
             .line-up
                 width: 20rem
 .main-container-contact
@@ -563,13 +821,29 @@ header
     top: 80px
     @include respond-to(genBook)
         top: 60px
+    @include respond-to(height-less)
+        top: 5px
+    @include respond-to(handhelds)
+        top: 5px
     .form-container
         float: left
         width: 50%
+        @include respond-to(touch-pad-portrait)
+            float: inherit !important
+            width: 80%
+            margin: auto
+        @include respond-to(handhelds)
+            float: inherit !important
+            width: 80%
+            margin: auto
         form
             width: 75%
             margin: auto
             overflow: hidden
+            @include respond-to(touch-pad-portrait)
+                overflow: inherit !important
+            @include respond-to(handhelds)
+                overflow: inherit !important
             .form-input
                 display: block
                 width: 98%
@@ -577,34 +851,49 @@ header
                 margin-top: 50px
                 @include respond-to(genBook)
                     margin-top: 35px
-                border: 1px solid #000
+                @include respond-to(height-less)
+                    margin-top: 10px
+                    height: 30px
+                @include respond-to(handhelds)
+                    margin-top: 10px
+                    height: 20px
+                border: 1px solid $color-theme
                 padding: 0 0 0 5px
         ::-webkit-input-placeholder
-            color: #000
+            color: $color-theme
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
         &:-moz-placeholder  /* Firefox 18- */
-            color: #000
+            color: $color-theme
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
         ::-moz-placeholder   /* Firefox 19+ */
-            color: #000
+            color: $color-theme
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
         &:-ms-input-placeholder
-            color: #000
+            color: $color-theme
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
 #user_mess
     height: 150px
     @include respond-to(genBook)
         height: 120px
+    @include respond-to(height-less)
+        height: 70px
+    @include respond-to(handhelds)
+        height: 50px
     padding-top: 5px
 #reset_button
     display: block
     font-size: 1em
     font-family: "helvetica neue thin", 'Lato', Arial, sans-serif
+    font-weight: 300
     width: 45%
     margin-top: 20px
-    background-color: inherit
+    background-color: #ffffff
     height: 45px
     float: left
+    @include respond-to(handhelds)
+        height: 20px
+        font-size: 0.8em
+        margin-top: 5px
     &:hover
         cursor: pointer
 #submit_button
@@ -615,45 +904,86 @@ header
 .ending-container
     float: right
     width: 50%
+    @include respond-to(touch-pad-portrait)
+        width: 80%
+        float: inherit !important
+        margin: auto
+    @include respond-to(handhelds)
+        width: 80%
+        float: inherit !important
+        margin: auto
     .end-text-content
         margin-top: 100px
         @include respond-to(genBook)
             margin-top: 80px
+        @include respond-to(touch-pad-portrait)
+            display: none
+        @include respond-to(height-less)
+            margin-top: 30px
+        @include respond-to(handhelds)
+            display: none
         h4
             font-size: 1.8em
             @include respond-to(genBook)
                 font-size: 1.5em
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 font-size: 1.3em
         p
             font-size: 1em
+            margin-top: 10%
             @include respond-to(genBook)
                 font-size: 0.8em
-            @include respond-to(genBook)
-                margin-top: 10%
-            @include respond-to(IPAD)
+            @include respond-to(touch-pad-landscape)
                 font-size: 0.7em
-            margin-top: 20%
+            @include respond-to(genBook)
+                margin-top: 5%
 
     .socials
         width: 100%
         margin-top: 50px
+        @include respond-to(touch-pad-portrait)
+            margin-top: 80px
+        @include respond-to(height-less)
+            margin-top: 20px
+        @include respond-to(handhelds)
+            margin-top: 30px
         @for $i from 1 through 3
             .social-icon-#{$i}
-                display: inline-block
+                @include inline-block
                 height: 5rem
                 width: 5rem
-                border: 1px solid #000
+                border: 1px solid $color-theme-2
                 border-radius: 100%
                 padding: 15px
+                @include transition(background-color)
+                @include transition-duration(0.2s)
+                @include respond-to(handhelds)
+                    height: 2rem
+                    width: 2rem
                 img
                     width: 100%
                 a
-                    position: relative
-                    bottom: 100%
                     display: block
                     height: 100%
                     width: 100%
+                &:hover
+                    background-color: $color-theme-2
 
             .social-icon-#{$i - 1}
                 margin-right: 40px
+                @include respond-to(handhelds)
+                    margin-right: 10px
+    .policy
+        font-size: 0.7em
+        margin-top: 25px
+        @include respond-to(touch-pad-portrait)
+            margin-top: 10px
+        @include respond-to(handhelds)
+            margin-top: 10px
+        p:last-child
+            font-size: 0.9em
+            margin-top: 10px
+            a
+                color: $color-theme-2
+        @include respond-to(genBook)
+            font-size: 0.5em

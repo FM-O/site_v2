@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Site de Florian Michel</title>
+    <title>Florian Michel - Développeur | Intégrateur web</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0,">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="author" content="Florian Michel">
+    <meta name="description" content="Site de Florian Michel, intégrateur et développeur web, étudiant DUT MMI Bordeaux à l'IUT Michel de Montaigne.">
+    <meta name="keywords" content="Florian Michel, Developpement, webdesign, programmation, Bordeaux, Lyon">
     <meta name="robots" content="noindex, nofollow">
 
+    <meta property="og:title" content="Florian Michel - Développeur, intégrateur web">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://prototype.florianmichel-online.com/images/logo-full.png">
+    <meta property="og:image:width" content="339">
+    <meta property="og:image:height" content="345">
+    <meta property="og:url" content="http://prototype.florianmichel-online.com">
+    <meta property="og:description" content="Site de Florian Michel, intégrateur et développeur web, étudiant DUT MMI Bordeaux à l'IUT Michel de Montaigne.">
+    <meta property="og:site_name" content="Florian Michel - Développeur, intégrateur web">
+
+    <link rel="icon" href="images/favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" />
     <link rel="stylesheet" href="javascript/full-plug/jquery.fullPage.css" type="text/css" />
@@ -19,7 +32,7 @@
     <style>
         .text-box-no-js{
             position: absolute;
-            z-index: 2;
+            z-index: 99;
             width: 50%;
             top: 40%;
             left: 20%;
@@ -49,13 +62,13 @@
 
     </style>
 </head>
-<body>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 10);">
     <div id="bloc-page">
     <!--[if IE]>
         <div class="filter-no-js"></div>
         <div class="text-box-no-js">
             <p>Site experimental - Ce site utilise des normes non supportées par votre navigateur</p>
-            <p>Téléchargez un des navigateurs ci-dessous pour naviguer sur mon site</p>
+            <p>Téléchargez un des navigateurs ci-dessous ou mettez à jour votre navigateur pour naviguer sur mon site</p>
             <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
             <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
         </div>
@@ -64,7 +77,7 @@
             <div class="filter-no-js"></div>
             <div class="text-box-no-js">
                 <p>Votre navigateur ne supporte pas javascript</p>
-                <p>Vous pouvez télécharger un des navigateurs suivants qui utilisent cette technologie</p>
+                <p>Activez Javascript ou téléchargez un des navigateurs suivants qui utilisent cette technologie</p>
                 <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
                 <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
                 <a href="http://windows.microsoft.com/fr-fr/internet-explorer/download-ie" target="_blank"><img src="http://www.criticmatters.com/wp-content/uploads/2014/09/ie9-10.png" title="télécharger Internet Explorer" alt="Internet Explorer"/></a>
@@ -81,6 +94,9 @@
                 <label class="close-menu" for="menu-button"></label>
             </nav>
         </header>
+        <div class="circle-cv">
+            <a href="cv.pdf" title="Mon Curriculum Vitae"><p>CV</p></a>
+        </div>
         <div class="arian-content">
             <div class="arian-fill-accueil">
                 <div class="tip-arian-accueil tip-arian-1 active-tip"><a href="#home"></a></div>
@@ -95,11 +111,12 @@
                 <section id="accueil">
                     <div class="main-wrapper-accueil">
                         <div class="title-accueil">
-                            <h1>Bienvenue sur florianmichel-online</h1>
+                            <h1>Florian Michel, <strong class="bold-font">développeur web</strong></h1>
                         </div>
                         <div class="visit-site-button">
-                            <a class="visit-button-link" title="commencer la visite" href="#about"><p>Commencer la visite</p></a>
+                            <a class="visit-button-link" title="commencer la visite" href="#about"><p>Commencer la visite</p><div class="content-triangle"></div></a>
                         </div>
+                        <p style="color: #8DBABA; font-size: 0.5em; margin-top: 10px">Beta 1.8 (compatible mobile / tablette)</p>
                     </div>
                 </section>
             </div>
@@ -108,25 +125,28 @@
                     <div class="main-wrapper-apropos">
                         <div class="main-text-bloc-apropos">
                             <div class="title-bloc-apropos">
-                                <h1>Qui suis-je ?</h1>
+                                <h3>Qui suis-je ?</h3>
                             </div>
                             <div class="line-up"></div>
                             <div class="text-bloc-apropos">
                                 <p>
-                                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                                    Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                                    nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                                    ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
-                                    erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
-                                    conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
-                                    dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin
-                                    condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas
-                                    quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                                    Passionné de nouvelles technologies, je me suis ensuite orienté vers le web, et plus précisément <strong>l'intégration et le
+                                    développement</strong>. Voulant créer une vitrine pour mes créations, je me suis
+                                    rapidement pris au jeu et j'ai voulu en découvrir toujours d'avantage. Avec les
+                                    langages <em class="em-style"><a href="http://www.alticreation.com/difference-developpeur-front-end-et-developpeur-back-end/" title="qu'est-ce que le Front-end" target="_blank">Front-End</a></em>,
+                                    j'ai pu allier mes compétences de graphiste à mon fort intérêt
+                                    pour le coté 'technique' du développement.
+                                    Ce site est construit selon une logique de minimalisme. En effet, la clarté de
+                                    l'information est pour moi une priorité lorsque l'on crée du contenu web. J'ai donc
+                                    travaillé mon design autour de 3 axes : <em class="em-style">simplicité</em>,
+                                    <em class="em-style">ergonomie</em> et <em class="em-style">clareté</em>. <br />
+                                    Vous avez un projet web ? <em class="em-style"><a href="#end" title="contact">Contactez-moi</a></em> et parlons-en ensemble :) <br />
+                                    Bonne visite !
                                 </p>
                             </div>
                         </div>
                         <div class="main-image-bloc-apropos">
-                            <img src="images/moon.png" title="moon" alt="moon" />
+                            <img src="images/moon.jpg" title="moon" alt="moon" />
                         </div>
                     </div>
                 </section>
@@ -137,20 +157,20 @@
                         <div class="main-wrapper-dev">
                             <div class="main-text-bloc-dev">
                                 <div class="title-bloc-dev">
-                                    <h1>Développement web</h1>
+                                    <h2>Développement web</h2>
                                 </div>
                                 <div class="line-up"></div>
                                 <div class="text-bloc-dev">
                                     <p>
-                                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                                        nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                                        ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
-                                        erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
-                                        conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
-                                        dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin
-                                        condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas
-                                        quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                                        Le <strong>développement web</strong>. Bien plus qu'un métier, une véritable passion !
+                                        Alors en quoi consiste le métier de développeur web ?
+                                        Prenez un café bien chaud, un clavier, et une bonne dose de motivation, car le
+                                        développement ce n'est pas que du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Hypertext_Markup_Language" title="le HTML c'est quoi ?" target="_blank">HTML</a></em>
+                                        ou du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" title="le CSS c'est quoi ?" target="_blank">CSS</a></em>. Si on peut concevoir qu'il existe de nombreux
+                                        outils comme Wix qui permettent de créer facilement un site Internet, il est évident
+                                        qu'ils connaissent également des limites. C'est là que nous, <strong>développeurs</strong>, intervenons en
+                                        vous proposant des solutions sur mesure ou plus performantes.
+                                        <span class="text-display">Quelques unes de mes <strong>compétences</strong> sont détaillées à droite.</span>
                                     </p>
                                 </div>
                             </div>
@@ -189,20 +209,21 @@
                         <div class="main-wrapper-design">
                             <div class="main-text-bloc-design">
                                 <div class="title-bloc-design">
-                                    <h1>Ergonomie et design</h1>
+                                    <h2>Ergonomie et design</h2>
                                 </div>
                                 <div class="line-up"></div>
                                 <div class="text-bloc-design">
                                     <p>
-                                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                                        nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                                        ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
-                                        erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
-                                        conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
-                                        dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin
-                                        condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas
-                                        quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                                        Un site Internet ce n'est évidemment pas que le <strong>développement web</strong>.
+                                        Il faut aussi prendre en compte deux éléments primordiaux : l'ergonomie et le design.
+                                        <strong>L'ergonomie</strong>, c'est avant tout permettre à vos utilisateurs une navigation fluide et
+                                        intuitive sur votre site. C'est aussi lui permettre de trouver immédiatement l'information
+                                        qu'il recherche. N'avez-vous jamais quitté un site web 1 minute après y être entré
+                                        frustré de ne pas trouver ce que vous cherchiez facilement ? L'ergonomie sert à cela : faire
+                                        en sorte que l'utilisateur reste sur votre site.
+                                        Le <strong>design</strong> d'un site, est sans doute aussi important que l'ergonomie de celui-ci.
+                                        En effet toute une réflexion doit être faite avant la phase de conception afin d'allier confort de
+                                        navigation et attractivité.
                                     </p>
                                 </div>
                             </div>
@@ -235,20 +256,21 @@
                         <div class="main-wrapper-responsive">
                             <div class="main-text-bloc-responsive">
                                 <div class="title-bloc-responsive">
-                                    <h1>Responsive design</h1>
+                                    <h2>Responsive design</h2>
                                 </div>
                                 <div class="line-up"></div>
                                 <div class="text-bloc-responsive">
                                     <p>
-                                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                                        nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                                        ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
-                                        erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
-                                        conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
-                                        dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin
-                                        condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas
-                                        quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                                        Qu'est-ce qu'un site <strong>responsive</strong>? Il s'agit d'un site qui permet
+                                        une navigation sur de nombreux périphériques. En effet, en entrant dans l'ère
+                                        numérique nous avons multiplié les façons de nous connecter à Internet, multiplier
+                                        les usages. Le responsive design c'est dire "mon site est capable de s'adapter à
+                                        tous ces périphériques, à toutes ces tailles d'écrans très différentes". Il est en
+                                        effet important de penser qu'aujourd'hui de plus en plus d'internautes naviguent sur
+                                        le web avec des tablettes ou des smartphones. Le web s'est adapté et la plupart des
+                                        sites sérieux (et pour lesquels la navigation mobile est évidente) sont conçus
+                                        pour être <strong>responsive</strong>. Par exemple ce site est conçu pour une navigation
+                                        sur grand écran, sur laptop, tablette et mobile.
                                     </p>
                                 </div>
                             </div>
@@ -271,16 +293,17 @@
                         <div class="container-rea">
                             <div class="rea-1">
                                 <div class="inner-rea">
-                                    <img src="images/mmi-bordeaux.png" class="img-crea" alt="Projet" title="projet" />
+                                    <img src="images/mmi-bordeaux.png" class="img-crea" alt="Logo MMI Bordeaux" title="Logo MMI Bordeaux" />
                                     <div class="content-rea">
-                                        <div class="test">
-                                            <p> This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                                                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                                                nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                                                ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae
+                                        <div class="rea-desc">
+                                            <h4>MMI Blog</h4>
+                                            <p>
+                                                Il s'agit d'un projet réalisé en traveaux pratiques à l'IUT Michel de Montaigne
+                                                dans le cadre de ma formation. Je l'ai ensuite amélioré afin de faire
+                                                évoluer le code en structure MVC. Le design a été fait à l'aide de Bootstrap.
                                             </p>
                                             <div class="button-more-rea">
-                                                <a href="http://google.fr" target="_blank" title="en savoir plus">En savoir +</a>
+                                                <a href="http://mmiblog.florianmichel-online.com" target="_blank" title="en savoir plus">En savoir +</a>
                                             </div>
                                         </div>
                                     </div>
@@ -288,14 +311,18 @@
                             </div>
                             <div class="rea-2">
                                 <div class="inner-rea">
-                                    <img src="images/mmi-bordeaux.png" class="img-crea" alt="Projet" title="projet" />
+                                    <img src="images/florianmichel-online-maquette.jpg" class="img-crea" alt="Maquette florianmichel-online" title="Projet maquette de site" />
                                     <div class="content-rea">
-                                        <div class="test">
-                                            <p> This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                                                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                                        <div class="rea-desc">
+                                            <h4>Maquette Site</h4>
+                                            <p>
+                                                Avant de concevoir ce site web il me fallait le penser, le concevoir "sur papier".
+                                                Comme vous pourrez l'observer en cliquant sur le lien ci-dessous, le design a
+                                                évolué entre temps. En effet il y a toujours des changements à opérer lorsque
+                                                l'on passe de la maquette à l'intégration !
                                             </p>
                                             <div class="button-more-rea">
-                                                <a href="http://google.fr" target="_blank" title="en savoir plus">En savoir +</a>
+                                                <a href="http://florianmichel-online.com/prototype/images/maquette.jpg" target="_blank" title="en savoir plus">En savoir +</a>
                                             </div>
                                         </div>
                                     </div>
@@ -303,15 +330,16 @@
                             </div>
                             <div class="rea-3">
                                 <div class="inner-rea">
-                                    <img src="images/mmi-bordeaux.png" class="img-crea" alt="Projet" title="projet" />
+                                    <img src="images/site-gite-aubrac.jpg" class="img-crea" alt="Ongle Magnolia Flyer" title="Projet Ongle Magnolia" />
                                     <div class="content-rea">
-                                        <div class="test">
-                                            <p> This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                                                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                                                nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
+                                        <div class="rea-desc">
+                                            <h4>Site - Gîte coeur d'Aubrac</h4>
+                                            <p>
+                                                Projet réalisé au sein de l'IUT Michel de Montaigne à Bordeaux. L'objectif était de concevoir un site Internet
+                                                et de le référencer le mieux possible sur les mots clés "gîte Aubrac", "gîte coeur d'Aubrac" et gîte "Bradjville".
                                             </p>
                                             <div class="button-more-rea">
-                                                <a href="http://google.fr" target="_blank" title="en savoir plus">En savoir +</a>
+                                                <a href="http://coeurdaubrac.fr/michel_florian/index.html" target="_blank" title="en savoir plus">En savoir +</a>
                                             </div>
                                         </div>
                                     </div>
@@ -319,7 +347,7 @@
                             </div>
                         </div>
                         <div class="main-image-bloc-rea">
-                            <img src="images/spray-brush.png" title="moon" alt="moon" />
+                            <img src="images/spray-brush.jpg" title="moon" alt="moon" />
                         </div>
                     </div>
                 </section>
@@ -329,41 +357,42 @@
                     <div class="main-wrapper-contact">
                         <div class="main-text-bloc-contact">
                             <div class="title-bloc-contact">
-                                <h1>Contact</h1>
+                                <h3>Contact</h3>
                                 <div class="line-up"></div>
                             </div>
                         </div>
                         <div class="main-container-contact">
                             <div class="form-container">
-                                <form>
-                                    <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" />
-                                    <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" />
-                                    <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" />
-                                    <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message"></textarea>
+                                <form action="mail.php" method="post">
+                                    <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" required />
+                                    <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" required />
+                                    <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" required />
+                                    <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message" required></textarea>
                                     <input type="reset" class="form-input" id="reset_button" value="Réinitialiser" />
                                     <input type="submit" class="form-input" id="submit_button" value="Envoyer" />
                                 </form>
                             </div>
-                            <div class="ending-container">
+                            <footer class="ending-container">
                                 <div class="end-text-content">
                                     <h4>Merci de votre visite !</h4>
                                     <p>Retrouvez-moi également sur les réseaux sociaux</p>
                                 </div>
                                 <div class="socials">
                                     <div class="social-icon-1">
-                                        <img src="images/g+-full.png" title="Google Plus" alt="icone Google Plus" />
-                                        <a href="http://google.fr" target="_blank" title="profil Google Plus"></a>
+                                        <a href="https://plus.google.com/u/0/103291228904643799333/" target="_blank" title="profil Google Plus"><img src="images/g+-full.png" title="Google Plus" alt="icone Google Plus" /></a>
                                     </div>
                                     <div class="social-icon-2">
-                                        <img src="images/twitter-full.png" title="Twitter" alt="icone Twitter" />
-                                        <a href="http://google.fr" target="_blank" title="profil Twitter"></a>
+                                        <a href="https://twitter.com/FlorianMICHEL69" target="_blank" title="profil Twitter"><img src="images/twitter-full.png" title="Twitter" alt="icone Twitter" /></a>
                                     </div>
                                     <div class="social-icon-3">
-                                        <img src="images/linkedin-full.png" title="Linkedin" alt="icone Linkedin" />
-                                        <a href="http://google.fr" target="_blank" title="profil Linkedin"></a>
+                                        <a href="http://fr.linkedin.com/pub/florian-michel/88/860/b58/" target="_blank" title="profil Linkedin"><img src="images/linkedin-full.png" title="Linkedin" alt="icone Linkedin" /></a>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="policy">
+                                    <p>Privacy policy - Florian Michel 2014 ©</p>
+                                    <p><a href="mailto:florian.michel69250@gmail.com">florian.michel69250@gmail.com</a></p>
+                                </div>
+                            </footer>
                         </div>
                     </div>
                 </section>
