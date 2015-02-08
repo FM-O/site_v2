@@ -3259,3 +3259,52 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
     font-size: 0.5em;
   }
 }
+
+/* line 988, ../sass/screen.sass */
+.correct {
+  outline-color: #a4ed73;
+}
+
+/* line 991, ../sass/screen.sass */
+.incorrect {
+  outline-color: rgba(255, 0, 0, 0.7);
+}
+
+/* line 994, ../sass/screen.sass */
+#overlay {
+  z-index: 99;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(102, 102, 102, 0.6);
+}
+
+/* line 1004, ../sass/screen.sass */
+.confirm_mail {
+  background-color: #ffffff;
+  width: 35%;
+  height: 25%;
+  font-size: 24px;
+  text-align: center;
+  display: table;
+  margin: auto;
+  position: relative;
+  top: 30%;
+}
+/* line 1014, ../sass/screen.sass */
+.confirm_mail p {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 1017, ../sass/screen.sass */
+.confirm_mail a {
+  display: block;
+  padding: 10px;
+  width: 100px;
+  color: #ffffff;
+  background-color: #3399ff;
+  margin: 10px auto auto auto;
+}

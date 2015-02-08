@@ -11,10 +11,10 @@
 
     <meta property="og:title" content="Florian Michel - Développeur, intégrateur web">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://prototype.florianmichel-online.com/images/logo-full.png">
+    <meta property="og:image" content="http://florianmichel-online.com/images/logo-full.png">
     <meta property="og:image:width" content="339">
     <meta property="og:image:height" content="345">
-    <meta property="og:url" content="http://prototype.florianmichel-online.com">
+    <meta property="og:url" content="http://florianmichel-online.com">
     <meta property="og:description" content="Site de Florian Michel, intégrateur et développeur web, étudiant DUT MMI Bordeaux à l'IUT Michel de Montaigne.">
     <meta property="og:site_name" content="Florian Michel - Développeur, intégrateur web">
 
@@ -353,6 +353,14 @@
                 </section>
             </div>
             <div class="section">
+                <div id="overlay">
+                    <div class="confirm_mail">
+                        <p>
+                            Votre message a bien été envoyé, merci !
+                            <a href="#" title="ok">OK</a>
+                        </p>
+                    </div>
+                </div>
                 <section id="contact">
                     <div class="main-wrapper-contact">
                         <div class="main-text-bloc-contact">
@@ -363,11 +371,11 @@
                         </div>
                         <div class="main-container-contact">
                             <div class="form-container">
-                                <form action="mail.php" method="post">
-                                    <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" required />
-                                    <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" required />
-                                    <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" required />
-                                    <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message" required></textarea>
+                                <form action="" method="post" id="contact_form">
+                                    <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" />
+                                    <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" />
+                                    <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" />
+                                    <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message"></textarea>
                                     <input type="reset" class="form-input" id="reset_button" value="Réinitialiser" />
                                     <input type="submit" class="form-input" id="submit_button" value="Envoyer" />
                                 </form>
@@ -399,5 +407,6 @@
             </div>
         </div>
     </div>
+<script type="text/javascript" src="javascript/app2.js"></script>
 </body>
 </html>
