@@ -3,13 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-
-
-//MASTER DEV -- \\
-/*** FINAL VERSION ***\
-
 //IS COMPRESSED
-
 
 @import "compass/reset"
 @import "compass"
@@ -79,7 +73,7 @@ $arian-color: #989797
         @media only screen and (max-height: 600px)
             @content
 //MORE-button-skillPage
-@mixin repsonsive-style-button
+@mixin responsive-style-button
     font-size: 1em
     @include respond-to(touch-pad-landscape)
         font-size: 0.6em
@@ -565,7 +559,7 @@ header
         text-align: center
         font-family: "helvetica neue light", 'Lato', Arial, sans-serif
         border: 1px solid $color-theme
-        @include repsonsive-style-button
+        @include responsive-style-button
 
 ////////////////////////////////////**** Competences ----> DESIGN ****/////////////////////////////////////////////////
 
@@ -988,3 +982,59 @@ header
                 color: $color-theme-2
         @include respond-to(genBook)
             font-size: 0.5em
+
+//////////////////////// ****** FORM ERRORS CLASSES AND ID'S ******* //////////////////////
+
+.correct
+    background-color: rgba(#96ed67, 0.2)
+
+.incorrect
+    background-color: rgba(#e34543, 0.2)
+
+#xhrErr
+    font-size: 0.7em
+    margin-top: 5px
+    color: #000
+    text-align: center
+    display: none
+
+#overlay
+    z-index: 99
+    display: none
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    position: absolute
+    background-color: rgba(102,102,102,0.6)
+
+.confirm_mail
+    background-color: #ffffff
+    width: 35%
+    height: 25%
+    font-size: 24px
+    text-align: center
+    display: table
+    margin: auto
+    position: relative
+    top: 30%
+    p
+        display: table-cell
+        vertical-align: middle
+    a
+        display: block
+        padding: 10px
+        width: 100px
+        color: #ffffff
+        background-color: rgba(51,153,255,1)
+        margin: 10px auto auto auto
+        &:active
+            background: darken(#3399FF, 5%)
+/*** Tooltips ***/
+.tooltip
+    display: block
+    font-size: 0.6em
+    font-family: "Helvetica Neue Light"
+    padding: 5px 0 0 5px
+    text-align: left
+    color: $red-default
