@@ -1,28 +1,53 @@
 // JavaScript Document
 
 (function(){
+
+    function desactivateTooltips() {
+
+        var spans = document.getElementsByClassName('tooltip'),
+            spansLength = spans.length;
+
+        for (var i = 0 ; i < spansLength ; i++){
+            spans[i].style.display = 'none';
+        }
+    }
+
+    function getTooltips(element) {
+        while (element = element.nextSibling) {
+            if (element.className === 'tooltip') {
+                return element;
+            }
+        }
+        return false;
+    }
 	var check = {};
 	
 	check['user_name'] = function(id) {
-		var user_name = document.getElementById(id);				
+		var user_name = document.getElementById(id),
+            tooltipStyle = getTooltips(user_name).style;
 		
-		if (user_name.value.length >= 2 && user_name.value) {
+		if (user_name.value.length >= 2) {
 			user_name.className = "form-input correct";
+            tooltipStyle.display = "none";
 			return true;
 		} else {
 			user_name.className = "form-input incorrect";
+            tooltipStyle.display = "block";
 			return false
 		}
 	};
 	
 	check['user_mail'] = function(id) {
-        var user_mail = document.getElementById(id);
+        var user_mail = document.getElementById(id),
+            tooltipStyle = getTooltips(user_mail).style;
 
         if (user_mail.value.length >= 2 && /^[A-Za-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(user_mail.value)) {
             user_mail.className = "form-input correct";
+            tooltipStyle.display = "none";
             return true;
         } else {
             user_mail.className = "form-input incorrect";
+            tooltipStyle.display = "block";
             return false
         }
     };
@@ -78,51 +103,55 @@
 				}
 				if (result) {
 					function submitForm() {
-							var overlay = document.getElementById('overlay'),
-							 	aElement = overlay.firstElementChild,
-							 	actual = aElement.firstElementChild;	
-														
-							var value_name = document.getElementById('user_name').value,
-								value_mail = document.getElementById('user_mail').value,
-								value_subject = document.getElementById('user_subject').value,
-								value_message = document.getElementById('user_mess').value;
-								
-							var xhr = new XMLHttpRequest();
-							
-							
-							xhr.open('POST', 'mail.php');
-							
-							xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-							
-							xhr.onreadystatechange = function() {
-								if (xhr.readyState == 4) {
 
-									var response = xhr.responseText;
-									
-									resp = JSON.parse(response);								
-									
-									if (resp.error == 'true') {
-										
-										var errorMess = document.createTextNode('Erreur dans l\'envoi du message !');
-										actual.style.color = "red";																			
-										actual.replaceChild(errorMess, actual.firstChild);																		
-									}
-									
-									overlay.style.display = "block";
-                                    actual.lastElementChild.focus();
-									actual.lastElementChild.onclick = function() {											
-										overlay.style.display = "none";
-										myForm.reset();
-										return false;
-									};																		
-								}
-							};
-							
-							xhr.send('param1=' + value_name + '&param2=' + value_mail + '&param3=' + value_subject + '&param4=' + value_message);
-						}
-						setTimeout(function(){
-							submitForm()
-						}, 500);
+                        var overlay = document.getElementById('overlay'),
+                            aElement = overlay.firstElementChild,
+                            actual = aElement.firstElementChild,
+                            errorMess = document.createTextNode('Erreur dans l\'envoi du message !');
+
+                        var value_name = document.getElementById('user_name').value,
+                            value_mail = document.getElementById('user_mail').value,
+                            value_subject = document.getElementById('user_subject').value,
+                            value_message = document.getElementById('user_mess').value;
+
+                        function downOverlay() {
+                            actual.lastElementChild.onclick = function() {
+                                overlay.style.display = "none";
+                                myForm.reset();
+                                return false;
+                            };
+                        }
+
+                        var xhr = new XMLHttpRequest();
+
+
+                        xhr.open('POST', 'mail.php');
+
+                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState == 4) {
+
+                                var response = xhr.responseText;
+
+                                resp = JSON.parse(response);
+
+                                if (resp.error == 'true') {
+
+                                    actual.style.color = "red";
+                                    actual.replaceChild(errorMess, actual.firstChild);
+                                }
+                                overlay.style.display = "block";
+                                actual.lastElementChild.focus();
+                                downOverlay();
+                            }
+                        };
+
+                        xhr.send('param1=' + value_name + '&param2=' + value_mail + '&param3=' + value_subject + '&param4=' + value_message);
+					}
+                    setTimeout(function(){
+                        submitForm()
+                    }, 500);
 				}
 
 			}, false);
@@ -134,9 +163,12 @@
 						inputs[i].className = "form-input";
 					}
 				}
+                desactivateTooltips();
 			};
 		
 	})();
+
+    desactivateTooltips();
 })();
 /*
 (function(){		

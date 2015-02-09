@@ -3308,3 +3308,18 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   background-color: #3399ff;
   margin: 10px auto auto auto;
 }
+/* line 1024, ../sass/screen.sass */
+.confirm_mail a:active {
+  background: #1a8cff;
+}
+
+/*** Tooltips ** */
+/* line 1027, ../sass/screen.sass */
+.tooltip {
+  display: block;
+  font-size: 0.6em;
+  font-family: "Helvetica Neue Light";
+  padding: 5px 0 0 5px;
+  text-align: left;
+  color: #7d0f00;
+}

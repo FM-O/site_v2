@@ -26,7 +26,6 @@
     <script src="javascript/full-plug/vendors/jquery.easings.min.js"></script>
     <script type="text/javascript" src="javascript/full-plug/vendors/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="javascript/full-plug/jquery.fullPage.js"></script>
-    <script type="text/javascript" src="javascript/app.js"></script>
     <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
     <!-- STYLE FOR NO JS -->
     <style>
@@ -373,9 +372,13 @@
                             <div class="form-container">
                                 <form action="" method="post" id="contact_form">
                                     <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" />
+                                    <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
                                     <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" />
+                                    <span class="tooltip">Ce champ doit contenir un email valide de la forme "mail@mail.mail"</span>
                                     <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" />
+                                    <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
                                     <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message"></textarea>
+                                    <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
                                     <input type="reset" class="form-input" id="reset_button" value="Réinitialiser" />
                                     <input type="submit" class="form-input" id="submit_button" value="Envoyer" />
                                 </form>
@@ -407,6 +410,7 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="javascript/app2.js"></script>
+    <script type="text/javascript" src="javascript/app.js"></script>
+    <script type="text/javascript" src="javascript/app2.js"></script>
 </body>
 </html>
