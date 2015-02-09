@@ -130,7 +130,7 @@
                         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
                         xhr.onreadystatechange = function() {
-                            if (xhr.readyState == 4) {
+                            if (xhr.readyState == 4 && xhr.status == 200) {
 
                                 var response = xhr.responseText;
 
@@ -141,6 +141,17 @@
                                     actual.style.color = "red";
                                     actual.replaceChild(errorMess, actual.firstChild);
                                 }
+                                overlay.style.display = "block";
+                                actual.lastElementChild.focus();
+                                downOverlay();
+                            } else if (xhr.readyState == 4 && xhr.status != 200) {
+                                var err = document.getElementById('xhrErr');
+                                    txtErr = document.createTextNode('erreur : ' + xhr.statusText);
+                                err.appendChild(txtErr);
+                                err.style.display  = "block";
+
+                                actual.style.color = "red";
+                                actual.replaceChild(errorMess, actual.firstChild);
                                 overlay.style.display = "block";
                                 actual.lastElementChild.focus();
                                 downOverlay();

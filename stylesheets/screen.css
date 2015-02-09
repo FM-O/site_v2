@@ -3271,6 +3271,15 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 }
 
 /* line 994, ../sass/screen.sass */
+#xhrErr {
+  font-size: 0.7em;
+  margin-top: 5px;
+  color: #000;
+  text-align: center;
+  display: none;
+}
+
+/* line 1001, ../sass/screen.sass */
 #overlay {
   z-index: 99;
   display: none;
@@ -3282,7 +3291,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   background-color: rgba(102, 102, 102, 0.6);
 }
 
-/* line 1004, ../sass/screen.sass */
+/* line 1011, ../sass/screen.sass */
 .confirm_mail {
   background-color: #ffffff;
   width: 35%;
@@ -3294,12 +3303,12 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   position: relative;
   top: 30%;
 }
-/* line 1014, ../sass/screen.sass */
+/* line 1021, ../sass/screen.sass */
 .confirm_mail p {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 1017, ../sass/screen.sass */
+/* line 1024, ../sass/screen.sass */
 .confirm_mail a {
   display: block;
   padding: 10px;
@@ -3308,13 +3317,13 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   background-color: #3399ff;
   margin: 10px auto auto auto;
 }
-/* line 1024, ../sass/screen.sass */
+/* line 1031, ../sass/screen.sass */
 .confirm_mail a:active {
   background: #1a8cff;
 }
 
 /*** Tooltips ** */
-/* line 1027, ../sass/screen.sass */
+/* line 1034, ../sass/screen.sass */
 .tooltip {
   display: block;
   font-size: 0.6em;
