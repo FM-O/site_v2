@@ -73,7 +73,7 @@ $arian-color: #989797
         @media only screen and (max-height: 600px)
             @content
 //MORE-button-skillPage
-@mixin repsonsive-style-button
+@mixin responsive-style-button
     font-size: 1em
     @include respond-to(touch-pad-landscape)
         font-size: 0.6em
@@ -559,7 +559,7 @@ header
         text-align: center
         font-family: "helvetica neue light", 'Lato', Arial, sans-serif
         border: 1px solid $color-theme
-        @include repsonsive-style-button
+        @include responsive-style-button
 
 ////////////////////////////////////**** Competences ----> DESIGN ****/////////////////////////////////////////////////
 
@@ -986,10 +986,10 @@ header
 //////////////////////// ****** FORM ERRORS CLASSES AND ID'S ******* //////////////////////
 
 .correct
-    outline-color: #a4ed73
+    background-color: rgba(#96ed67, 0.2)
 
 .incorrect
-    outline-color: rgba(#ff0000, 0.7)
+    background-color: rgba(#e34543, 0.2)
 
 #overlay
     z-index: 99

@@ -3262,12 +3262,12 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 
 /* line 988, ../sass/screen.sass */
 .correct {
-  outline-color: #a4ed73;
+  background-color: rgba(150, 237, 103, 0.2);
 }
 
 /* line 991, ../sass/screen.sass */
 .incorrect {
-  outline-color: rgba(255, 0, 0, 0.7);
+  background-color: rgba(227, 69, 67, 0.2);
 }
 
 /* line 994, ../sass/screen.sass */

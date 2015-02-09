@@ -15,7 +15,17 @@
 		}
 	};
 	
-	check['user_mail'] = check['user_name'];
+	check['user_mail'] = function(id) {
+        var user_mail = document.getElementById(id);
+
+        if (user_mail.value.length >= 2 && /^[A-Za-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(user_mail.value)) {
+            user_mail.className = "form-input correct";
+            return true;
+        } else {
+            user_mail.className = "form-input incorrect";
+            return false
+        }
+    };
 	
 	check['user_subject'] = check['user_name'];
 	
@@ -99,6 +109,7 @@
 									}
 									
 									overlay.style.display = "block";
+                                    actual.lastElementChild.focus();
 									actual.lastElementChild.onclick = function() {											
 										overlay.style.display = "none";
 										myForm.reset();
