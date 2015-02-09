@@ -109,8 +109,6 @@
                             actual = aElement.firstElementChild,
                             errorMess = document.createTextNode('Erreur dans l\'envoi du message !');
 
-                        alert(actual.firstChild.nodeName);
-
                         var value_name = document.getElementById('user_name').value,
                             value_mail = document.getElementById('user_mail').value,
                             value_subject = document.getElementById('user_subject').value,

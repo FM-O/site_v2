@@ -58,7 +58,7 @@ if((isset($_POST['param1']) AND !empty($_POST['param1']))
         //==========
 
         //=====Envoi de l'e-mail.
-        //mail($mail,$sujet,$message,$header);
+        mail($mail,$sujet,$message,$header);
         //==========
 
         //header('Location: index.html');
