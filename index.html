@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-        <!-- FINAL VERSION -->
 <html lang="fr">
 <head>
     <title>Florian Michel - Développeur | Intégrateur web</title>
@@ -27,9 +26,7 @@
     <script src="javascript/full-plug/vendors/jquery.easings.min.js"></script>
     <script type="text/javascript" src="javascript/full-plug/vendors/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="javascript/full-plug/jquery.fullPage.js"></script>
-
     <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
-
     <!-- STYLE FOR NO JS -->
     <style>
         .text-box-no-js{
@@ -65,344 +62,359 @@
     </style>
 </head>
 <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 10);">
-    <div id="bloc-page">
-    <!--[if IE]>
-        <div class="filter-no-js"></div>
-        <div class="text-box-no-js">
-            <p>Site experimental - Ce site utilise des normes non supportées par votre navigateur</p>
-            <p>Téléchargez un des navigateurs ci-dessous ou mettez à jour votre navigateur pour naviguer sur mon site</p>
-            <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
-            <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
-        </div>
-    <![endif]-->
-        <noscript>
-            <div class="filter-no-js"></div>
-            <div class="text-box-no-js">
-                <p>Votre navigateur ne supporte pas javascript</p>
-                <p>Activez Javascript ou téléchargez un des navigateurs suivants qui utilisent cette technologie</p>
-                <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
-                <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
-                <a href="http://windows.microsoft.com/fr-fr/internet-explorer/download-ie" target="_blank"><img src="http://www.criticmatters.com/wp-content/uploads/2014/09/ie9-10.png" title="télécharger Internet Explorer" alt="Internet Explorer"/></a>
+<div id="bloc-page">
+<!--[if IE]>
+<div class="filter-no-js"></div>
+<div class="text-box-no-js">
+    <p>Site experimental - Ce site utilise des normes non supportées par votre navigateur</p>
+    <p>Téléchargez un des navigateurs ci-dessous ou mettez à jour votre navigateur pour naviguer sur mon site</p>
+    <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
+    <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
+</div>
+<![endif]-->
+<noscript>
+    <div class="filter-no-js"></div>
+    <div class="text-box-no-js">
+        <p>Votre navigateur ne supporte pas javascript</p>
+        <p>Activez Javascript ou téléchargez un des navigateurs suivants qui utilisent cette technologie</p>
+        <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
+        <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
+        <a href="http://windows.microsoft.com/fr-fr/internet-explorer/download-ie" target="_blank"><img src="http://www.criticmatters.com/wp-content/uploads/2014/09/ie9-10.png" title="télécharger Internet Explorer" alt="Internet Explorer"/></a>
+    </div>
+</noscript>
+<header>
+    <nav id="myMenu">
+        <input id="menu-button" type="checkbox" />
+        <a class="menu-item" href="#home" title="accueil">Accueil</a>
+        <a class="menu-item" href="#about" title="A propos">A propos</a>
+        <a class="menu-item" href="#skills" title="Compétences">Compétences</a>
+        <a class="menu-item" href="#achievements" title="Réalisations">Réalisations</a>
+        <a class="menu-item" href="#end" title="Contact">Contact</a>
+        <label class="close-menu" for="menu-button"></label>
+    </nav>
+</header>
+<div class="circle-cv">
+    <a href="cv.pdf" title="Mon Curriculum Vitae"><p>CV</p></a>
+</div>
+<div class="arian-content">
+    <div class="arian-fill-accueil">
+        <div class="tip-arian-accueil tip-arian-1 active-tip"><a href="#home"></a></div>
+        <div class="tip-arian-accueil tip-arian-2"><a href="#about"></a></div>
+        <div class="tip-arian-accueil tip-arian-3"><a href="#skills"></a></div>
+        <div class="tip-arian-accueil tip-arian-4"><a href="#achievements"></a></div>
+        <div class="tip-arian-accueil tip-arian-5"><a href="#end"></a></div>
+    </div>
+</div>
+<div id="fullpage">
+<div class="section">
+    <section id="accueil">
+        <div class="main-wrapper-accueil">
+            <div class="title-accueil">
+                <h1>Florian Michel, <strong class="bold-font">développeur web</strong></h1>
             </div>
-        </noscript>
-        <header>
-            <nav id="myMenu">
-                <input id="menu-button" type="checkbox" />
-                <a class="menu-item" href="#home" title="accueil">Accueil</a>
-                <a class="menu-item" href="#about" title="A propos">A propos</a>
-                <a class="menu-item" href="#skills" title="Compétences">Compétences</a>
-                <a class="menu-item" href="#achievements" title="Réalisations">Réalisations</a>
-                <a class="menu-item" href="#end" title="Contact">Contact</a>
-                <label class="close-menu" for="menu-button"></label>
-            </nav>
-        </header>
-        <div class="circle-cv">
-            <a href="cv.pdf" title="Mon Curriculum Vitae"><p>CV</p></a>
+            <div class="visit-site-button">
+                <a class="visit-button-link" title="commencer la visite" href="#about"><p>Commencer la visite</p><div class="content-triangle"></div></a>
+            </div>
+            <p style="color: #8DBABA; font-size: 0.5em; margin-top: 10px">Beta 1.8 (compatible mobile / tablette)</p>
         </div>
-        <div class="arian-content">
-            <div class="arian-fill-accueil">
-                <div class="tip-arian-accueil tip-arian-1 active-tip"><a href="#home"></a></div>
-                <div class="tip-arian-accueil tip-arian-2"><a href="#about"></a></div>
-                <div class="tip-arian-accueil tip-arian-3"><a href="#skills"></a></div>
-                <div class="tip-arian-accueil tip-arian-4"><a href="#achievements"></a></div>
-                <div class="tip-arian-accueil tip-arian-5"><a href="#end"></a></div>
+    </section>
+</div>
+<div class="section">
+    <section id="apropos">
+        <div class="main-wrapper-apropos">
+            <div class="main-text-bloc-apropos">
+                <div class="title-bloc-apropos">
+                    <h3>Qui suis-je ?</h3>
+                </div>
+                <div class="line-up"></div>
+                <div class="text-bloc-apropos">
+                    <p>
+                        Passionné de nouvelles technologies, je me suis ensuite orienté vers le web, et plus précisément <strong>l'intégration et le
+                        développement</strong>. Voulant créer une vitrine pour mes créations, je me suis
+                        rapidement pris au jeu et j'ai voulu en découvrir toujours d'avantage. Avec les
+                        langages <em class="em-style"><a href="http://www.alticreation.com/difference-developpeur-front-end-et-developpeur-back-end/" title="qu'est-ce que le Front-end" target="_blank">Front-End</a></em>,
+                        j'ai pu allier mes compétences de graphiste à mon fort intérêt
+                        pour le coté 'technique' du développement.
+                        Ce site est construit selon une logique de minimalisme. En effet, la clarté de
+                        l'information est pour moi une priorité lorsque l'on crée du contenu web. J'ai donc
+                        travaillé mon design autour de 3 axes : <em class="em-style">simplicité</em>,
+                        <em class="em-style">ergonomie</em> et <em class="em-style">clareté</em>. <br />
+                        Vous avez un projet web ? <em class="em-style"><a href="#end" title="contact">Contactez-moi</a></em> et parlons-en ensemble :) <br />
+                        Bonne visite !
+                    </p>
+                </div>
+            </div>
+            <div class="main-image-bloc-apropos">
+                <img src="images/moon.jpg" title="moon" alt="moon" />
             </div>
         </div>
-        <div id="fullpage">
-            <div class="section">
-                <section id="accueil">
-                    <div class="main-wrapper-accueil">
-                        <div class="title-accueil">
-                            <h1>Florian Michel, <strong class="bold-font">développeur web</strong></h1>
-                        </div>
-                        <div class="visit-site-button">
-                            <a class="visit-button-link" title="commencer la visite" href="#about"><p>Commencer la visite</p><div class="content-triangle"></div></a>
-                        </div>
+    </section>
+</div>
+<div class="section">
+    <section id="competences">
+        <div class="slide">
+            <div class="main-wrapper-dev">
+                <div class="main-text-bloc-dev">
+                    <div class="title-bloc-dev">
+                        <h2>Développement web</h2>
                     </div>
-                </section>
+                    <div class="line-up"></div>
+                    <div class="text-bloc-dev">
+                        <p>
+                            Le <strong>développement web</strong>. Bien plus qu'un métier, une véritable passion !
+                            Alors en quoi consiste le métier de développeur web ?
+                            Prenez un café bien chaud, un clavier, et une bonne dose de motivation, car le
+                            développement ce n'est pas que du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Hypertext_Markup_Language" title="le HTML c'est quoi ?" target="_blank">HTML</a></em>
+                            ou du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" title="le CSS c'est quoi ?" target="_blank">CSS</a></em>. Si on peut concevoir qu'il existe de nombreux
+                            outils comme Wix qui permettent de créer facilement un site Internet, il est évident
+                            qu'ils connaissent également des limites. C'est là que nous, <strong>développeurs</strong>, intervenons en
+                            vous proposant des solutions sur mesure ou plus performantes.
+                            <span class="text-display">Quelques unes de mes <strong>compétences</strong> sont détaillées à droite.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="main-image-bloc-dev">
+                    <div class="skill-bar-1">
+                                    <span class="skill-empty">
+                                        <span class="skill-progress"></span>
+                                    </span>
+                        <p>HTML / CSS</p>
+                    </div>
+                    <div class="skill-bar-2">
+                                    <span class="skill-empty">
+                                        <span class="skill-progress"></span>
+                                    </span>
+                        <p>Javascript</p>
+                    </div>
+                    <div class="skill-bar-3">
+                                    <span class="skill-empty">
+                                        <span class="skill-progress"></span>
+                                    </span>
+                        <p>PHP</p>
+                    </div>
+                    <div class="skill-bar-4">
+                                    <span class="skill-empty">
+                                        <span class="skill-progress"></span>
+                                    </span>
+                        <p>Ruby On Rails</p>
+                    </div>
+                    <div class="more-skills-button">
+                        <a href="#">Plus +</a>
+                    </div>
+                </div>
             </div>
-            <div class="section">
-                <section id="apropos">
-                    <div class="main-wrapper-apropos">
-                        <div class="main-text-bloc-apropos">
-                            <div class="title-bloc-apropos">
-                                <h3>Qui suis-je ?</h3>
-                            </div>
-                            <div class="line-up"></div>
-                            <div class="text-bloc-apropos">
+        </div>
+        <div class="slide">
+            <div class="main-wrapper-design">
+                <div class="main-text-bloc-design">
+                    <div class="title-bloc-design">
+                        <h2>Ergonomie et design</h2>
+                    </div>
+                    <div class="line-up"></div>
+                    <div class="text-bloc-design">
+                        <p>
+                            Un site Internet ce n'est évidemment pas que le <strong>développement web</strong>.
+                            Il faut aussi prendre en compte deux éléments primordiaux : l'ergonomie et le design.
+                            <strong>L'ergonomie</strong>, c'est avant tout permettre à vos utilisateurs une navigation fluide et
+                            intuitive sur votre site. C'est aussi lui permettre de trouver immédiatement l'information
+                            qu'il recherche. N'avez-vous jamais quitté un site web 1 minute après y être entrer
+                            frustré de ne pas trouver ce que vous cherchiez facilement ? L'ergonomie sert à cela : faire
+                            en sorte que l'utilisateur reste sur votre site.
+                            Le <strong>design</strong> d'un site, est sans doute aussi important que l'ergonomie de celui-ci.
+                            En effet toute une réflexion doit être faite avant la phase de conception afin d'allier confort de
+                            navigation et attractivité.
+                        </p>
+                    </div>
+                </div>
+                <div class="main-image-bloc-design">
+                    <div class="skill-circle-1">
+                        <div class="skill-empty">
+                            <div class="circle-skill-progress" data-progress="1.86" data-progressfinal="0.5"></div>
+                            <p>70%</p>
+                        </div>
+                        <p>Photoshop</p>
+                    </div>
+                    <div class="skill-circle-2">
+                        <div class="skill-empty">
+                            <div class="circle-skill-progress" data-progress="1.6" data-progressfinal="0.5"></div>
+                            <p>60%</p>
+                        </div>
+                        <p>Illustrator</p>
+                    </div>
+                    <div class="skill-circle-3">
+                        <div class="skill-empty">
+                            <div class="circle-skill-progress" data-progress="2" data-progressfinal="0.5"></div>
+                            <p>75%</p>
+                        </div>
+                        <p>InDesign</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="main-wrapper-responsive">
+                <div class="main-text-bloc-responsive">
+                    <div class="title-bloc-responsive">
+                        <h2>Responsive design</h2>
+                    </div>
+                    <div class="line-up"></div>
+                    <div class="text-bloc-responsive">
+                        <p>
+                            Qu'est-ce qu'un site <strong>responsive</strong>? Il s'agit d'un site qui permet
+                            une navigation sur de nombreux périphériques. En effet, en entrant dans l'ère
+                            numérique nous avons multiplié les façons de nous connecter à Internet, multiplier
+                            les usages. Le responsive design c'est dire "mon site est capable de s'adapter à
+                            tous ces périphériques, à toutes ces tailles d'écrans très différentes". Il est en
+                            effet important de penser qu'aujourd'hui de plus en plus d'internautes naviguent sur
+                            le web avec des tablettes ou des smartphones. Le web s'est adapté et la plupart des
+                            sites sérieux (et pour lesquels la navigation mobile est évidente) sont conçus
+                            pour être <strong>responsive</strong>. Par exemple ce site est conçu pour une navigation
+                            sur grand écran, sur laptop, tablette et mobile.
+                        </p>
+                    </div>
+                </div>
+                <div class="main-image-bloc-responsive">
+                    <img src="images/imac.png" title="illustration i-mac" alt="illustration responsive" />
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="section">
+    <section id="realisations">
+        <div class="main-wrapper-rea">
+            <div class="main-text-bloc-rea">
+                <div class="title-bloc-rea">
+                    <h1>Réalisations</h1>
+                    <div class="line-up"></div>
+                </div>
+            </div>
+            <div class="container-rea">
+                <div class="rea-1">
+                    <div class="inner-rea">
+                        <img src="images/mmi-bordeaux.png" class="img-crea" alt="Logo MMI Bordeaux" title="Logo MMI Bordeaux" />
+                        <div class="content-rea">
+                            <div class="rea-desc">
+                                <h4>MMI Blog</h4>
                                 <p>
-                                    Passionné de nouvelles technologies, je me suis ensuite orienté vers le web, et plus précisément <strong>l'intégration et le
-                                    développement</strong>. Voulant créer une vitrine pour mes créations, je me suis
-                                    rapidement pris au jeu et j'ai voulu en découvrir toujours d'avantage. Avec les
-                                    langages <em class="em-style"><a href="http://www.alticreation.com/difference-developpeur-front-end-et-developpeur-back-end/" title="qu'est-ce que le Front-end" target="_blank">Front-End</a></em>,
-                                    j'ai pu allier mes compétences de graphiste à mon fort intérêt
-                                    pour le coté 'technique' du développement.
-                                    Ce site est construit selon une logique de minimalisme. En effet, la clarté de
-                                    l'information est pour moi une priorité lorsque l'on crée du contenu web. J'ai donc
-                                    travaillé mon design autour de 3 axes : <em class="em-style">simplicité</em>,
-                                    <em class="em-style">ergonomie</em> et <em class="em-style">clareté</em>. <br />
-                                    Vous avez un projet web ? <em class="em-style"><a href="#end" title="contact">Contactez-moi</a></em> et parlons-en ensemble :) <br />
-                                    Bonne visite !
+                                    Il s'agit d'un projet réalisé en traveaux pratiques à l'IUT Michel de Montaigne
+                                    dans le cadre de ma formation. Je l'ai ensuite amélioré afin de faire
+                                    évoluer le code en structure MVC. Le design a été fait à l'aide de Bootstrap.
                                 </p>
+                                <div class="button-more-rea">
+                                    <a href="http://mmiblog.florianmichel-online.com" target="_blank" title="en savoir plus">En savoir +</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="main-image-bloc-apropos">
-                            <img src="images/moon.jpg" title="moon" alt="moon" />
+                    </div>
+                </div>
+                <div class="rea-2">
+                    <div class="inner-rea">
+                        <img src="images/florianmichel-online-maquette.jpg" class="img-crea" alt="Maquette florianmichel-online" title="Projet maquette de site" />
+                        <div class="content-rea">
+                            <div class="rea-desc">
+                                <h4>Maquette Site</h4>
+                                <p>
+                                    Avant de concevoir ce site web il me fallait le penser, le concevoir "sur papier".
+                                    Comme vous pourrez l'observer en cliquant sur le lien ci-dessous, le design a
+                                    évolué entre temps. En effet il y a toujours des changements à opérer lorsque
+                                    l'on passe de la maquette à l'intégration !
+                                </p>
+                                <div class="button-more-rea">
+                                    <a href="http://florianmichel-online.com/prototype/images/maquette.jpg" target="_blank" title="en savoir plus">En savoir +</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
+                <div class="rea-3">
+                    <div class="inner-rea">
+                        <img src="images/site-gite-aubrac.jpg" class="img-crea" alt="Ongle Magnolia Flyer" title="Projet Ongle Magnolia" />
+                        <div class="content-rea">
+                            <div class="rea-desc">
+                                <h4>Site - Gîte coeur d'Aubrac</h4>
+                                <p>
+                                    Projet réalisé au sein de l'IUT Michel de Montaigne à Bordeaux. L'objectif était de concevoir un site Internet
+                                    et de le référencer le mieux possible sur les mots clés "gîte Aubrac", "gîte coeur d'Aubrac" et gîte "Bradjville".
+                                </p>
+                                <div class="button-more-rea">
+                                    <a href="http://coeurdaubrac.fr/michel_florian/index.html" target="_blank" title="en savoir plus">En savoir +</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section">
-                <section id="competences">
-                    <div class="slide">
-                        <div class="main-wrapper-dev">
-                            <div class="main-text-bloc-dev">
-                                <div class="title-bloc-dev">
-                                    <h2>Développement web</h2>
-                                </div>
-                                <div class="line-up"></div>
-                                <div class="text-bloc-dev">
-                                    <p>
-                                        Le <strong>développement web</strong>. Bien plus qu'un métier, une véritable passion !
-                                        Alors en quoi consiste le métier de développeur web ?
-                                        Prenez un café bien chaud, un clavier, et une bonne dose de motivation, car le
-                                        développement ce n'est pas que du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Hypertext_Markup_Language" title="le HTML c'est quoi ?" target="_blank">HTML</a></em>
-                                        ou du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" title="le CSS c'est quoi ?" target="_blank">CSS</a></em>. Si on peut concevoir qu'il existe de nombreux
-                                        outils comme Wix qui permettent de créer facilement un site Internet, il est évident
-                                        qu'ils connaissent également des limites. C'est là que nous, <strong>développeurs</strong>, intervenons en
-                                        vous proposant des solutions sur mesure ou plus performantes.
-                                        <span class="text-display">Quelques unes de mes <strong>compétences</strong> sont détaillées à droite.</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="main-image-bloc-dev">
-                                <div class="skill-bar-1">
-                                    <span class="skill-empty">
-                                        <span class="skill-progress"></span>
-                                    </span>
-                                    <p>HTML / CSS</p>
-                                </div>
-                                <div class="skill-bar-2">
-                                    <span class="skill-empty">
-                                        <span class="skill-progress"></span>
-                                    </span>
-                                    <p>Javascript</p>
-                                </div>
-                                <div class="skill-bar-3">
-                                    <span class="skill-empty">
-                                        <span class="skill-progress"></span>
-                                    </span>
-                                    <p>PHP</p>
-                                </div>
-                                <div class="skill-bar-4">
-                                    <span class="skill-empty">
-                                        <span class="skill-progress"></span>
-                                    </span>
-                                    <p>Ruby On Rails</p>
-                                </div>
-                                <div class="more-skills-button">
-                                    <a href="#">Plus +</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="main-wrapper-design">
-                            <div class="main-text-bloc-design">
-                                <div class="title-bloc-design">
-                                    <h2>Ergonomie et design</h2>
-                                </div>
-                                <div class="line-up"></div>
-                                <div class="text-bloc-design">
-                                    <p>
-                                        Un site Internet ce n'est évidemment pas que le <strong>développement web</strong>.
-                                        Il faut aussi prendre en compte deux éléments primordiaux : l'ergonomie et le design.
-                                        <strong>L'ergonomie</strong>, c'est avant tout permettre à vos utilisateurs une navigation fluide et
-                                        intuitive sur votre site. C'est aussi lui permettre de trouver immédiatement l'information
-                                        qu'il recherche. N'avez-vous jamais quitté un site web 1 minute après y être entré
-                                        frustré de ne pas trouver ce que vous cherchiez facilement ? L'ergonomie sert à cela : faire
-                                        en sorte que l'utilisateur reste sur votre site.
-                                        Le <strong>design</strong> d'un site, est sans doute aussi important que l'ergonomie de celui-ci.
-                                        En effet toute une réflexion doit être faite avant la phase de conception afin d'allier confort de
-                                        navigation et attractivité.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="main-image-bloc-design">
-                                <div class="skill-circle-1">
-                                    <div class="skill-empty">
-                                        <div class="circle-skill-progress" data-progress="1.86" data-progressfinal="0.5"></div>
-                                        <p>70%</p>
-                                    </div>
-                                    <p>Photoshop</p>
-                                </div>
-                                <div class="skill-circle-2">
-                                    <div class="skill-empty">
-                                        <div class="circle-skill-progress" data-progress="1.6" data-progressfinal="0.5"></div>
-                                        <p>60%</p>
-                                    </div>
-                                    <p>Illustrator</p>
-                                </div>
-                                <div class="skill-circle-3">
-                                    <div class="skill-empty">
-                                        <div class="circle-skill-progress" data-progress="2" data-progressfinal="0.5"></div>
-                                        <p>75%</p>
-                                    </div>
-                                    <p>InDesign</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="main-wrapper-responsive">
-                            <div class="main-text-bloc-responsive">
-                                <div class="title-bloc-responsive">
-                                    <h2>Responsive design</h2>
-                                </div>
-                                <div class="line-up"></div>
-                                <div class="text-bloc-responsive">
-                                    <p>
-                                        Qu'est-ce qu'un site <strong>responsive</strong>? Il s'agit d'un site qui permet
-                                        une navigation sur de nombreux périphériques. En effet, en entrant dans l'ère
-                                        numérique nous avons multiplié les façons de nous connecter à Internet, multiplier
-                                        les usages. Le responsive design c'est dire "mon site est capable de s'adapter à
-                                        tous ces périphériques, à toutes ces tailles d'écrans très différentes". Il est en
-                                        effet important de penser qu'aujourd'hui de plus en plus d'internautes naviguent sur
-                                        le web avec des tablettes ou des smartphones. Le web s'est adapté et la plupart des
-                                        sites sérieux (et pour lesquels la navigation mobile est évidente) sont conçus
-                                        pour être <strong>responsive</strong>. Par exemple ce site est conçu pour une navigation
-                                        sur grand écran, sur laptop, tablette et mobile.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="main-image-bloc-responsive">
-                                <img src="images/imac.png" title="illustration i-mac" alt="illustration responsive" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <div class="main-image-bloc-rea">
+                <img src="images/spray-brush.jpg" title="moon" alt="moon" />
             </div>
-            <div class="section">
-                <section id="realisations">
-                    <div class="main-wrapper-rea">
-                        <div class="main-text-bloc-rea">
-                            <div class="title-bloc-rea">
-                                <h1>Réalisations</h1>
-                                <div class="line-up"></div>
-                            </div>
-                        </div>
-                        <div class="container-rea">
-                            <div class="rea-1">
-                                <div class="inner-rea">
-                                    <img src="images/mmi-bordeaux.png" class="img-crea" alt="Logo MMI Bordeaux" title="Logo MMI Bordeaux" />
-                                    <div class="content-rea">
-                                        <div class="rea-desc">
-                                            <h4>MMI Blog</h4>
-                                            <p>
-                                                Il s'agit d'un projet réalisé en traveaux pratiques à l'IUT Michel de Montaigne
-                                                dans le cadre de ma formation. Je l'ai ensuite amélioré afin de faire
-                                                évoluer le code en structure MVC. Le design a été fait à l'aide de Bootstrap.
-                                            </p>
-                                            <div class="button-more-rea">
-                                                <a href="http://mmiblog.florianmichel-online.com" target="_blank" title="en savoir plus">En savoir +</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="rea-2">
-                                <div class="inner-rea">
-                                    <img src="images/florianmichel-online-maquette.jpg" class="img-crea" alt="Maquette florianmichel-online" title="Projet maquette de site" />
-                                    <div class="content-rea">
-                                        <div class="rea-desc">
-                                            <h4>Maquette Site</h4>
-                                            <p>
-                                                Avant de concevoir ce site web il me fallait le penser, le concevoir "sur papier".
-                                                Comme vous pourrez l'observer en cliquant sur le lien ci-dessous, le design a
-                                                évolué entre temps. En effet il y a toujours des changements à opérer lorsque
-                                                l'on passe de la maquette à l'intégration !
-                                            </p>
-                                            <div class="button-more-rea">
-                                                <a href="http://florianmichel-online.com/images/maquette.jpg" target="_blank" title="en savoir plus">En savoir +</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="rea-3">
-                                <div class="inner-rea">
-                                    <img src="images/site-gite-aubrac.jpg" class="img-crea" alt="Ongle Magnolia Flyer" title="Projet Ongle Magnolia" />
-                                    <div class="content-rea">
-                                        <div class="rea-desc">
-                                            <h4>Site - Gîte coeur d'Aubrac</h4>
-                                            <p>
-                                                Projet réalisé au sein de l'IUT Michel de Montaigne à Bordeaux. L'objectif était de concevoir un site Internet
-                                                et de le référencer le mieux possible sur les mots clés "gîte Aubrac", "gîte coeur d'Aubrac" et gîte "Bradjville".
-                                            </p>
-                                            <div class="button-more-rea">
-                                                <a href="http://coeurdaubrac.fr/michel_florian/index.html" target="_blank" title="en savoir plus">En savoir +</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="main-image-bloc-rea">
-                            <img src="images/spray-brush.jpg" title="moon" alt="moon" />
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="section">
-                <section id="contact">
-                    <div class="main-wrapper-contact">
-                        <div class="main-text-bloc-contact">
-                            <div class="title-bloc-contact">
-                                <h3>Contact</h3>
-                                <div class="line-up"></div>
-                            </div>
-                        </div>
-                        <div class="main-container-contact">
-                            <div class="form-container">
-                                <form action="mail.php" method="post">
-                                    <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" required />
-                                    <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" required />
-                                    <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" required />
-                                    <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message" required></textarea>
-                                    <input type="reset" class="form-input" id="reset_button" value="Réinitialiser" />
-                                    <input type="submit" class="form-input" id="submit_button" value="Envoyer" />
-                                </form>
-                            </div>
-                            <footer class="ending-container">
-                                <div class="end-text-content">
-                                    <h4>Merci de votre visite !</h4>
-                                    <p>Retrouvez-moi également sur les réseaux sociaux</p>
-                                </div>
-                                <div class="socials">
-                                    <div class="social-icon-1">
-                                        <a href="https://plus.google.com/u/0/103291228904643799333/" target="_blank" title="profil Google Plus"><img src="images/g+-full.png" title="Google Plus" alt="icone Google Plus" /></a>
-                                    </div>
-                                    <div class="social-icon-2">
-                                        <a href="https://twitter.com/FlorianMICHEL69" target="_blank" title="profil Twitter"><img src="images/twitter-full.png" title="Twitter" alt="icone Twitter" /></a>
-                                    </div>
-                                    <div class="social-icon-3">
-                                        <a href="http://fr.linkedin.com/pub/florian-michel/88/860/b58/" target="_blank" title="profil Linkedin"><img src="images/linkedin-full.png" title="Linkedin" alt="icone Linkedin" /></a>
-                                    </div>
-                                </div>
-                                <div class="policy">
-                                    <p>Privacy policy - Florian Michel 2014 ©</p>
-                                    <p><a href="mailto:florian.michel69250@gmail.com">florian.michel69250@gmail.com</a></p>
-                                </div>
-                            </footer>
-                        </div>
-                    </div>
-                </section>
-            </div>
+        </div>
+    </section>
+</div>
+<div class="section">
+    <div id="overlay">
+        <div class="confirm_mail">
+            <p>
+                Votre message a bien été envoyé, merci !
+                <span id="xhrErr"></span>
+                <a href="#" title="ok">OK</a>
+            </p>
         </div>
     </div>
+    <section id="contact">
+        <div class="main-wrapper-contact">
+            <div class="main-text-bloc-contact">
+                <div class="title-bloc-contact">
+                    <h3>Contact</h3>
+                    <div class="line-up"></div>
+                </div>
+            </div>
+            <div class="main-container-contact">
+                <div class="form-container">
+                    <form action="" method="post" id="contact_form">
+                        <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" />
+                        <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
+                        <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" />
+                        <span class="tooltip">Ce champ doit contenir un email valide de la forme "mail@mail.mail"</span>
+                        <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" />
+                        <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
+                        <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message"></textarea>
+                        <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
+                        <input type="reset" class="form-input" id="reset_button" value="Réinitialiser" />
+                        <input type="submit" class="form-input" id="submit_button" value="Envoyer" />
+                    </form>
+                </div>
+                <footer class="ending-container">
+                    <div class="end-text-content">
+                        <h4>Merci de votre visite !</h4>
+                        <p>Retrouvez-moi également sur les réseaux sociaux</p>
+                    </div>
+                    <div class="socials">
+                        <div class="social-icon-1">
+                            <a href="https://plus.google.com/u/0/103291228904643799333/" target="_blank" title="profil Google Plus"><img src="images/g+-full.png" title="Google Plus" alt="icone Google Plus" /></a>
+                        </div>
+                        <div class="social-icon-2">
+                            <a href="https://twitter.com/FlorianMICHEL69" target="_blank" title="profil Twitter"><img src="images/twitter-full.png" title="Twitter" alt="icone Twitter" /></a>
+                        </div>
+                        <div class="social-icon-3">
+                            <a href="http://fr.linkedin.com/pub/florian-michel/88/860/b58/" target="_blank" title="profil Linkedin"><img src="images/linkedin-full.png" title="Linkedin" alt="icone Linkedin" /></a>
+                        </div>
+                    </div>
+                    <div class="policy">
+                        <p>Privacy policy - Florian Michel 2014 ©</p>
+                        <p><a href="mailto:florian.michel69250@gmail.com">florian.michel69250@gmail.com</a></p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+</div>
 <!-- Calling scripts -->
     <script type="text/javascript" src="javascript/app.js"></script>
-    <!-- Google Analytics -->
+    <script type="text/javascript" src="javascript/app2.js"></script>
+<!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -412,10 +424,8 @@
         ga('create', 'UA-50635783-1', 'florianmichel-online.com');
         ga('require','displayfeatures');
         ga('send', 'pageview');
-
     </script>
-
-    <!-- Google Analytics -->
+<!-- Google Analytics -->
 <!-- Ending calls -->
 </body>
 </html>
