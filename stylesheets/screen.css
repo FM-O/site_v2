@@ -3296,7 +3296,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   background-color: #ffffff;
   width: 35%;
   height: 25%;
-  font-size: 24px;
+  font-size: 1.2em;
   text-align: center;
   display: table;
   margin: auto;
@@ -3312,7 +3312,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 .confirm_mail a {
   display: block;
   padding: 10px;
-  width: 100px;
+  width: 5em;
   color: #ffffff;
   background-color: #3399ff;
   margin: 10px auto auto auto;
@@ -3327,9 +3327,9 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 .tooltip {
   display: none;
   position: absolute;
-  font-size: 0.6em;
-  font-family: "Helvetica Neue Light";
-  padding: 5px 0 0 5px;
+  font-size: 0.5em;
   text-align: left;
-  color: #7d0f00;
+  font-family: "Helvetica Neue Light";
+  padding: 2px 0 0 5px;
+  color: #be0000;
 }
