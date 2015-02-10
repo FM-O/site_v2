@@ -12,19 +12,33 @@
         }
     }
 
-    function getTooltips(element) {
+    function getToolTip(element){
         while (element = element.nextSibling) {
+
             if (element.className === 'tooltip') {
+
                 return element;
             }
         }
         return false;
     }
+
+    function getAllTooltips() {
+        var spans = document.getElementsByClassName("form-input incorrect"),
+            spansLen = spans.length,
+            result = [];
+
+        for (var i = 0 ; i < spansLen ; i++) {
+            result.push(spans[i].nextElementSibling);
+        }
+        return result;
+    }
+
 	var check = {};
 	
 	check['user_name'] = function(id) {
 		var user_name = document.getElementById(id),
-            tooltipStyle = getTooltips(user_name).style;
+            tooltipStyle = getToolTip(user_name).style;
 		
 		if (user_name.value.length >= 2) {
 			user_name.className = "form-input correct";
@@ -32,14 +46,13 @@
 			return true;
 		} else {
 			user_name.className = "form-input incorrect";
-            tooltipStyle.display = "block";
 			return false
 		}
 	};
 	
 	check['user_mail'] = function(id) {
         var user_mail = document.getElementById(id),
-            tooltipStyle = getTooltips(user_mail).style;
+            tooltipStyle = getToolTip(user_mail).style;
 
         if (user_mail.value.length >= 2 && /^[A-Za-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(user_mail.value)) {
             user_mail.className = "form-input correct";
@@ -47,7 +60,6 @@
             return true;
         } else {
             user_mail.className = "form-input incorrect";
-            tooltipStyle.display = "block";
             return false
         }
     };
@@ -163,7 +175,14 @@
                     setTimeout(function(){
                         submitForm()
                     }, 500);
-				}
+				} else {
+                    var tooltips = getAllTooltips();
+
+                    for (var j = 0 ; j < tooltips.length ; j++) {
+
+                        tooltips[j].style.display = "block";
+                    }
+                }
 
 			}, false);
 			

@@ -3325,7 +3325,8 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 /*** Tooltips ** */
 /* line 1034, ../sass/screen.sass */
 .tooltip {
-  display: block;
+  display: none;
+  position: absolute;
   font-size: 0.6em;
   font-family: "Helvetica Neue Light";
   padding: 5px 0 0 5px;
