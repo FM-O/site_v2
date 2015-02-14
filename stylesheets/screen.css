@@ -2772,7 +2772,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 @media only screen and (max-width: 1550px) {
   /* line 802, ../sass/screen.sass */
   .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact {
-    top: 60px;
+    top: 45px;
   }
 }
 @media only screen and (max-height: 600px) {
@@ -2860,7 +2860,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   display: block;
   width: 98%;
   height: 35px;
-  margin-top: 50px;
+  margin: 50px 0 4px 0;
   border: 1px solid #696868;
   padding: 0 0 0 5px;
 }
@@ -2936,7 +2936,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   font-family: "helvetica neue thin", "Lato", Arial, sans-serif;
   font-weight: 300;
   width: 45%;
-  margin-top: 20px;
+  margin-top: 35px;
   background-color: #ffffff;
   height: 45px;
   float: left;
@@ -3334,4 +3334,10 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   color: #f1f1f1;
   background-color: #272727;
   border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  /* line 1034, ../sass/screen.sass */
+  .tooltip {
+    display: none !important;
+  }
 }
