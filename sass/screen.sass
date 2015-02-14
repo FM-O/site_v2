@@ -803,7 +803,7 @@ header
             position: relative
             top: 80px
             @include respond-to(genBook)
-                top: 60px
+                top: 45px
             @include respond-to(height-less)
                 top: 0
             @include respond-to(handhelds)
@@ -815,7 +815,7 @@ header
     overflow: hidden
     top: 80px
     @include respond-to(genBook)
-        top: 60px
+        top: 45px
     @include respond-to(height-less)
         top: 5px
     @include respond-to(handhelds)
@@ -843,7 +843,7 @@ header
                 display: block
                 width: 98%
                 height: 35px
-                margin-top: 50px
+                margin: 50px 0 4px 0
                 @include respond-to(genBook)
                     margin-top: 35px
                 @include respond-to(height-less)
@@ -868,22 +868,23 @@ header
             font-family: "helvetica neue light", 'Lato', Arial, sans-serif
 #user_mess
     height: 150px
+    padding-top: 5px
     @include respond-to(genBook)
         height: 120px
     @include respond-to(height-less)
         height: 70px
     @include respond-to(handhelds)
         height: 50px
-    padding-top: 5px
 #reset_button
     display: block
     font-size: 1em
     font-family: "helvetica neue thin", 'Lato', Arial, sans-serif
     font-weight: 300
     width: 45%
-    margin-top: 20px
-    background-color: #ffffff
     height: 45px
+    margin-top: 35px
+    padding: 0
+    background-color: #ffffff
     float: left
     @include respond-to(handhelds)
         height: 20px
@@ -1012,7 +1013,7 @@ header
     background-color: #ffffff
     width: 35%
     height: 25%
-    font-size: 24px
+    font-size: 1.2em
     text-align: center
     display: table
     margin: auto
@@ -1024,7 +1025,7 @@ header
     a
         display: block
         padding: 10px
-        width: 100px
+        width: 5em
         color: #ffffff
         background-color: rgba(51,153,255,1)
         margin: 10px auto auto auto
@@ -1032,9 +1033,14 @@ header
             background: darken(#3399FF, 5%)
 /*** Tooltips ***/
 .tooltip
-    display: block
-    font-size: 0.6em
-    font-family: "Helvetica Neue Light"
-    padding: 5px 0 0 5px
+    display: none
+    position: absolute
+    font-size: 0.5em
     text-align: left
-    color: $red-default
+    font-family: "Helvetica Neue Light"
+    padding: 5px
+    color: #f1f1f1
+    background-color: #272727
+    border-radius: 10px
+    @include respond-to(handhelds)
+        display: none !important

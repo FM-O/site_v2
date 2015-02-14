@@ -2772,7 +2772,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 @media only screen and (max-width: 1550px) {
   /* line 802, ../sass/screen.sass */
   .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact {
-    top: 60px;
+    top: 45px;
   }
 }
 @media only screen and (max-height: 600px) {
@@ -2801,7 +2801,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 @media only screen and (max-width: 1550px) {
   /* line 813, ../sass/screen.sass */
   .main-container-contact {
-    top: 60px;
+    top: 45px;
   }
 }
 @media only screen and (max-height: 600px) {
@@ -2860,7 +2860,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   display: block;
   width: 98%;
   height: 35px;
-  margin-top: 50px;
+  margin: 50px 0 4px 0;
   border: 1px solid #696868;
   padding: 0 0 0 5px;
 }
@@ -2936,9 +2936,10 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   font-family: "helvetica neue thin", "Lato", Arial, sans-serif;
   font-weight: 300;
   width: 45%;
-  margin-top: 20px;
-  background-color: #ffffff;
   height: 45px;
+  margin-top: 35px;
+  padding: 0;
+  background-color: #ffffff;
   float: left;
 }
 @media only screen and (max-width: 500px) {
@@ -2949,24 +2950,24 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
     margin-top: 5px;
   }
 }
-/* line 892, ../sass/screen.sass */
+/* line 893, ../sass/screen.sass */
 #reset_button:hover, #submit_button:hover {
   cursor: pointer;
 }
 
-/* line 894, ../sass/screen.sass */
+/* line 895, ../sass/screen.sass */
 #submit_button {
   float: right;
   margin-right: 5px;
 }
 
-/* line 899, ../sass/screen.sass */
+/* line 900, ../sass/screen.sass */
 .ending-container {
   float: right;
   width: 50%;
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 899, ../sass/screen.sass */
+  /* line 900, ../sass/screen.sass */
   .ending-container {
     width: 80%;
     float: inherit !important;
@@ -2974,104 +2975,104 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 899, ../sass/screen.sass */
+  /* line 900, ../sass/screen.sass */
   .ending-container {
     width: 80%;
     float: inherit !important;
     margin: auto;
   }
 }
-/* line 910, ../sass/screen.sass */
+/* line 911, ../sass/screen.sass */
 .ending-container .end-text-content {
   margin-top: 100px;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 910, ../sass/screen.sass */
+  /* line 911, ../sass/screen.sass */
   .ending-container .end-text-content {
     margin-top: 80px;
   }
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 910, ../sass/screen.sass */
+  /* line 911, ../sass/screen.sass */
   .ending-container .end-text-content {
     display: none;
   }
 }
 @media only screen and (max-height: 600px) {
-  /* line 910, ../sass/screen.sass */
+  /* line 911, ../sass/screen.sass */
   .ending-container .end-text-content {
     margin-top: 30px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 910, ../sass/screen.sass */
+  /* line 911, ../sass/screen.sass */
   .ending-container .end-text-content {
     display: none;
   }
 }
-/* line 920, ../sass/screen.sass */
+/* line 921, ../sass/screen.sass */
 .ending-container .end-text-content h4 {
   font-size: 1.8em;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 920, ../sass/screen.sass */
+  /* line 921, ../sass/screen.sass */
   .ending-container .end-text-content h4 {
     font-size: 1.5em;
   }
 }
 @media only screen and (max-width: 1024px) {
-  /* line 920, ../sass/screen.sass */
+  /* line 921, ../sass/screen.sass */
   .ending-container .end-text-content h4 {
     font-size: 1.3em;
   }
 }
-/* line 926, ../sass/screen.sass */
+/* line 927, ../sass/screen.sass */
 .ending-container .end-text-content p {
   font-size: 1em;
   margin-top: 10%;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 926, ../sass/screen.sass */
+  /* line 927, ../sass/screen.sass */
   .ending-container .end-text-content p {
     font-size: 0.8em;
   }
 }
 @media only screen and (max-width: 1024px) {
-  /* line 926, ../sass/screen.sass */
+  /* line 927, ../sass/screen.sass */
   .ending-container .end-text-content p {
     font-size: 0.7em;
   }
 }
 @media only screen and (max-width: 1550px) {
-  /* line 926, ../sass/screen.sass */
+  /* line 927, ../sass/screen.sass */
   .ending-container .end-text-content p {
     margin-top: 5%;
   }
 }
-/* line 936, ../sass/screen.sass */
+/* line 937, ../sass/screen.sass */
 .ending-container .socials {
   width: 100%;
   margin-top: 50px;
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 936, ../sass/screen.sass */
+  /* line 937, ../sass/screen.sass */
   .ending-container .socials {
     margin-top: 80px;
   }
 }
 @media only screen and (max-height: 600px) {
-  /* line 936, ../sass/screen.sass */
+  /* line 937, ../sass/screen.sass */
   .ending-container .socials {
     margin-top: 20px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 936, ../sass/screen.sass */
+  /* line 937, ../sass/screen.sass */
   .ending-container .socials {
     margin-top: 30px;
   }
 }
-/* line 946, ../sass/screen.sass */
+/* line 947, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 {
   display: inline-block;
   vertical-align: middle;
@@ -3093,37 +3094,37 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   transition-duration: 0.2s;
 }
 @media only screen and (max-width: 500px) {
-  /* line 946, ../sass/screen.sass */
+  /* line 947, ../sass/screen.sass */
   .ending-container .socials .social-icon-1 {
     height: 2rem;
     width: 2rem;
   }
 }
-/* line 958, ../sass/screen.sass */
+/* line 959, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 img {
   width: 100%;
 }
-/* line 960, ../sass/screen.sass */
+/* line 961, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 a {
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 964, ../sass/screen.sass */
+/* line 965, ../sass/screen.sass */
 .ending-container .socials .social-icon-1:hover {
   background-color: #99CCCC;
 }
-/* line 967, ../sass/screen.sass */
+/* line 968, ../sass/screen.sass */
 .ending-container .socials .social-icon-0 {
   margin-right: 40px;
 }
 @media only screen and (max-width: 500px) {
-  /* line 967, ../sass/screen.sass */
+  /* line 968, ../sass/screen.sass */
   .ending-container .socials .social-icon-0 {
     margin-right: 10px;
   }
 }
-/* line 946, ../sass/screen.sass */
+/* line 947, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 {
   display: inline-block;
   vertical-align: middle;
@@ -3145,37 +3146,37 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   transition-duration: 0.2s;
 }
 @media only screen and (max-width: 500px) {
-  /* line 946, ../sass/screen.sass */
+  /* line 947, ../sass/screen.sass */
   .ending-container .socials .social-icon-2 {
     height: 2rem;
     width: 2rem;
   }
 }
-/* line 958, ../sass/screen.sass */
+/* line 959, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 img {
   width: 100%;
 }
-/* line 960, ../sass/screen.sass */
+/* line 961, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 a {
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 964, ../sass/screen.sass */
+/* line 965, ../sass/screen.sass */
 .ending-container .socials .social-icon-2:hover {
   background-color: #99CCCC;
 }
-/* line 967, ../sass/screen.sass */
+/* line 968, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 {
   margin-right: 40px;
 }
 @media only screen and (max-width: 500px) {
-  /* line 967, ../sass/screen.sass */
+  /* line 968, ../sass/screen.sass */
   .ending-container .socials .social-icon-1 {
     margin-right: 10px;
   }
 }
-/* line 946, ../sass/screen.sass */
+/* line 947, ../sass/screen.sass */
 .ending-container .socials .social-icon-3 {
   display: inline-block;
   vertical-align: middle;
@@ -3197,80 +3198,80 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   transition-duration: 0.2s;
 }
 @media only screen and (max-width: 500px) {
-  /* line 946, ../sass/screen.sass */
+  /* line 947, ../sass/screen.sass */
   .ending-container .socials .social-icon-3 {
     height: 2rem;
     width: 2rem;
   }
 }
-/* line 958, ../sass/screen.sass */
+/* line 959, ../sass/screen.sass */
 .ending-container .socials .social-icon-3 img {
   width: 100%;
 }
-/* line 960, ../sass/screen.sass */
+/* line 961, ../sass/screen.sass */
 .ending-container .socials .social-icon-3 a {
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 964, ../sass/screen.sass */
+/* line 965, ../sass/screen.sass */
 .ending-container .socials .social-icon-3:hover {
   background-color: #99CCCC;
 }
-/* line 967, ../sass/screen.sass */
+/* line 968, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 {
   margin-right: 40px;
 }
 @media only screen and (max-width: 500px) {
-  /* line 967, ../sass/screen.sass */
+  /* line 968, ../sass/screen.sass */
   .ending-container .socials .social-icon-2 {
     margin-right: 10px;
   }
 }
-/* line 971, ../sass/screen.sass */
+/* line 972, ../sass/screen.sass */
 .ending-container .policy {
   font-size: 0.7em;
   margin-top: 25px;
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 971, ../sass/screen.sass */
+  /* line 972, ../sass/screen.sass */
   .ending-container .policy {
     margin-top: 10px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 971, ../sass/screen.sass */
+  /* line 972, ../sass/screen.sass */
   .ending-container .policy {
     margin-top: 10px;
   }
 }
-/* line 978, ../sass/screen.sass */
+/* line 979, ../sass/screen.sass */
 .ending-container .policy p:last-child {
   font-size: 0.9em;
   margin-top: 10px;
 }
-/* line 981, ../sass/screen.sass */
+/* line 982, ../sass/screen.sass */
 .ending-container .policy p:last-child a {
   color: #99CCCC;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 971, ../sass/screen.sass */
+  /* line 972, ../sass/screen.sass */
   .ending-container .policy {
     font-size: 0.5em;
   }
 }
 
-/* line 988, ../sass/screen.sass */
+/* line 989, ../sass/screen.sass */
 .correct {
   background-color: rgba(150, 237, 103, 0.2);
 }
 
-/* line 991, ../sass/screen.sass */
+/* line 992, ../sass/screen.sass */
 .incorrect {
   background-color: rgba(227, 69, 67, 0.2);
 }
 
-/* line 994, ../sass/screen.sass */
+/* line 995, ../sass/screen.sass */
 #xhrErr {
   font-size: 0.7em;
   margin-top: 5px;
@@ -3279,7 +3280,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   display: none;
 }
 
-/* line 1001, ../sass/screen.sass */
+/* line 1002, ../sass/screen.sass */
 #overlay {
   z-index: 99;
   display: none;
@@ -3291,44 +3292,53 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   background-color: rgba(102, 102, 102, 0.6);
 }
 
-/* line 1011, ../sass/screen.sass */
+/* line 1012, ../sass/screen.sass */
 .confirm_mail {
   background-color: #ffffff;
   width: 35%;
   height: 25%;
-  font-size: 24px;
+  font-size: 1.2em;
   text-align: center;
   display: table;
   margin: auto;
   position: relative;
   top: 30%;
 }
-/* line 1021, ../sass/screen.sass */
+/* line 1022, ../sass/screen.sass */
 .confirm_mail p {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 1024, ../sass/screen.sass */
+/* line 1025, ../sass/screen.sass */
 .confirm_mail a {
   display: block;
   padding: 10px;
-  width: 100px;
+  width: 5em;
   color: #ffffff;
   background-color: #3399ff;
   margin: 10px auto auto auto;
 }
-/* line 1031, ../sass/screen.sass */
+/* line 1032, ../sass/screen.sass */
 .confirm_mail a:active {
   background: #1a8cff;
 }
 
 /*** Tooltips ** */
-/* line 1034, ../sass/screen.sass */
+/* line 1035, ../sass/screen.sass */
 .tooltip {
-  display: block;
-  font-size: 0.6em;
-  font-family: "Helvetica Neue Light";
-  padding: 5px 0 0 5px;
+  display: none;
+  position: absolute;
+  font-size: 0.5em;
   text-align: left;
-  color: #7d0f00;
+  font-family: "Helvetica Neue Light";
+  padding: 5px;
+  color: #f1f1f1;
+  background-color: #272727;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  /* line 1035, ../sass/screen.sass */
+  .tooltip {
+    display: none !important;
+  }
 }
