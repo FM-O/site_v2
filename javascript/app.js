@@ -38,11 +38,11 @@ $(document).ready(function() {
             var $height = window.innerHeight,
                 $width = window.innerWidth;
             var $tip1 = $('.tip-arian-1'),
-            $tip2 = $('.tip-arian-2'),
-            $tip3 = $('.tip-arian-3'),
-            $tip4 = $('.tip-arian-4'),
-            $tip5 = $('.tip-arian-5'),
-            $allTips = $('.tip-arian-accueil');
+                $tip2 = $('.tip-arian-2'),
+                $tip3 = $('.tip-arian-3'),
+                $tip4 = $('.tip-arian-4'),
+                $tip5 = $('.tip-arian-5'),
+                $allTips = $('.tip-arian-accueil');
 
             if(anchorLink == 'home'){
                 $allTips.removeClass('active-tip');
@@ -170,8 +170,8 @@ $(document).ready(function() {
                 $progress = $(this).data('progress'),
                 $progress_final = $(this).data('progressfinal');
 
-            $circle1 = $canvasFull;
-            $color = $canvasFull;
+            var $circle1 = $canvasFull,
+                $color = $canvasFull;
             $currentElem.append($circle1);
             $currentElem.append($color);
 
@@ -218,10 +218,3 @@ $(document).ready(function() {
 
     })(jQuery);
 });
-
-
-
-
-
-
-
