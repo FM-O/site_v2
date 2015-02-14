@@ -2801,7 +2801,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
 @media only screen and (max-width: 1550px) {
   /* line 813, ../sass/screen.sass */
   .main-container-contact {
-    top: 60px;
+    top: 45px;
   }
 }
 @media only screen and (max-height: 600px) {
