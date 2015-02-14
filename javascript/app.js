@@ -170,8 +170,8 @@ $(document).ready(function() {
                 $progress = $(this).data('progress'),
                 $progress_final = $(this).data('progressfinal');
 
-            $circle1 = $canvasFull;
-            $color = $canvasFull;
+            var $circle1 = $canvasFull,
+                $color = $canvasFull;
             $currentElem.append($circle1);
             $currentElem.append($color);
 
