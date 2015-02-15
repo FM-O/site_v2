@@ -405,8 +405,8 @@ header
     top: 20px
     z-index: 99
     display: table
-    width: 80px
-    height: 80px
+    width: 100px
+    height: 100px
     margin: auto
     border-radius: 100%
     border: 1px solid $color-theme-2
@@ -421,6 +421,12 @@ header
         font-size: 1.8em
         display: table-cell
         vertical-align: middle
+        &:hover
+            text-decoration: underline
+    p
+        font-size: 1.4em
+        @extend a
+        color: inherit
 
 //////////////////////////////////////////////////**** ACCUEIL ****//////////////////////////////////////////////////
 
