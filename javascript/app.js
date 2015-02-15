@@ -55,6 +55,12 @@ $(document).ready(function() {
                         value: 'inherit'
                     },
                     {
+                        slide: '.tip-arian-1',
+                        element: '.circle-cv p',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
                         slide:'.tip-arian-1',
                         element:'.circle-cv',
                         property: 'background-color',
@@ -69,6 +75,12 @@ $(document).ready(function() {
                     {
                         slide: '.tip-arian-2',
                         element: '.circle-cv a',
+                        property: 'color',
+                        value: '#FFFFFF'
+                    },
+                    {
+                        slide: '.tip-arian-2',
+                        element: '.circle-cv p',
                         property: 'color',
                         value: '#FFFFFF'
                     },
@@ -96,6 +108,12 @@ $(document).ready(function() {
                         value: 'inherit'
                     },
                     {
+                        slide: '.tip-arian-3',
+                        element: '.circle-cv p',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
                         slide:'.tip-arian-3',
                         element:'.circle-cv',
                         property: 'background-color',
@@ -114,6 +132,12 @@ $(document).ready(function() {
                         value: '#FFFFFF'
                     },
                     {
+                        slide: '.tip-arian-4',
+                        element: '.circle-cv p',
+                        property: 'color',
+                        value: '#FFFFFF'
+                    },
+                    {
                         slide:'.tip-arian-4',
                         element:'.circle-cv',
                         property: 'background-color',
@@ -128,6 +152,12 @@ $(document).ready(function() {
                     {
                         slide: '.tip-arian-5',
                         element: '.circle-cv a',
+                        property: 'color',
+                        value: 'inherit'
+                    },
+                    {
+                        slide: '.tip-arian-5',
+                        element: '.circle-cv p',
                         property: 'color',
                         value: 'inherit'
                     },
@@ -201,7 +231,7 @@ $(document).ready(function() {
         $('.more-skills-button').click(function(){
 
             var sector = $('.main-image-bloc-dev');
-            var $error = $('<p>This link is not yet available</p>');
+            var $error = $('<p>Ce lien n\'est pas encore disponible</p>');
 
             $error.addClass('error-mess');
 
