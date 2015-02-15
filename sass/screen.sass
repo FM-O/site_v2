@@ -187,6 +187,40 @@ body
     font-family: "Helvetica Neue Light", 'Lato', Arial, sans-serif
     font-weight: 300
     font-size: 100%
+    p::selection
+        background: #FFA500 !important
+        color: #ffffff !important
+    img::selection
+        @extend p::selection
+    div::selection
+        @extend p::selection
+    section::selection
+        @extend p::selection
+    h1::selection
+        @extend p::selection
+    h2::selection
+        @extend p::selection
+    h3::selection
+        @extend p::selection
+    h4::selection
+        @extend p::selection
+    a::selection
+        @extend p::selection
+    strong::selection
+        @extend p::selection
+    em::selection
+        @extend p::selection
+    span::selection
+        @extend p::selection
+    canvas::selection
+        @extend p::selection
+    form::selection
+        @extend p::selection
+    input::selection
+        @extend p::selection
+    textarea::selection
+        @extend p::selection
+
     a
         text-decoration: none
         color: $color-theme
