@@ -119,7 +119,7 @@
                     var overlay = document.getElementById('overlay'),
                         aElement = overlay.firstElementChild,
                         actual = aElement.firstElementChild,
-                        errorMess = document.createTextNode('Erreur dans l\'envoi du message !');
+                        errorMess = document.createTextNode('An error occurred in sending the message');
 
                     var value_name = document.getElementById('user_name').value,
                         value_mail = document.getElementById('user_mail').value,
@@ -157,7 +157,7 @@
                             downOverlay();
                         } else if (xhr.readyState == 4 && xhr.status != 200) {
                             var err = document.getElementById('xhrErr'),
-                                txtErr = document.createTextNode('erreur : ' + xhr.statusText);
+                                txtErr = document.createTextNode('error : ' + xhr.statusText);
                             err.appendChild(txtErr);
                             err.style.display  = "block";
 
