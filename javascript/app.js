@@ -250,10 +250,3 @@ $(document).ready(function() {
 
     })(jQuery);
 });
-
-
-
-
-
-
-
