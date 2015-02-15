@@ -213,7 +213,9 @@ $(document).ready(function() {
 
             setTimeout(function(){
                 $error.remove();
-            }, 1400)
+            }, 1400);
+
+            return false;
         });
 
     })(jQuery);
