@@ -231,7 +231,7 @@ $(document).ready(function() {
         $('.more-skills-button').click(function(){
 
             var sector = $('.main-image-bloc-dev');
-            var $error = $('<p>Ce lien n\'est pas encore disponible</p>');
+            var $error = $('<p>This link is not yet available</p>');
 
             $error.addClass('error-mess');
 
