@@ -679,7 +679,6 @@ header
     display: table
     width: 100%
     height: 100%
-    background: url("../images/WP_20140911_023.jpg")
     background-size: cover
     .title-rea
         display: table-cell
@@ -701,12 +700,44 @@ header
                 background: $color-theme-2
                 color: #ffffff
 
-.main-wrapper-realisations2
-    display: table
+.main-wrapper-web
     height: 100%
     width: 100%
-    background: url("../images/montaigne_bordeaux2.jpg")
-    background-size: cover
+    .web-project
+        height: 90%
+        .skew
+            display: block
+            position: absolute
+            width: 0
+            height: 0
+            right: -100%
+            border: 30rem solid #ffffff
+            border-left: 30rem solid transparent
+            border-bottom: 30rem solid transparent
+            z-index: 51
+            @include transition(right)
+            @include transition-duration(1s)
+        p
+            visibility: hidden
+            position: absolute
+            right: -100%
+            width: 33%
+            z-index: 52
+            @include transition(right, 1s)
+
+        .bck-web
+            position: relative
+            z-index: 50
+            height: 100%
+            background: #000000
+            opacity: 0.4
+            @include transition(background, 0.2s)
+        .web-project-inner
+            position: relative
+            z-index: 49
+            height: 100%
+            bottom: 100%
+            background: url("../images/florianmichel-online-maquette.jpg") left no-repeat
 
 
 ///////////////////////////////////////////////**** Contact ****///////////////////////////////////////////////

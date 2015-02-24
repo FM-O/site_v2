@@ -250,3 +250,14 @@ $(document).ready(function() {
 
     })(jQuery);
 });
+
+(function($){
+    $('.web-project').click(function(){
+
+        $('.skew').css('right', '0');
+        $('.bck-web').css('background', 'none');
+        $('#myText').css('visibility', 'visible');
+        $('#myText').css('right', '10%');
+
+    });
+})(jQuery);
