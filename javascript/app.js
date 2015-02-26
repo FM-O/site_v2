@@ -169,6 +169,17 @@ $(document).ready(function() {
                     }
                 ]);
             }
+        },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction) {
+            if (index == 4 && slideIndex == 1 && direction == 'right'){
+                $('.skew').css('display', 'none');
+            }
+
+            if (index == 4 && slideIndex == 2 && direction == 'left'){
+                setTimeout(function(){
+                    $('.skew').css('display', 'block');
+                }, 400);
+            }
         }
     });
 
@@ -254,10 +265,17 @@ $(document).ready(function() {
 (function($){
     $('.web-project').click(function(){
 
-        $('.skew').css('right', '0');
-        $('.bck-web').css('background', 'none');
-        $('#myText').css('visibility', 'visible');
-        $('#myText').css('right', '10%');
+        $('.skew').css('display', 'block');
 
+        setTimeout(function(){
+            $('.skew').css('left', '50%');
+            $('.bck-web').css('background', 'none');
+            setTimeout(function(){
+                $('.skew').css('transform', 'matrix(1, 0, -0.33, 1, 0, 0)')
+            }, 500);
+            setTimeout(function(){
+                $('#myText').fadeIn(300);
+            }, 700);
+        }, 100);
     });
 })(jQuery);

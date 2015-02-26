@@ -706,24 +706,25 @@ header
     .web-project
         height: 90%
         .skew
-            display: block
+            display: none
             position: absolute
-            width: 0
-            height: 0
-            right: -100%
-            border: 30rem solid #ffffff
-            border-left: 30rem solid transparent
-            border-bottom: 30rem solid transparent
+            width: 100%
+            height: 100%
+            background: $color-theme-2
+            left: 110%
+            transform: matrix(1, 0, 0, 1, 0, 0)
             z-index: 51
-            @include transition(right)
-            @include transition-duration(1s)
+            box-shadow: -2px 0 15px #504f4f
+            @include transition(left)
+            @include transition-duration(0.7s)
+            @include transition(transform, 0.5s)
         p
-            visibility: hidden
+            display: none
             position: absolute
-            right: -100%
+            right: 5%
             width: 33%
             z-index: 52
-            @include transition(right, 1s)
+            color: #ffffff
 
         .bck-web
             position: relative
