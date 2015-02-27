@@ -687,8 +687,6 @@ header
         font-size: 2em
         @include respond-to(genBook)
             font-size: 1.3em
-        .test
-            //margin: 0 50px 0 50px
         h1
             width: 20%
             margin: auto
@@ -699,46 +697,65 @@ header
             &:hover
                 background: $color-theme-2
                 color: #ffffff
-
-.main-wrapper-web
-    height: 100%
-    width: 100%
-    .web-project
-        height: 90%
-        .skew
-            display: none
+@for $i from 1 through 2
+    .main-wrapper-web-#{$i}
+        height: 100%
+        width: 100%
+        position: relative
+        .button-project-#{$i}
             position: absolute
+            z-index: 53
+            display: table
+            height: 100%
             width: 100%
-            height: 100%
-            background: $color-theme-2
-            left: 110%
-            transform: matrix(1, 0, 0, 1, 0, 0)
-            z-index: 51
-            box-shadow: -2px 0 15px #504f4f
-            @include transition(left)
-            @include transition-duration(0.7s)
-            @include transition(transform, 0.5s)
-        p
-            display: none
-            position: absolute
-            right: 5%
-            width: 33%
-            z-index: 52
-            color: #ffffff
+            text-align: center
+            .cell-button-#{$i}
+                display: table-cell
+                vertical-align: middle
+                a
+                    padding: 5px 10px 5px 10px
+                    border: 1px solid #ffffff
+                    color: #ffffff
+                    border-radius: 5px
+                    &:hover
+                        background: #ffffff
+                        color: $color-theme-2
+        .web-project-#{$i}
+            height: 90%
+            .skew-#{$i}
+                display: none
+                position: absolute
+                width: 100%
+                height: 100%
+                background: $color-theme-2
+                left: 110%
+                transform: matrix(1, 0, 0, 1, 0, 0)
+                z-index: 51
+                box-shadow: -2px 0 15px #504f4f
+                @include transition(left)
+                @include transition-duration(0.7s)
+                @include transition(transform, 0.5s)
+            p
+                display: none
+                position: absolute
+                right: 5%
+                width: 33%
+                z-index: 52
+                color: #ffffff
 
-        .bck-web
-            position: relative
-            z-index: 50
-            height: 100%
-            background: #000000
-            opacity: 0.4
-            @include transition(background, 0.2s)
-        .web-project-inner
-            position: relative
-            z-index: 49
-            height: 100%
-            bottom: 100%
-            background: url("../images/florianmichel-online-maquette.jpg") left no-repeat
+            .bck-web-#{$i}
+                position: relative
+                z-index: 50
+                height: 100%
+                background: #000000
+                opacity: 0.4
+                @include transition(background, 0.2s)
+            .web-project-inner-#{$i}
+                position: relative
+                z-index: 49
+                height: 100%
+                bottom: 100%
+                background: url("../images/florianmichel-online-maquette.jpg") left no-repeat
 
 
 ///////////////////////////////////////////////**** Contact ****///////////////////////////////////////////////

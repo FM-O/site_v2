@@ -2271,7 +2271,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
     font-size: 1.3em;
   }
 }
-/* line 692, ../sass/screen.sass */
+/* line 690, ../sass/screen.sass */
 .main-wrapper-realisations .title-rea h1, .main-wrapper-realisations .title-rea .main-text-bloc-apropos .title-bloc-apropos h2, .main-text-bloc-apropos .title-bloc-apropos .main-wrapper-realisations .title-rea h2, .main-wrapper-realisations .title-rea .main-text-bloc-apropos .title-bloc-apropos h3, .main-text-bloc-apropos .title-bloc-apropos .main-wrapper-realisations .title-rea h3, .main-wrapper-realisations .title-rea .main-text-bloc-responsive .title-bloc-responsive h2, .main-text-bloc-responsive .title-bloc-responsive .main-wrapper-realisations .title-rea h2, .main-wrapper-realisations .title-rea .main-text-bloc-responsive .title-bloc-responsive h3, .main-text-bloc-responsive .title-bloc-responsive .main-wrapper-realisations .title-rea h3, .main-wrapper-realisations .title-rea .main-text-bloc-dev .title-bloc-dev h2, .main-text-bloc-dev .title-bloc-dev .main-wrapper-realisations .title-rea h2, .main-wrapper-realisations .title-rea .main-text-bloc-dev .title-bloc-dev h3, .main-text-bloc-dev .title-bloc-dev .main-wrapper-realisations .title-rea h3, .main-wrapper-realisations .title-rea .main-text-bloc-design .title-bloc-design h2, .main-text-bloc-design .title-bloc-design .main-wrapper-realisations .title-rea h2, .main-wrapper-realisations .title-rea .main-text-bloc-design .title-bloc-design h3, .main-text-bloc-design .title-bloc-design .main-wrapper-realisations .title-rea h3, .main-wrapper-realisations .title-rea .main-text-bloc-realisations .title-bloc-realisations h2, .main-text-bloc-realisations .title-bloc-realisations .main-wrapper-realisations .title-rea h2, .main-wrapper-realisations .title-rea .main-text-bloc-realisations .title-bloc-realisations h3, .main-text-bloc-realisations .title-bloc-realisations .main-wrapper-realisations .title-rea h3, .main-wrapper-realisations .title-rea .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact h2, .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact .main-wrapper-realisations .title-rea h2, .main-wrapper-realisations .title-rea .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact h3, .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact .main-wrapper-realisations .title-rea h3 {
   width: 20%;
   margin: auto;
@@ -2280,23 +2280,50 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   border-radius: 20px;
   background: #ffffff;
 }
-/* line 699, ../sass/screen.sass */
+/* line 697, ../sass/screen.sass */
 .main-wrapper-realisations .title-rea h1:hover, .main-wrapper-realisations .title-rea .main-text-bloc-apropos .title-bloc-apropos h2:hover, .main-text-bloc-apropos .title-bloc-apropos .main-wrapper-realisations .title-rea h2:hover, .main-wrapper-realisations .title-rea .main-text-bloc-apropos .title-bloc-apropos h3:hover, .main-text-bloc-apropos .title-bloc-apropos .main-wrapper-realisations .title-rea h3:hover, .main-wrapper-realisations .title-rea .main-text-bloc-responsive .title-bloc-responsive h2:hover, .main-text-bloc-responsive .title-bloc-responsive .main-wrapper-realisations .title-rea h2:hover, .main-wrapper-realisations .title-rea .main-text-bloc-responsive .title-bloc-responsive h3:hover, .main-text-bloc-responsive .title-bloc-responsive .main-wrapper-realisations .title-rea h3:hover, .main-wrapper-realisations .title-rea .main-text-bloc-dev .title-bloc-dev h2:hover, .main-text-bloc-dev .title-bloc-dev .main-wrapper-realisations .title-rea h2:hover, .main-wrapper-realisations .title-rea .main-text-bloc-dev .title-bloc-dev h3:hover, .main-text-bloc-dev .title-bloc-dev .main-wrapper-realisations .title-rea h3:hover, .main-wrapper-realisations .title-rea .main-text-bloc-design .title-bloc-design h2:hover, .main-text-bloc-design .title-bloc-design .main-wrapper-realisations .title-rea h2:hover, .main-wrapper-realisations .title-rea .main-text-bloc-design .title-bloc-design h3:hover, .main-text-bloc-design .title-bloc-design .main-wrapper-realisations .title-rea h3:hover, .main-wrapper-realisations .title-rea .main-text-bloc-realisations .title-bloc-realisations h2:hover, .main-text-bloc-realisations .title-bloc-realisations .main-wrapper-realisations .title-rea h2:hover, .main-wrapper-realisations .title-rea .main-text-bloc-realisations .title-bloc-realisations h3:hover, .main-text-bloc-realisations .title-bloc-realisations .main-wrapper-realisations .title-rea h3:hover, .main-wrapper-realisations .title-rea .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact h2:hover, .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact .main-wrapper-realisations .title-rea h2:hover, .main-wrapper-realisations .title-rea .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact h3:hover, .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact .main-wrapper-realisations .title-rea h3:hover {
   background: #99CCCC;
   color: #ffffff;
 }
 
-/* line 703, ../sass/screen.sass */
-.main-wrapper-web {
+/* line 701, ../sass/screen.sass */
+.main-wrapper-web-1 {
   height: 100%;
   width: 100%;
+  position: relative;
 }
-/* line 706, ../sass/screen.sass */
-.main-wrapper-web .web-project {
+/* line 705, ../sass/screen.sass */
+.main-wrapper-web-1 .button-project-1 {
+  position: absolute;
+  z-index: 53;
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+/* line 712, ../sass/screen.sass */
+.main-wrapper-web-1 .button-project-1 .cell-button-1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 715, ../sass/screen.sass */
+.main-wrapper-web-1 .button-project-1 .cell-button-1 a, .main-wrapper-web-1 .button-project-1 .cell-button-1 .circle-cv p, .circle-cv .main-wrapper-web-1 .button-project-1 .cell-button-1 p {
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 5px;
+}
+/* line 720, ../sass/screen.sass */
+.main-wrapper-web-1 .button-project-1 .cell-button-1 a:hover, .main-wrapper-web-1 .button-project-1 .cell-button-1 .circle-cv p:hover, .circle-cv .main-wrapper-web-1 .button-project-1 .cell-button-1 p:hover {
+  background: #ffffff;
+  color: #99CCCC;
+}
+/* line 723, ../sass/screen.sass */
+.main-wrapper-web-1 .web-project-1 {
   height: 90%;
 }
-/* line 708, ../sass/screen.sass */
-.main-wrapper-web .web-project .skew {
+/* line 725, ../sass/screen.sass */
+.main-wrapper-web-1 .web-project-1 .skew-1 {
   display: none;
   position: absolute;
   width: 100%;
@@ -2319,8 +2346,8 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   -webkit-transition: -webkit-transform, 0.5s;
   transition: transform, 0.5s;
 }
-/* line 721, ../sass/screen.sass */
-.main-wrapper-web .web-project p {
+/* line 738, ../sass/screen.sass */
+.main-wrapper-web-1 .web-project-1 p {
   display: none;
   position: absolute;
   right: 5%;
@@ -2328,8 +2355,8 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   z-index: 52;
   color: #ffffff;
 }
-/* line 729, ../sass/screen.sass */
-.main-wrapper-web .web-project .bck-web {
+/* line 746, ../sass/screen.sass */
+.main-wrapper-web-1 .web-project-1 .bck-web-1 {
   position: relative;
   z-index: 50;
   height: 100%;
@@ -2340,8 +2367,8 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   -webkit-transition: background, 0.2s;
   transition: background, 0.2s;
 }
-/* line 736, ../sass/screen.sass */
-.main-wrapper-web .web-project .web-project-inner {
+/* line 753, ../sass/screen.sass */
+.main-wrapper-web-1 .web-project-1 .web-project-inner-1 {
   position: relative;
   z-index: 49;
   height: 100%;
@@ -2349,20 +2376,110 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   background: url("../images/florianmichel-online-maquette.jpg") left no-repeat;
 }
 
+/* line 701, ../sass/screen.sass */
+.main-wrapper-web-2 {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+/* line 705, ../sass/screen.sass */
+.main-wrapper-web-2 .button-project-2 {
+  position: absolute;
+  z-index: 53;
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+/* line 712, ../sass/screen.sass */
+.main-wrapper-web-2 .button-project-2 .cell-button-2 {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 715, ../sass/screen.sass */
+.main-wrapper-web-2 .button-project-2 .cell-button-2 a, .main-wrapper-web-2 .button-project-2 .cell-button-2 .circle-cv p, .circle-cv .main-wrapper-web-2 .button-project-2 .cell-button-2 p {
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 5px;
+}
+/* line 720, ../sass/screen.sass */
+.main-wrapper-web-2 .button-project-2 .cell-button-2 a:hover, .main-wrapper-web-2 .button-project-2 .cell-button-2 .circle-cv p:hover, .circle-cv .main-wrapper-web-2 .button-project-2 .cell-button-2 p:hover {
+  background: #ffffff;
+  color: #99CCCC;
+}
+/* line 723, ../sass/screen.sass */
+.main-wrapper-web-2 .web-project-2 {
+  height: 90%;
+}
+/* line 725, ../sass/screen.sass */
+.main-wrapper-web-2 .web-project-2 .skew-2 {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #99CCCC;
+  left: 110%;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  z-index: 51;
+  box-shadow: -2px 0 15px #504f4f;
+  -moz-transition: left;
+  -o-transition: left;
+  -webkit-transition: left;
+  transition: left;
+  -moz-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+  -moz-transition: -moz-transform, 0.5s;
+  -o-transition: -o-transform, 0.5s;
+  -webkit-transition: -webkit-transform, 0.5s;
+  transition: transform, 0.5s;
+}
+/* line 738, ../sass/screen.sass */
+.main-wrapper-web-2 .web-project-2 p {
+  display: none;
+  position: absolute;
+  right: 5%;
+  width: 33%;
+  z-index: 52;
+  color: #ffffff;
+}
 /* line 746, ../sass/screen.sass */
+.main-wrapper-web-2 .web-project-2 .bck-web-2 {
+  position: relative;
+  z-index: 50;
+  height: 100%;
+  background: #000000;
+  opacity: 0.4;
+  -moz-transition: background, 0.2s;
+  -o-transition: background, 0.2s;
+  -webkit-transition: background, 0.2s;
+  transition: background, 0.2s;
+}
+/* line 753, ../sass/screen.sass */
+.main-wrapper-web-2 .web-project-2 .web-project-inner-2 {
+  position: relative;
+  z-index: 49;
+  height: 100%;
+  bottom: 100%;
+  background: url("../images/florianmichel-online-maquette.jpg") left no-repeat;
+}
+
+/* line 763, ../sass/screen.sass */
 #contact {
   width: 100%;
   height: 100%;
   font-size: 2em;
 }
 @media only screen and (max-width: 500px) and (min-height: 500px) {
-  /* line 746, ../sass/screen.sass */
+  /* line 763, ../sass/screen.sass */
   #contact {
     display: table;
   }
 }
 
-/* line 753, ../sass/screen.sass */
+/* line 770, ../sass/screen.sass */
 .main-wrapper-contact {
   display: block;
   width: 100%;
@@ -2372,7 +2489,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   overflow: hidden;
 }
 @media only screen and (max-width: 500px) and (min-height: 500px) {
-  /* line 753, ../sass/screen.sass */
+  /* line 770, ../sass/screen.sass */
   .main-wrapper-contact {
     display: table-cell;
     vertical-align: middle;
@@ -2408,65 +2525,65 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
     margin: 5px auto 5px auto;
   }
 }
-/* line 765, ../sass/screen.sass */
+/* line 782, ../sass/screen.sass */
 .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact {
   position: relative;
   top: 80px;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 765, ../sass/screen.sass */
+  /* line 782, ../sass/screen.sass */
   .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact {
     top: 45px;
   }
 }
 @media only screen and (max-height: 600px) {
-  /* line 765, ../sass/screen.sass */
+  /* line 782, ../sass/screen.sass */
   .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact {
     top: 0;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 765, ../sass/screen.sass */
+  /* line 782, ../sass/screen.sass */
   .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact {
     top: 10px;
   }
 }
-/* line 774, ../sass/screen.sass */
+/* line 791, ../sass/screen.sass */
 .main-wrapper-contact .main-text-bloc-contact .title-bloc-contact .line-up {
   width: 20rem;
 }
 
-/* line 776, ../sass/screen.sass */
+/* line 793, ../sass/screen.sass */
 .main-container-contact {
   position: relative;
   overflow: hidden;
   top: 80px;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 776, ../sass/screen.sass */
+  /* line 793, ../sass/screen.sass */
   .main-container-contact {
     top: 45px;
   }
 }
 @media only screen and (max-height: 600px) {
-  /* line 776, ../sass/screen.sass */
+  /* line 793, ../sass/screen.sass */
   .main-container-contact {
     top: 5px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 776, ../sass/screen.sass */
+  /* line 793, ../sass/screen.sass */
   .main-container-contact {
     top: 5px;
   }
 }
-/* line 786, ../sass/screen.sass */
+/* line 803, ../sass/screen.sass */
 .main-container-contact .form-container {
   float: left;
   width: 50%;
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 786, ../sass/screen.sass */
+  /* line 803, ../sass/screen.sass */
   .main-container-contact .form-container {
     float: inherit !important;
     width: 80%;
@@ -2474,32 +2591,32 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 786, ../sass/screen.sass */
+  /* line 803, ../sass/screen.sass */
   .main-container-contact .form-container {
     float: inherit !important;
     width: 80%;
     margin: auto;
   }
 }
-/* line 797, ../sass/screen.sass */
+/* line 814, ../sass/screen.sass */
 .main-container-contact .form-container form {
   width: 75%;
   margin: auto;
   overflow: hidden;
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 797, ../sass/screen.sass */
+  /* line 814, ../sass/screen.sass */
   .main-container-contact .form-container form {
     overflow: inherit !important;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 797, ../sass/screen.sass */
+  /* line 814, ../sass/screen.sass */
   .main-container-contact .form-container form {
     overflow: inherit !important;
   }
 }
-/* line 805, ../sass/screen.sass */
+/* line 822, ../sass/screen.sass */
 .main-container-contact .form-container form .form-input {
   display: block;
   width: 98%;
@@ -2509,71 +2626,71 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   padding: 0 0 0 5px;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 805, ../sass/screen.sass */
+  /* line 822, ../sass/screen.sass */
   .main-container-contact .form-container form .form-input {
     margin-top: 35px;
   }
 }
 @media only screen and (max-height: 600px) {
-  /* line 805, ../sass/screen.sass */
+  /* line 822, ../sass/screen.sass */
   .main-container-contact .form-container form .form-input {
     margin-top: 10px;
     height: 30px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 805, ../sass/screen.sass */
+  /* line 822, ../sass/screen.sass */
   .main-container-contact .form-container form .form-input {
     margin-top: 10px;
     height: 20px;
   }
 }
-/* line 820, ../sass/screen.sass */
+/* line 837, ../sass/screen.sass */
 .main-container-contact .form-container ::-webkit-input-placeholder {
   color: #696868;
   font-family: "helvetica neue light", "Lato", Arial, sans-serif;
 }
-/* line 823, ../sass/screen.sass */
+/* line 840, ../sass/screen.sass */
 .main-container-contact .form-container:-moz-placeholder {
   color: #696868;
   font-family: "helvetica neue light", "Lato", Arial, sans-serif;
 }
-/* line 826, ../sass/screen.sass */
+/* line 843, ../sass/screen.sass */
 .main-container-contact .form-container ::-moz-placeholder {
   color: #696868;
   font-family: "helvetica neue light", "Lato", Arial, sans-serif;
 }
-/* line 829, ../sass/screen.sass */
+/* line 846, ../sass/screen.sass */
 .main-container-contact .form-container:-ms-input-placeholder {
   color: #696868;
   font-family: "helvetica neue light", "Lato", Arial, sans-serif;
 }
 
-/* line 832, ../sass/screen.sass */
+/* line 849, ../sass/screen.sass */
 #user_mess {
   height: 150px;
   padding-top: 5px;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 832, ../sass/screen.sass */
+  /* line 849, ../sass/screen.sass */
   #user_mess {
     height: 120px;
   }
 }
 @media only screen and (max-height: 600px) {
-  /* line 832, ../sass/screen.sass */
+  /* line 849, ../sass/screen.sass */
   #user_mess {
     height: 70px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 832, ../sass/screen.sass */
+  /* line 849, ../sass/screen.sass */
   #user_mess {
     height: 50px;
   }
 }
 
-/* line 841, ../sass/screen.sass */
+/* line 858, ../sass/screen.sass */
 #reset_button, #submit_button {
   display: block;
   font-size: 1em;
@@ -2587,31 +2704,31 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   float: left;
 }
 @media only screen and (max-width: 500px) {
-  /* line 841, ../sass/screen.sass */
+  /* line 858, ../sass/screen.sass */
   #reset_button, #submit_button {
     height: 20px;
     font-size: 0.8em;
     margin-top: 5px;
   }
 }
-/* line 856, ../sass/screen.sass */
+/* line 873, ../sass/screen.sass */
 #reset_button:hover, #submit_button:hover {
   cursor: pointer;
 }
 
-/* line 858, ../sass/screen.sass */
+/* line 875, ../sass/screen.sass */
 #submit_button {
   float: right;
   margin-right: 5px;
 }
 
-/* line 863, ../sass/screen.sass */
+/* line 880, ../sass/screen.sass */
 .ending-container {
   float: right;
   width: 50%;
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 863, ../sass/screen.sass */
+  /* line 880, ../sass/screen.sass */
   .ending-container {
     width: 80%;
     float: inherit !important;
@@ -2619,104 +2736,104 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 863, ../sass/screen.sass */
+  /* line 880, ../sass/screen.sass */
   .ending-container {
     width: 80%;
     float: inherit !important;
     margin: auto;
   }
 }
-/* line 874, ../sass/screen.sass */
+/* line 891, ../sass/screen.sass */
 .ending-container .end-text-content {
   margin-top: 100px;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 874, ../sass/screen.sass */
+  /* line 891, ../sass/screen.sass */
   .ending-container .end-text-content {
     margin-top: 80px;
   }
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 874, ../sass/screen.sass */
+  /* line 891, ../sass/screen.sass */
   .ending-container .end-text-content {
     display: none;
   }
 }
 @media only screen and (max-height: 600px) {
-  /* line 874, ../sass/screen.sass */
+  /* line 891, ../sass/screen.sass */
   .ending-container .end-text-content {
     margin-top: 30px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 874, ../sass/screen.sass */
+  /* line 891, ../sass/screen.sass */
   .ending-container .end-text-content {
     display: none;
   }
 }
-/* line 884, ../sass/screen.sass */
+/* line 901, ../sass/screen.sass */
 .ending-container .end-text-content h4 {
   font-size: 1.8em;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 884, ../sass/screen.sass */
+  /* line 901, ../sass/screen.sass */
   .ending-container .end-text-content h4 {
     font-size: 1.5em;
   }
 }
 @media only screen and (max-width: 1024px) {
-  /* line 884, ../sass/screen.sass */
+  /* line 901, ../sass/screen.sass */
   .ending-container .end-text-content h4 {
     font-size: 1.3em;
   }
 }
-/* line 890, ../sass/screen.sass */
+/* line 907, ../sass/screen.sass */
 .ending-container .end-text-content p {
   font-size: 1em;
   margin-top: 10%;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 890, ../sass/screen.sass */
+  /* line 907, ../sass/screen.sass */
   .ending-container .end-text-content p {
     font-size: 0.8em;
   }
 }
 @media only screen and (max-width: 1024px) {
-  /* line 890, ../sass/screen.sass */
+  /* line 907, ../sass/screen.sass */
   .ending-container .end-text-content p {
     font-size: 0.7em;
   }
 }
 @media only screen and (max-width: 1550px) {
-  /* line 890, ../sass/screen.sass */
+  /* line 907, ../sass/screen.sass */
   .ending-container .end-text-content p {
     margin-top: 5%;
   }
 }
-/* line 900, ../sass/screen.sass */
+/* line 917, ../sass/screen.sass */
 .ending-container .socials {
   width: 100%;
   margin-top: 50px;
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 900, ../sass/screen.sass */
+  /* line 917, ../sass/screen.sass */
   .ending-container .socials {
     margin-top: 80px;
   }
 }
 @media only screen and (max-height: 600px) {
-  /* line 900, ../sass/screen.sass */
+  /* line 917, ../sass/screen.sass */
   .ending-container .socials {
     margin-top: 20px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 900, ../sass/screen.sass */
+  /* line 917, ../sass/screen.sass */
   .ending-container .socials {
     margin-top: 30px;
   }
 }
-/* line 910, ../sass/screen.sass */
+/* line 927, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 {
   display: inline-block;
   vertical-align: middle;
@@ -2738,37 +2855,37 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   transition-duration: 0.2s;
 }
 @media only screen and (max-width: 500px) {
-  /* line 910, ../sass/screen.sass */
+  /* line 927, ../sass/screen.sass */
   .ending-container .socials .social-icon-1 {
     height: 2rem;
     width: 2rem;
   }
 }
-/* line 922, ../sass/screen.sass */
+/* line 939, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 img {
   width: 100%;
 }
-/* line 924, ../sass/screen.sass */
+/* line 941, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 a, .ending-container .socials .social-icon-1 .circle-cv p, .circle-cv .ending-container .socials .social-icon-1 p {
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 928, ../sass/screen.sass */
+/* line 945, ../sass/screen.sass */
 .ending-container .socials .social-icon-1:hover {
   background-color: #99CCCC;
 }
-/* line 931, ../sass/screen.sass */
+/* line 948, ../sass/screen.sass */
 .ending-container .socials .social-icon-0 {
   margin-right: 40px;
 }
 @media only screen and (max-width: 500px) {
-  /* line 931, ../sass/screen.sass */
+  /* line 948, ../sass/screen.sass */
   .ending-container .socials .social-icon-0 {
     margin-right: 10px;
   }
 }
-/* line 910, ../sass/screen.sass */
+/* line 927, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 {
   display: inline-block;
   vertical-align: middle;
@@ -2790,37 +2907,37 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   transition-duration: 0.2s;
 }
 @media only screen and (max-width: 500px) {
-  /* line 910, ../sass/screen.sass */
+  /* line 927, ../sass/screen.sass */
   .ending-container .socials .social-icon-2 {
     height: 2rem;
     width: 2rem;
   }
 }
-/* line 922, ../sass/screen.sass */
+/* line 939, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 img {
   width: 100%;
 }
-/* line 924, ../sass/screen.sass */
+/* line 941, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 a, .ending-container .socials .social-icon-2 .circle-cv p, .circle-cv .ending-container .socials .social-icon-2 p {
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 928, ../sass/screen.sass */
+/* line 945, ../sass/screen.sass */
 .ending-container .socials .social-icon-2:hover {
   background-color: #99CCCC;
 }
-/* line 931, ../sass/screen.sass */
+/* line 948, ../sass/screen.sass */
 .ending-container .socials .social-icon-1 {
   margin-right: 40px;
 }
 @media only screen and (max-width: 500px) {
-  /* line 931, ../sass/screen.sass */
+  /* line 948, ../sass/screen.sass */
   .ending-container .socials .social-icon-1 {
     margin-right: 10px;
   }
 }
-/* line 910, ../sass/screen.sass */
+/* line 927, ../sass/screen.sass */
 .ending-container .socials .social-icon-3 {
   display: inline-block;
   vertical-align: middle;
@@ -2842,80 +2959,80 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   transition-duration: 0.2s;
 }
 @media only screen and (max-width: 500px) {
-  /* line 910, ../sass/screen.sass */
+  /* line 927, ../sass/screen.sass */
   .ending-container .socials .social-icon-3 {
     height: 2rem;
     width: 2rem;
   }
 }
-/* line 922, ../sass/screen.sass */
+/* line 939, ../sass/screen.sass */
 .ending-container .socials .social-icon-3 img {
   width: 100%;
 }
-/* line 924, ../sass/screen.sass */
+/* line 941, ../sass/screen.sass */
 .ending-container .socials .social-icon-3 a, .ending-container .socials .social-icon-3 .circle-cv p, .circle-cv .ending-container .socials .social-icon-3 p {
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 928, ../sass/screen.sass */
+/* line 945, ../sass/screen.sass */
 .ending-container .socials .social-icon-3:hover {
   background-color: #99CCCC;
 }
-/* line 931, ../sass/screen.sass */
+/* line 948, ../sass/screen.sass */
 .ending-container .socials .social-icon-2 {
   margin-right: 40px;
 }
 @media only screen and (max-width: 500px) {
-  /* line 931, ../sass/screen.sass */
+  /* line 948, ../sass/screen.sass */
   .ending-container .socials .social-icon-2 {
     margin-right: 10px;
   }
 }
-/* line 935, ../sass/screen.sass */
+/* line 952, ../sass/screen.sass */
 .ending-container .policy {
   font-size: 0.7em;
   margin-top: 25px;
 }
 @media only screen and (max-width: 800px) and (max-height: 1100px) {
-  /* line 935, ../sass/screen.sass */
+  /* line 952, ../sass/screen.sass */
   .ending-container .policy {
     margin-top: 10px;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 935, ../sass/screen.sass */
+  /* line 952, ../sass/screen.sass */
   .ending-container .policy {
     margin-top: 10px;
   }
 }
-/* line 942, ../sass/screen.sass */
+/* line 959, ../sass/screen.sass */
 .ending-container .policy p:last-child {
   font-size: 0.9em;
   margin-top: 10px;
 }
-/* line 945, ../sass/screen.sass */
+/* line 962, ../sass/screen.sass */
 .ending-container .policy p:last-child a, .ending-container .policy p:last-child .circle-cv p, .circle-cv .ending-container .policy p:last-child p {
   color: #99CCCC;
 }
 @media only screen and (max-width: 1550px) {
-  /* line 935, ../sass/screen.sass */
+  /* line 952, ../sass/screen.sass */
   .ending-container .policy {
     font-size: 0.5em;
   }
 }
 
-/* line 952, ../sass/screen.sass */
+/* line 969, ../sass/screen.sass */
 .correct {
   background-color: rgba(150, 237, 103, 0.2);
 }
 
-/* line 955, ../sass/screen.sass */
+/* line 972, ../sass/screen.sass */
 .incorrect {
   background-color: rgba(227, 69, 67, 0.2);
 }
 
-/* line 958, ../sass/screen.sass */
+/* line 975, ../sass/screen.sass */
 #xhrErr {
   font-size: 0.7em;
   margin-top: 5px;
@@ -2924,7 +3041,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   display: none;
 }
 
-/* line 965, ../sass/screen.sass */
+/* line 982, ../sass/screen.sass */
 #overlay {
   z-index: 99;
   display: none;
@@ -2936,7 +3053,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   background-color: rgba(102, 102, 102, 0.6);
 }
 
-/* line 975, ../sass/screen.sass */
+/* line 992, ../sass/screen.sass */
 .confirm_mail {
   background-color: #ffffff;
   width: 35%;
@@ -2948,12 +3065,12 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   position: relative;
   top: 30%;
 }
-/* line 985, ../sass/screen.sass */
+/* line 1002, ../sass/screen.sass */
 .confirm_mail p {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 988, ../sass/screen.sass */
+/* line 1005, ../sass/screen.sass */
 .confirm_mail a, .confirm_mail .circle-cv p, .circle-cv .confirm_mail p {
   display: block;
   padding: 10px;
@@ -2962,13 +3079,13 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   background-color: #3399ff;
   margin: 10px auto auto auto;
 }
-/* line 995, ../sass/screen.sass */
+/* line 1012, ../sass/screen.sass */
 .confirm_mail a:active, .confirm_mail .circle-cv p:active, .circle-cv .confirm_mail p:active {
   background: #1a8cff;
 }
 
 /*** Tooltips ** */
-/* line 998, ../sass/screen.sass */
+/* line 1015, ../sass/screen.sass */
 .tooltip {
   display: none;
   position: absolute;
@@ -2981,7 +3098,7 @@ header nav input[type='checkbox']:not(:checked) ~ .close-menu {
   border-radius: 10px;
 }
 @media only screen and (max-width: 500px) {
-  /* line 998, ../sass/screen.sass */
+  /* line 1015, ../sass/screen.sass */
   .tooltip {
     display: none !important;
   }
