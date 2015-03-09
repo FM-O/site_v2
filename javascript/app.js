@@ -252,43 +252,35 @@ $(document).ready(function() {
 });
 
 (function($){
-    $('.button-project-1').click(function(){
 
-        $(this).fadeOut(100);
+    function skewAnim(i) {
 
-        $('.skew-1').css('display', 'block');
+        $('.button-project-'+i+'').click(function(){
 
-        setTimeout(function(){
-            $('.skew-1').css('left', '50%');
-            $('.bck-web-1').css('background', 'none');
+            $(this).fadeOut(100);
+
+            $('.skew-'+i+'').css('display', 'block');
+
             setTimeout(function(){
-                $('.skew-1').css('transform', 'matrix(1, 0, -0.33, 1, 0, 0)')
-            }, 500);
-            setTimeout(function(){
-                $('.myText-1').fadeIn(300);
-            }, 700);
-        }, 100);
+                $('.skew-'+i+'').css('left', '50%');
+                $('.bck-web-'+i+'').css('background', 'none');
+                setTimeout(function(){
+                    $('.skew-'+i+'').css('transform', 'matrix(1, 0, -0.33, 1, 0, 0)')
+                }, 500);
+                setTimeout(function(){
+                    $('.details-'+i+'').fadeIn(300);
+                }, 700);
+            }, 100);
 
-        return false;
-    });
+            return false;
+        });
+    }
 
-    $('.button-project-2').click(function(){
+    var projects = document.getElementsByClassName('button-project'),
+        projectsLen = projects.length;
 
-        $(this).fadeOut(100);
-
-        $('.skew-2').css('display', 'block');
-
-        setTimeout(function(){
-            $('.skew-2').css('left', '50%');
-            $('.bck-web-2').css('background', 'none');
-            setTimeout(function(){
-                $('.skew-2').css('transform', 'matrix(1, 0, -0.33, 1, 0, 0)')
-            }, 500);
-            setTimeout(function(){
-                $('.myText-2').fadeIn(300);
-            }, 700);
-        }, 100);
-
-        return false;
-    });
+    for (var i = 0 ; i < projectsLen ; i++) {
+        skewAnim(i+1);
+        console.log(i+1);
+    }
 })(jQuery);

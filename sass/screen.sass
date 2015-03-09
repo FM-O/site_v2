@@ -47,6 +47,10 @@ $color-theme-2: #99CCCC
 $bar-color: #ebebeb
 $arian-color: #989797
 
+// LIST BACKGROUDS REA
+
+$backgrounds: laptop, i-mac
+
 /******** MIXINS *********/
 
 //MEDIA QUERIES
@@ -702,7 +706,7 @@ header
         height: 100%
         width: 100%
         position: relative
-        .button-project-#{$i}
+        .button-project-container-#{$i}
             position: absolute
             z-index: 53
             display: table
@@ -725,7 +729,7 @@ header
             .skew-#{$i}
                 display: none
                 position: absolute
-                width: 100%
+                width: 75%
                 height: 100%
                 background: $color-theme-2
                 left: 110%
@@ -735,10 +739,11 @@ header
                 @include transition(left)
                 @include transition-duration(0.7s)
                 @include transition(transform, 0.5s)
-            p
+            .details-#{$i}
                 display: none
                 position: absolute
                 right: 5%
+                top: 25%
                 width: 33%
                 z-index: 52
                 color: #ffffff
@@ -755,7 +760,7 @@ header
                 z-index: 49
                 height: 100%
                 bottom: 100%
-                background: url("../images/florianmichel-online-maquette.jpg") left no-repeat
+                background: url("../images/"+ nth($backgrounds, $i)+".jpg") left no-repeat
 
 
 ///////////////////////////////////////////////**** Contact ****///////////////////////////////////////////////
@@ -801,6 +806,7 @@ header
     @include respond-to(handhelds)
         top: 5px
     .form-container
+        position: relative
         float: left
         width: 50%
         @include respond-to(touch-pad-portrait)
@@ -876,6 +882,51 @@ header
     @extend #reset_button
     float: right
     margin-right: 5px
+
+/* -------------- Loader1 -------------- */
+
+.loader1
+    display: none
+    position: absolute
+    bottom: 7px
+    right: 60px
+    height: 30px
+    width: 30px
+    border-radius: 30px
+    border: 3px solid rgba($color-theme, 0.2)
+
+    -webkit-transform-origin: 50% 50%
+        transform-origin: 50% 50%
+    -webkit-animation: loader1 0.7s linear infinite
+        animation: loader1 3s linear infinite
+
+
+.loader1:after
+    content: ""
+    position: absolute
+    top: -5px
+    left: 10px
+    width: 7px
+    height: 7px
+    border-radius: 5px
+    background-color: #c6c5c5
+
+
+@-webkit-keyframes loader1
+    0%
+        -webkit-transform: rotate(0deg)
+    100%
+        -webkit-transform: rotate(360deg)
+
+
+@keyframes loader1
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+
+
 
 .ending-container
     float: right

@@ -107,6 +107,8 @@
 			addEvent(myForm, 'submit', function(e) {
 				
 				e.preventDefault();
+
+                var loader = document.getElementById('mess_loader');
 				
 				var result = true;
 				
@@ -136,13 +138,15 @@
 
                         var xhr = new XMLHttpRequest();
 
-
                         xhr.open('POST', 'mail.php');
 
                         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
                         xhr.onreadystatechange = function() {
                             if (xhr.readyState == 4 && xhr.status == 200) {
+
+                                //remove loader
+                                loader.style.display = "none";
 
                                 var response = xhr.responseText,
                                 resp = JSON.parse(response);
@@ -156,6 +160,10 @@
                                 actual.lastElementChild.focus();
                                 downOverlay();
                             } else if (xhr.readyState == 4 && xhr.status != 200) {
+
+                                //remove loader
+                                loader.style.display = "none";
+
                                 var err = document.getElementById('xhrErr'),
                                     txtErr = document.createTextNode('erreur : ' + xhr.statusText);
                                 err.appendChild(txtErr);
@@ -171,6 +179,10 @@
 
                         xhr.send('param1=' + value_name + '&param2=' + value_mail + '&param3=' + value_subject + '&param4=' + value_message);
 					}
+                    // Loader displaying
+
+                    loader.style.display = "block";
+
                     setTimeout(function(){
                         submitForm()
                     }, 500);
@@ -199,41 +211,3 @@
 
     desactivateTooltips();
 })();
-/*
-(function(){		
-	
-	function submitForm() {
-		var value_name = document.getElementById('user_name').value,
-			value_mail = document.getElementById('user_mail').value,
-			value_subject = document.getElementById('user_subject').value,
-			value_message = document.getElementById('user_mess').value;
-			
-		var xhr = new XMLHttpRequest();
-		
-		
-		xhr.open('POST', 'mail.php');
-		
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4) {
-				var message = 'email envoyé';
-				var messageError = 'email PAS envoyé';
-				alert('no error detected');
-				document.getElementById('test').innerHTML = '<span>' + message + '</span>';
-			}
-			else {
-				alert('erreur !!!!');
-			}
-		};
-		
-		xhr.send('param1=' + value_name + '&param2=' + value_mail + '&param3=' + value_subject + '&param4=' + value_message);
-	}
-	
-	var myForm = document.getElementById('contact_form');
-	
-	myForm.onsubmit = function() {
-		submitForm();
-		return false;
-	};
-})();*/
