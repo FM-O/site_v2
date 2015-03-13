@@ -108,7 +108,7 @@
 				
 				e.preventDefault();
 
-                //var loader = document.getElementById('mess_loader');
+                var loader = document.getElementById('mess_loader');
 				
 				var result = true;
 				
@@ -146,7 +146,7 @@
                             if (xhr.readyState == 4 && xhr.status == 200) {
 
                                 //remove loader
-                                //loader.style.display = "none";
+                                loader.style.display = "none";
 
                                 var response = xhr.responseText,
                                 resp = JSON.parse(response);
@@ -162,7 +162,7 @@
                             } else if (xhr.readyState == 4 && xhr.status != 200) {
 
                                 //remove loader
-                                //loader.style.display = "none";
+                                loader.style.display = "none";
 
                                 var err = document.getElementById('xhrErr');
                                 if (xhr.statusText != '') {
@@ -188,7 +188,7 @@
 					}
                     // Loader displaying
 
-                    //loader.style.display = "block";
+                    loader.style.display = "block";
 
                     setTimeout(function(){
                         submitForm()
