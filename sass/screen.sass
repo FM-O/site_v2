@@ -782,10 +782,13 @@ header
                                 display: inline-block
                                 vertical-align: top
                 .zoom-gallery
+                    a
+                        outline: none
                     p
                         margin-bottom: 25px
                     img
                         width: 20%
+                        box-shadow: 2px 2px 4px #3a3a3a
 
             .bck-web-#{$i}
                 position: relative
@@ -925,7 +928,7 @@ header
 /* -------------- Loader1 -------------- */
 
 .loader1
-    display: block
+    display: none
     position: absolute
     bottom: 7px
     right: 60px
@@ -933,6 +936,20 @@ header
     width: 30px
     border-radius: 30px
     border: 3px solid rgba($color-theme, 0.6)
+    @include respond-to(genBook)
+        right: 40px
+    @include respond-to(touch-pad-landscape)
+        right: 20px
+    @include respond-to(touch-pad-portrait)
+        bottom: -80px
+        right: 35px
+    @include respond-to(handhelds)
+        height: 15px
+        width: 15px
+        border-radius: 15px
+        border-width: 1px
+        bottom: -28px
+        right: 10px
 
     @include transform-origin(50% 50%)
     //transform-origin: 50% 50%
@@ -949,6 +966,10 @@ header
     height: 7px
     border-radius: 5px
     background-color: white
+    @include respond-to(handhelds)
+        width: 3px
+        height: 3px
+        top: 0
 
 
 @-webkit-keyframes loader1
