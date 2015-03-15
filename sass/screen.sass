@@ -41,6 +41,10 @@ $color-theme: #696868
 $color-theme-2: #99CCCC
 
 $colors-used-list: $color-theme-2, $color-theme
+
+$colors-used-gite: #000, #FFF, #f0bc00, #39d670, #46bed8
+
+$colors-used-magnolia: #000, #FFF, #b31f24
 //---------------------------------------\\
 
 //SKILLS BAR / CIRCLES COLORS / ARIAN COLORS
@@ -50,9 +54,12 @@ $arian-color: #989797
 
 // LIST BACKGROUDS REA
 
-$backgrounds: laptop, i-mac
+$backgrounds: laptop, site-gite-aubrac, graphique, flowers
 
 /******** MIXINS *********/
+
+//Mixin project details
+
 
 //MEDIA QUERIES
 @mixin respond-to($media)
@@ -703,7 +710,7 @@ header
             &:hover
                 background: $color-theme-2
                 color: #ffffff
-@for $i from 1 through 2
+@for $i from 1 through 4
     .main-wrapper-web-#{$i}
         height: 100%
         width: 100%
@@ -753,20 +760,54 @@ header
                 display: none
                 position: absolute
                 right: 5%
-                top: 25%
+                @if $i == 4 // Special constraint for fourth slide
+                    top: 10%
+                    @include respond-to(genBook)
+                        top: 20%
+                    @include respond-to(touch-pad-landscape)
+                        top: 25%
+                    @include respond-to(touch-pad-portrait)
+                        top: 25%
+                @else
+                    top: 25%
                 width: 33%
                 z-index: 52
                 color: #ffffff
+                h3
+                    text-align: center
                 hr
                     width: 75%
                 p
                     font-size: 0.8em
-                    //margin-top: 25px
+                    @if $i == 4 //Special constraint for fourth slide
+                        margin-bottom: 20px
+                @if $i == 2 //Special constraint for second slide
+                    .see-more-project
+                        display: block
+                        color: #FFFFFF
+                        padding: 5px 10px 5px 10px
+                        margin-top: 20px
+                        border: 1px solid #FFFFFF
+                        text-align: center
+                        &:hover
+                            background-color: #FFFFFF
+                            color: $color-theme-2
                 .features
                     margin-top: 30px
                     p
                         margin-bottom: 20px
-                    @for $i from 1 through 2
+                    //Conditionnal for each features lists
+                    $listSelect: 0
+                    @if $i == 1
+                        $listSelect: $colors-used-list
+                    @else if $i == 2
+                        $listSelect: $colors-used-gite
+                    @else if $i == 3
+                        $listSelect: $colors-used-magnolia
+                    @else if $i == 4
+                        $listSelect: $colors-used-magnolia
+
+                    @for $i from 1 through length($listSelect)
                         .feature-#{$i}
                             display: inline-block
                             padding-left: 10px
@@ -774,13 +815,13 @@ header
                                 display: inline-block
                                 width: 25px
                                 height: 25px
-                                //border: 1px solid #FFFFFF
                                 border-radius: 50%
-                                background-color: nth($colors-used-list, $i)
+                                background-color: nth($listSelect, $i)
                                 box-shadow: 4px 4px 6px #3a3a3a
+                                vertical-align: middle
                             p
                                 display: inline-block
-                                vertical-align: top
+                                vertical-align: baseline
                 .zoom-gallery
                     a
                         outline: none
