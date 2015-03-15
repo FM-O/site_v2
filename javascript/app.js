@@ -257,7 +257,7 @@ $(document).ready(function() {
 
         $('.button-project-'+i+'').click(function(){
 
-            $(this).fadeOut(100);
+            $('.button-project-container-'+i+'').fadeOut(100);
 
             $('.skew-'+i+'').css('display', 'block');
 
@@ -265,6 +265,7 @@ $(document).ready(function() {
                 $('.skew-'+i+'').css('left', '50%');
                 $('.bck-web-'+i+'').css('background', 'none');
                 setTimeout(function(){
+                    $('.bck-web-'+i+'').css('z-index', '49');
                     $('.skew-'+i+'').css({
                         'transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
                         '-webkit-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
