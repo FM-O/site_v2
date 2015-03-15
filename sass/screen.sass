@@ -180,6 +180,7 @@ $backgrounds: laptop, i-mac
 html
     font-size: 100%
     -webkit-font-smoothing: antialiased
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004)
     color: $color-theme
     @include respond-to(touch-pad-landscape)
         font-size: 80%
@@ -733,7 +734,7 @@ header
                 height: 100%
                 background: $color-theme-2
                 left: 110%
-                transform: matrix(1, 0, 0, 1, 0, 0)
+                @include transform(matrix(1, 0, 0, 1, 0, 0))
                 z-index: 51
                 box-shadow: -2px 0 15px #504f4f
                 @include transition(left)
@@ -886,19 +887,19 @@ header
 /* -------------- Loader1 -------------- */
 
 .loader1
-    display: none
+    display: block
     position: absolute
     bottom: 7px
     right: 60px
     height: 30px
     width: 30px
     border-radius: 30px
-    border: 3px solid rgba($color-theme, 0.2)
+    border: 3px solid rgba($color-theme, 0.6)
 
-    -webkit-transform-origin: 50% 50%
-        transform-origin: 50% 50%
-    -webkit-animation: loader1 0.7s linear infinite
-        animation: loader1 3s linear infinite
+    @include transform-origin(50% 50%)
+    //transform-origin: 50% 50%
+    @include animation(loader1 0.8s linear infinite)
+    //animation: loader1 3s linear infinite
 
 
 .loader1:after
@@ -909,21 +910,21 @@ header
     width: 7px
     height: 7px
     border-radius: 5px
-    background-color: #c6c5c5
+    background-color: white
 
 
 @-webkit-keyframes loader1
     0%
-        -webkit-transform: rotate(0deg)
+        @include transform(rotate(0deg))
     100%
-        -webkit-transform: rotate(360deg)
+        @include transform(rotate(360deg))
 
 
 @keyframes loader1
     0%
-        transform: rotate(0deg)
+        @include transform(rotate(0deg))
     100%
-        transform: rotate(360deg)
+        @include transform(rotate(360deg))
 
 
 

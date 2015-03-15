@@ -265,7 +265,12 @@ $(document).ready(function() {
                 $('.skew-'+i+'').css('left', '50%');
                 $('.bck-web-'+i+'').css('background', 'none');
                 setTimeout(function(){
-                    $('.skew-'+i+'').css('transform', 'matrix(1, 0, -0.33, 1, 0, 0)')
+                    $('.skew-'+i+'').css({
+                        'transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                        '-webkit-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                        '-ms-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                        '-moz-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)'
+                    });
                 }, 500);
                 setTimeout(function(){
                     $('.details-'+i+'').fadeIn(300);
