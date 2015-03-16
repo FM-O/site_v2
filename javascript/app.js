@@ -169,6 +169,19 @@ $(document).ready(function() {
                     }
                 ]);
             }
+        },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction) {
+
+            if (anchorLink == 'achievements' && slideIndex == 1 && direction == 'right') {
+                $('.circle-cv').css('display', 'none');
+            } else if (anchorLink == 'achievements' && slideIndex == 0 && direction == 'right') {
+                $('.circle-cv').css('display', 'none');
+            }
+        },
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+            if (anchorLink == 'achievements' && slideIndex == 0) {
+                $('.circle-cv').css('display', 'table');
+            }
         }
     });
 

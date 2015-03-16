@@ -707,14 +707,14 @@ header
             border: 1px solid $color-theme-2
             border-radius: 20px
             background: #ffffff
-            &:hover
-                background: $color-theme-2
-                color: #ffffff
 @for $i from 1 through 4
     .main-wrapper-web-#{$i}
         height: 100%
         width: 100%
         position: relative
+        @include text-shadow(1px 1px 1px #535353)
+        @include respond-to(genBook)
+            font-size: 0.8em
         .button-project-container-#{$i}
             position: absolute
             z-index: 53
@@ -763,11 +763,14 @@ header
                 @if $i == 4 // Special constraint for fourth slide
                     top: 10%
                     @include respond-to(genBook)
-                        top: 20%
+                        top: 15%
+                        right: 7%
                     @include respond-to(touch-pad-landscape)
                         top: 25%
                     @include respond-to(touch-pad-portrait)
                         top: 25%
+                @else if $i == 2 // Special constraint for second slide
+                    top: 15%
                 @else
                     top: 25%
                 width: 33%
@@ -777,6 +780,7 @@ header
                     text-align: center
                 hr
                     width: 75%
+                    color: #ffffff
                 p
                     font-size: 0.8em
                     @if $i == 4 //Special constraint for fourth slide
