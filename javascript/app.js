@@ -7,7 +7,7 @@
 $(document).ready(function() {
 
     function animateOnActive(){
-
+    // This function allow to combine multiple properties according to the currently active slide
         if(arguments.length == 1){
             var $modif = arguments[0];
             for(var i=0; i<$modif.length; i++){
@@ -171,7 +171,6 @@ $(document).ready(function() {
             }
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction) {
-
             if (anchorLink == 'achievements' && slideIndex == 1 && direction == 'right') {
                 $('.circle-cv').css('display', 'none');
             } else if (anchorLink == 'achievements' && slideIndex == 0 && direction == 'right') {
@@ -181,6 +180,18 @@ $(document).ready(function() {
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
             if (anchorLink == 'achievements' && slideIndex == 0) {
                 $('.circle-cv').css('display', 'table');
+            }
+        },
+        onLeave: function(index, nextIndex, direction) {
+            var currentUrl = document.URL;
+            /^[a-z0-9\/:._-]+#achievements(\S+)$/.exec(currentUrl);
+
+            if (index == 4 && (direction == 'down' || direction == 'up')) {
+                $('.circle-cv').css('display', 'table');
+            } else if (index == 5 && direction == 'up' && RegExp.$1 != '') {
+                $('.circle-cv').css('display', 'none');
+            } else if (index == 3 && direction == 'down' && RegExp.$1 != '') {
+                $('.circle-cv').css('display', 'none');
             }
         }
     });
@@ -239,6 +250,7 @@ $(document).ready(function() {
 
     })(jQuery);
 
+    //Function not available link deployed
     (function($){
 
         $('.more-skills-button').click(function(){
@@ -263,6 +275,8 @@ $(document).ready(function() {
 
     })(jQuery);
 });
+
+// Animate function for skew slides rea
 
 (function($){
 
