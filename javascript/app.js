@@ -171,9 +171,7 @@ $(document).ready(function() {
             }
         },
         onSlideLeave: function(anchorLink, index, slideIndex, direction) {
-            if (anchorLink == 'achievements' && slideIndex == 1 && direction == 'right') {
-                $('.circle-cv').css('display', 'none');
-            } else if (anchorLink == 'achievements' && slideIndex == 0 && direction == 'right') {
+            if (anchorLink == 'achievements' && slideIndex == 0 && direction == 'right') {
                 $('.circle-cv').css('display', 'none');
             }
         },
@@ -282,29 +280,45 @@ $(document).ready(function() {
 
     function skewAnim(i) {
 
+        var height = window.innerHeight,
+            width = window.innerWidth;
+
         $('.button-project-'+i+'').click(function(){
 
             $('.button-project-container-'+i+'').fadeOut(100);
 
             $('.skew-'+i+'').css('display', 'block');
 
-            setTimeout(function(){
-                $('.skew-'+i+'').css('left', '50%');
-                $('.bck-web-'+i+'').css('background', 'none');
-                setTimeout(function(){
-                    $('.bck-web-'+i+'').css('z-index', '49');
-                    $('.skew-'+i+'').css({
-                        'transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
-                        '-webkit-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
-                        '-ms-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
-                        '-moz-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)'
-                    });
-                }, 500);
-                setTimeout(function(){
-                    $('.details-'+i+'').fadeIn(300);
-                }, 700);
-            }, 100);
+            if(width >= 800 && height >= 500) {
 
+                setTimeout(function(){
+                    $('.skew-'+i+'').css('left', '50%');
+                    $('.bck-web-'+i+'').css('background', 'none');
+                    setTimeout(function(){
+                        $('.bck-web-'+i+'').css('z-index', '49');
+                        $('.skew-'+i+'').css({
+                            'transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                            '-webkit-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                            '-ms-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                            '-moz-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)'
+                        });
+                    }, 500);
+                    setTimeout(function(){
+                        $('.details-'+i+'').fadeIn(300);
+                    }, 700);
+                }, 100);
+            } else {
+                setTimeout(function(){
+                    $('.skew-'+i+'').css('left', '0');
+                    $('.bck-web-'+i+'').css('background', 'none');
+                    setTimeout(function(){
+                        $('.bck-web-'+i+'').css('z-index', '49');
+                    }, 500);
+                    setTimeout(function(){
+                        $('.details-'+i+'').fadeIn(300);
+                    }, 700);
+                }, 100);
+            }
             return false;
         });
     }

@@ -39,6 +39,7 @@ $red-default: #7d0f00
 
 $color-theme: #696868
 $color-theme-2: #99CCCC
+$error-color: rgba(#ff0000, 0.7)
 
 $colors-used-list: $color-theme-2, $color-theme
 
@@ -252,7 +253,7 @@ body
     font-size: 0.5em
     color: #ffffff
     padding: 5px 0 5px 0
-    background-color: rgba(#ff0000, 0.7)
+    background-color: $error-color
     text-align: center
     @include respond-to(genBook)
         position: relative
@@ -688,25 +689,66 @@ header
 ///////////////////////////////////////////////**** Realisations ****///////////////////////////////////////////////
 @include default-slide-style(realisations, realisations)
 
+/////////////////////////////////////////
+/////////// FORBIDDEN DEVICE \\\\\\\\\\\\
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#overlay-warning-device
+    display: none
+    @include respond-to(touch-pad-landscape)
+        display: table
+    height: 100%
+    width: 100%
+    background-color: rgba(0,0,0,0.9)
+    position: absolute
+    z-index: 98
+    #overlay-rea-content
+        display: table-cell
+        vertical-align: middle
+        p
+            text-align: center
+            font-size: 0.6em
+            padding: 20px 60px 20px 60px
+            color: $error-color
+            background-color: #FFFFFF
+        a
+            margin-top: 10px
+            display: block
+            padding: 5px 10px 5px 10px
+            border: 1px solid $color-theme-2
+
+/////////////////////////////////////////
+/////////// FORBIDDEN DEVICE \\\\\\\\\\\\
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 .main-wrapper-realisations
     display: table
     width: 100%
     height: 100%
     background-size: cover
+    @include respond-to(handhelds)
+        display: table !important
     .title-rea
         display: table-cell
         vertical-align: middle
         text-align: center
-        font-size: 2em
-        @include respond-to(genBook)
-            font-size: 1.3em
         h1
+            font-size: 2em
             width: 20%
             margin: auto
             padding: 10px
             border: 1px solid $color-theme-2
             border-radius: 20px
             background: #ffffff
+            @include respond-to(genBook)
+                font-size: 1.3em
+            @include respond-to(touch-pad-portrait)
+                width: 30%
+            @include respond-to(handhelds)
+                width: 65%
+        p
+            margin: 10px
+            color: $color-theme-2
+            font-size: 0.6em
 @for $i from 1 through 4
     .main-wrapper-web-#{$i}
         height: 100%
@@ -752,10 +794,12 @@ header
                 left: 110%
                 @include transform(matrix(1, 0, 0, 1, 0, 0))
                 z-index: 51
-                box-shadow: -2px 0 15px #504f4f
+                @include box-shadow(-2px 0 15px #504f4f)
                 @include transition(left)
                 @include transition-duration(0.7s)
                 @include transition(transform, 0.5s)
+                @include respond-to(handhelds)
+                    width: 100%
             .details-#{$i}
                 display: none
                 position: absolute
@@ -768,14 +812,27 @@ header
                     @include respond-to(touch-pad-landscape)
                         top: 25%
                     @include respond-to(touch-pad-portrait)
-                        top: 25%
+                        top: 35%
+                    @include respond-to(handhelds)
+                        top: 10%
                 @else if $i == 2 // Special constraint for second slide
                     top: 15%
+                    @include respond-to(touch-pad-portrait)
+                        top: 35%
+                    @include respond-to(handhelds)
+                        top: 10%
                 @else
                     top: 25%
+                    @include respond-to(touch-pad-portrait)
+                        top: 35%
+                    @include respond-to(handhelds)
+                        top: 10%
                 width: 33%
                 z-index: 52
                 color: #ffffff
+                @include respond-to(handhelds)
+                    width: 80%
+                    font-size: 0.8em
                 h3
                     text-align: center
                 hr
