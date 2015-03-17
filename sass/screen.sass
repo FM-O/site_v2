@@ -39,7 +39,13 @@ $red-default: #7d0f00
 
 $color-theme: #696868
 $color-theme-2: #99CCCC
+$error-color: rgba(#ff0000, 0.7)
 
+$colors-used-list: $color-theme-2, $color-theme
+
+$colors-used-gite: #000, #FFF, #f0bc00, #39d670, #46bed8
+
+$colors-used-magnolia: #000, #FFF, #b31f24
 //---------------------------------------\\
 
 //SKILLS BAR / CIRCLES COLORS / ARIAN COLORS
@@ -47,7 +53,14 @@ $color-theme-2: #99CCCC
 $bar-color: #ebebeb
 $arian-color: #989797
 
+// LIST BACKGROUDS REA
+
+$backgrounds: laptop, site-gite-aubrac, graphique, flowers
+
 /******** MIXINS *********/
+
+//Mixin project details
+
 
 //MEDIA QUERIES
 @mixin respond-to($media)
@@ -176,6 +189,7 @@ $arian-color: #989797
 html
     font-size: 100%
     -webkit-font-smoothing: antialiased
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004)
     color: $color-theme
     @include respond-to(touch-pad-landscape)
         font-size: 80%
@@ -239,7 +253,7 @@ body
     font-size: 0.5em
     color: #ffffff
     padding: 5px 0 5px 0
-    background-color: rgba(#ff0000, 0.7)
+    background-color: $error-color
     text-align: center
     @include respond-to(genBook)
         position: relative
@@ -673,150 +687,225 @@ header
                 margin-right: 0
 
 ///////////////////////////////////////////////**** Realisations ****///////////////////////////////////////////////
+@include default-slide-style(realisations, realisations)
 
-#realisations
-    width: 100%
-    height: 100%
-    font-size: 2em
-    @include respond-to(high-handhelds)
+/////////////////////////////////////////
+/////////// FORBIDDEN DEVICE \\\\\\\\\\\\
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#overlay-warning-device
+    display: none
+    @include respond-to(touch-pad-landscape)
         display: table
-
-.main-wrapper-rea
-    display: table
+    height: 100%
     width: 100%
-    height: 90%
-    text-align: center
-    font-family: "Helvetica Neue Thin", 'Lato', Arial, sans-serif
-    overflow: hidden
-    @include respond-to(high-handhelds)
+    background-color: rgba(0,0,0,0.9)
+    position: absolute
+    z-index: 98
+    #overlay-rea-content
         display: table-cell
         vertical-align: middle
+        p
+            text-align: center
+            font-size: 0.6em
+            padding: 20px 60px 20px 60px
+            color: $error-color
+            background-color: #FFFFFF
+        a
+            margin-top: 10px
+            display: block
+            padding: 5px 10px 5px 10px
+            border: 1px solid $color-theme-2
 
-.main-text-bloc-rea
-    display: table-row
+/////////////////////////////////////////
+/////////// FORBIDDEN DEVICE \\\\\\\\\\\\
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+.main-wrapper-realisations
+    display: table
     width: 100%
-    @include title-default(rea)
+    height: 100%
+    background-size: cover
     @include respond-to(handhelds)
-        display: block
-    .title-bloc-rea
-        position: relative
-        top: 80px
-        z-index: 99
-        @include respond-to(genBook)
-            top: 40px
-        @include respond-to(handhelds)
-            top: 10px
-        @include respond-to(high-handhelds)
-            top: 0
-        .line-up
-            width: 20rem
-
-.container-rea
-    position: relative
-    z-index: 2
-    @include respond-to(touch-pad-landscape)
-        top: 20px
-        margin: auto
-        @include display-flex
-        //IE FIX
-        display: -ms-flexbox
-        //SAFARI FIX
-        display: -webkit-box
-        //OLD FIREFOX FIX
-        display: -moz-flex
-        @include flex-wrap(wrap)
-    @include respond-to(high-handhelds)
-        padding: 0 0 0 10px
-    @for $i from 1 through 3
-        .rea-#{$i}
-            @include inline-block
-            width: 20rem
-            height: 20rem
-            border: 1px solid $color-theme
-            background-color: #ffffff
+        display: table !important
+    .title-rea
+        display: table-cell
+        vertical-align: middle
+        text-align: center
+        h1
+            font-size: 2em
+            width: 20%
+            margin: auto
             padding: 10px
-            overflow: hidden
+            border: 1px solid $color-theme-2
+            border-radius: 20px
+            background: #ffffff
             @include respond-to(genBook)
-                width: 17rem
-                height: 17rem
-            @include respond-to(handhelds)
-                width: 15rem
-                height: 15rem
-                padding: 0
-            .inner-rea
-                position: relative
-                height: 100%
-                width: 100%
-                img
-                    position: absolute
-                    width: 100%
-                    top: 0
-                    left: 0
-                .content-rea
-                    position: relative
-                    display: table
-                    height: 100%
-                    width: 100%
-                    top: 115%
-                    font-family: "helvetica neue light", 'Lato', Arial, sans-serif
-                    font-size: 0.5em
-                    @include respond-to(genBook)
-                        font-size: 0.4em
-                    color: #ffffff
-                    background-color: rgba(0, 0, 0, 0.85)
-                    @include transition-property(top)
-                    @include transition-duration(0.5s)
-                    .rea-desc
-                        display: table-cell
-                        vertical-align: middle
-                        h4
-                            font-size: 1.2em
-                            width: 50%
-                            margin: auto
-                            padding-bottom: 10px
-                            border-bottom: 1px solid #ffffff
-                            @include respond-to(handhelds)
-                                padding-bottom: 2px
-                        p
-                            padding: 20px
-                            @include respond-to(handhelds)
-                                padding: 5px 10px 5px 10px
-                        .button-more-rea
-                            border: 1px solid #ffffff
-                            width: 50%
-                            margin: auto
-                            a
-                                display: block
-                                color: #ffffff
-                                padding: 10px 0 10px 0
-                                @include respond-to(handhelds)
-                                    padding: 2px 0 2px 0
-                            &:hover
-                                background-color: #ffffff
-                                a
-                                    color: $color-theme-2
-            &:hover
-                .content-rea
-                    top: 0
-        .rea-#{$i - 1}
-            margin-right: 10rem
-            @include respond-to(genBook)
-                margin-right: 5rem
-            @include respond-to(touch-pad-landscape)
-                margin-right: 3rem
+                font-size: 1.3em
             @include respond-to(touch-pad-portrait)
-                margin: 0
+                width: 30%
             @include respond-to(handhelds)
-                margin: 0
+                width: 65%
+        p
+            margin: 10px
+            color: $color-theme-2
+            font-size: 0.6em
+@for $i from 1 through 4
+    .main-wrapper-web-#{$i}
+        height: 100%
+        width: 100%
+        position: relative
+        @include text-shadow(1px 1px 1px #535353)
+        @include respond-to(genBook)
+            font-size: 0.8em
+        .button-project-container-#{$i}
+            position: absolute
+            z-index: 53
+            display: table
+            height: 100%
+            width: 100%
+            text-align: center
+            color: #ffffff
+            .cell-button-#{$i}
+                display: table-cell
+                vertical-align: middle
+                h2
+                    position: relative
+                    font-size: 1.2em
+                hr
+                    width: 20%
+                a
+                    position: relative
+                    top: 10px
+                    padding: 5px 10px 5px 10px
+                    border: 1px solid #ffffff
+                    border-radius: 5px
+                    color: #ffffff
+                    &:hover
+                        background: #ffffff
+                        color: $color-theme-2
+        .web-project-#{$i}
+            height: 90%
+            .skew-#{$i}
+                display: none
+                position: absolute
+                width: 75%
+                height: 100%
+                background: $color-theme-2
+                left: 110%
+                @include transform(matrix(1, 0, 0, 1, 0, 0))
+                z-index: 51
+                @include box-shadow(-2px 0 15px #504f4f)
+                @include transition(left)
+                @include transition-duration(0.7s)
+                @include transition(transform, 0.5s)
+                @include respond-to(handhelds)
+                    width: 100%
+            .details-#{$i}
+                display: none
+                position: absolute
+                right: 5%
+                @if $i == 4 // Special constraint for fourth slide
+                    top: 10%
+                    @include respond-to(genBook)
+                        top: 15%
+                        right: 7%
+                    @include respond-to(touch-pad-landscape)
+                        top: 25%
+                    @include respond-to(touch-pad-portrait)
+                        top: 35%
+                    @include respond-to(handhelds)
+                        top: 10%
+                @else if $i == 2 // Special constraint for second slide
+                    top: 15%
+                    @include respond-to(touch-pad-portrait)
+                        top: 35%
+                    @include respond-to(handhelds)
+                        top: 10%
+                @else
+                    top: 25%
+                    @include respond-to(touch-pad-portrait)
+                        top: 35%
+                    @include respond-to(handhelds)
+                        top: 10%
+                width: 33%
+                z-index: 52
+                color: #ffffff
+                @include respond-to(handhelds)
+                    width: 80%
+                    font-size: 0.8em
+                h3
+                    text-align: center
+                hr
+                    width: 75%
+                    color: #ffffff
+                p
+                    font-size: 0.8em
+                    @if $i == 4 //Special constraint for fourth slide
+                        margin-bottom: 20px
+                @if $i == 2 //Special constraint for second slide
+                    .see-more-project
+                        display: block
+                        color: #FFFFFF
+                        padding: 5px 10px 5px 10px
+                        margin-top: 20px
+                        border: 1px solid #FFFFFF
+                        text-align: center
+                        &:hover
+                            background-color: #FFFFFF
+                            color: $color-theme-2
+                .features
+                    margin-top: 30px
+                    p
+                        margin-bottom: 20px
+                    //Conditionnal for each features lists
+                    $listSelect: 0
+                    @if $i == 1
+                        $listSelect: $colors-used-list
+                    @else if $i == 2
+                        $listSelect: $colors-used-gite
+                    @else if $i == 3
+                        $listSelect: $colors-used-magnolia
+                    @else if $i == 4
+                        $listSelect: $colors-used-magnolia
 
-.main-image-bloc-rea
-    position: absolute
-    z-index: 0
-    top: 0
-    right: 0
-    img
-        float: right
-        width: 80%
+                    @for $i from 1 through length($listSelect)
+                        .feature-#{$i}
+                            display: inline-block
+                            padding-left: 10px
+                            .color-feature
+                                display: inline-block
+                                width: 25px
+                                height: 25px
+                                border-radius: 50%
+                                background-color: nth($listSelect, $i)
+                                box-shadow: 4px 4px 6px #3a3a3a
+                                vertical-align: middle
+                            p
+                                display: inline-block
+                                vertical-align: baseline
+                .zoom-gallery
+                    a
+                        outline: none
+                    p
+                        margin-bottom: 25px
+                    img
+                        width: 20%
+                        box-shadow: 2px 2px 4px #3a3a3a
+
+            .bck-web-#{$i}
+                position: relative
+                z-index: 50
+                height: 100%
+                background: #000000
+                opacity: 0.4
+                @include transition(background, 0.2s)
+            .web-project-inner-#{$i}
+                position: relative
+                z-index: 49
+                height: 100%
+                bottom: 100%
+                background: url("../images/"+ nth($backgrounds, $i)+".jpg") left no-repeat
+
 
 ///////////////////////////////////////////////**** Contact ****///////////////////////////////////////////////
 
@@ -861,6 +950,7 @@ header
     @include respond-to(handhelds)
         top: 5px
     .form-container
+        position: relative
         float: left
         width: 50%
         @include respond-to(touch-pad-portrait)
@@ -936,6 +1026,69 @@ header
     @extend #reset_button
     float: right
     margin-right: 5px
+
+/* -------------- Loader1 -------------- */
+
+.loader1
+    display: none
+    position: absolute
+    bottom: 7px
+    right: 60px
+    height: 30px
+    width: 30px
+    border-radius: 30px
+    border: 3px solid rgba($color-theme, 0.6)
+    @include respond-to(genBook)
+        right: 40px
+    @include respond-to(touch-pad-landscape)
+        right: 20px
+    @include respond-to(touch-pad-portrait)
+        bottom: -80px
+        right: 35px
+    @include respond-to(handhelds)
+        height: 15px
+        width: 15px
+        border-radius: 15px
+        border-width: 1px
+        bottom: -28px
+        right: 10px
+
+    @include transform-origin(50% 50%)
+    //transform-origin: 50% 50%
+    @include animation(loader1 0.8s linear infinite)
+    //animation: loader1 3s linear infinite
+
+
+.loader1:after
+    content: ""
+    position: absolute
+    top: -5px
+    left: 10px
+    width: 7px
+    height: 7px
+    border-radius: 5px
+    background-color: white
+    @include respond-to(handhelds)
+        width: 3px
+        height: 3px
+        top: 0
+
+
+@-webkit-keyframes loader1
+    0%
+        @include transform(rotate(0deg))
+    100%
+        @include transform(rotate(360deg))
+
+
+@keyframes loader1
+    0%
+        @include transform(rotate(0deg))
+    100%
+        @include transform(rotate(360deg))
+
+
+
 
 .ending-container
     float: right

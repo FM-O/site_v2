@@ -7,7 +7,7 @@
 $(document).ready(function() {
 
     function animateOnActive(){
-
+    // This function allow to combine multiple properties according to the currently active slide
         if(arguments.length == 1){
             var $modif = arguments[0];
             for(var i=0; i<$modif.length; i++){
@@ -38,11 +38,11 @@ $(document).ready(function() {
             var $height = window.innerHeight,
                 $width = window.innerWidth;
             var $tip1 = $('.tip-arian-1'),
-                $tip2 = $('.tip-arian-2'),
-                $tip3 = $('.tip-arian-3'),
-                $tip4 = $('.tip-arian-4'),
-                $tip5 = $('.tip-arian-5'),
-                $allTips = $('.tip-arian-accueil');
+            $tip2 = $('.tip-arian-2'),
+            $tip3 = $('.tip-arian-3'),
+            $tip4 = $('.tip-arian-4'),
+            $tip5 = $('.tip-arian-5'),
+            $allTips = $('.tip-arian-accueil');
 
             if(anchorLink == 'home'){
                 $allTips.removeClass('active-tip');
@@ -169,6 +169,28 @@ $(document).ready(function() {
                     }
                 ]);
             }
+        },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction) {
+            if (anchorLink == 'achievements' && slideIndex == 0 && direction == 'right') {
+                $('.circle-cv').css('display', 'none');
+            }
+        },
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+            if (anchorLink == 'achievements' && slideIndex == 0) {
+                $('.circle-cv').css('display', 'table');
+            }
+        },
+        onLeave: function(index, nextIndex, direction) {
+            var currentUrl = document.URL;
+            /^[a-z0-9\/:._-]+#achievements(\S+)$/.exec(currentUrl);
+
+            if (index == 4 && (direction == 'down' || direction == 'up')) {
+                $('.circle-cv').css('display', 'table');
+            } else if (index == 5 && direction == 'up' && RegExp.$1 != '') {
+                $('.circle-cv').css('display', 'none');
+            } else if (index == 3 && direction == 'down' && RegExp.$1 != '') {
+                $('.circle-cv').css('display', 'none');
+            }
         }
     });
 
@@ -226,6 +248,7 @@ $(document).ready(function() {
 
     })(jQuery);
 
+    //Function not available link deployed
     (function($){
 
         $('.more-skills-button').click(function(){
@@ -250,3 +273,61 @@ $(document).ready(function() {
 
     })(jQuery);
 });
+
+// Animate function for skew slides rea
+
+(function($){
+
+    function skewAnim(i) {
+
+        var height = window.innerHeight,
+            width = window.innerWidth;
+
+        $('.button-project-'+i+'').click(function(){
+
+            $('.button-project-container-'+i+'').fadeOut(100);
+
+            $('.skew-'+i+'').css('display', 'block');
+
+            if(width >= 800 && height >= 500) {
+
+                setTimeout(function(){
+                    $('.skew-'+i+'').css('left', '50%');
+                    $('.bck-web-'+i+'').css('background', 'none');
+                    setTimeout(function(){
+                        $('.bck-web-'+i+'').css('z-index', '49');
+                        $('.skew-'+i+'').css({
+                            'transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                            '-webkit-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                            '-ms-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)',
+                            '-moz-transform' : 'matrix(1, 0, -0.33, 1, 0, 0)'
+                        });
+                    }, 500);
+                    setTimeout(function(){
+                        $('.details-'+i+'').fadeIn(300);
+                    }, 700);
+                }, 100);
+            } else {
+                setTimeout(function(){
+                    $('.skew-'+i+'').css('left', '0');
+                    $('.bck-web-'+i+'').css('background', 'none');
+                    setTimeout(function(){
+                        $('.bck-web-'+i+'').css('z-index', '49');
+                    }, 500);
+                    setTimeout(function(){
+                        $('.details-'+i+'').fadeIn(300);
+                    }, 700);
+                }, 100);
+            }
+            return false;
+        });
+    }
+
+    var projects = document.getElementsByClassName('button-project'),
+        projectsLen = projects.length;
+
+    for (var i = 0 ; i < projectsLen ; i++) {
+        skewAnim(i+1);
+        console.log(i+1);
+    }
+})(jQuery);

@@ -22,7 +22,11 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" />
     <link rel="stylesheet" href="javascript/full-plug/jquery.fullPage.css" type="text/css" />
+    <link rel="stylesheet" href="javascript/magnific-popup/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/lightbox.css" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="javascript/lightbox.js"></script>
     <script src="javascript/full-plug/vendors/jquery.easings.min.js"></script>
     <script type="text/javascript" src="javascript/full-plug/vendors/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="javascript/full-plug/jquery.fullPage.js"></script>
@@ -52,6 +56,7 @@
         }
 
         .filter-no-js{
+            z-index: 99;
             position: absolute;
             height: 100%;
             width: 100%;
@@ -62,371 +67,570 @@
     </style>
 </head>
 <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 10);">
-<div id="bloc-page">
-<!--[if IE]>
-<div class="filter-no-js"></div>
-<div class="text-box-no-js">
-    <p>Site experimental - Ce site utilise des normes non supportées par votre navigateur</p>
-    <p>Téléchargez un des navigateurs ci-dessous ou mettez à jour votre navigateur pour naviguer sur mon site</p>
-    <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
-    <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
-</div>
-<![endif]-->
-<noscript>
-    <div class="filter-no-js"></div>
-    <div class="text-box-no-js">
-        <p>Votre navigateur ne supporte pas javascript</p>
-        <p>Activez Javascript ou téléchargez un des navigateurs suivants qui utilisent cette technologie</p>
-        <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
-        <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
-        <a href="http://windows.microsoft.com/fr-fr/internet-explorer/download-ie" target="_blank"><img src="http://www.criticmatters.com/wp-content/uploads/2014/09/ie9-10.png" title="télécharger Internet Explorer" alt="Internet Explorer"/></a>
-    </div>
-</noscript>
-<header>
-    <nav id="myMenu">
-        <input id="menu-button" type="checkbox" />
-        <a class="menu-item" href="#home" title="accueil">Accueil</a>
-        <a class="menu-item" href="#about" title="A propos">A propos</a>
-        <a class="menu-item" href="#skills" title="Compétences">Compétences</a>
-        <a class="menu-item" href="#achievements" title="Réalisations">Réalisations</a>
-        <a class="menu-item" href="#end" title="Contact">Contact</a>
-        <label class="close-menu" for="menu-button"></label>
-    </nav>
-</header>
-<div class="circle-cv">
-    <a href="http://en.florianmichel-online.com" title="English version">EN</a>
-    <p>|</p>
-    <a href="cv.pdf" title="Mon Curriculum Vitae">CV</a>
-</div>
-<div class="arian-content">
-    <div class="arian-fill-accueil">
-        <div class="tip-arian-accueil tip-arian-1 active-tip"><a href="#home"></a></div>
-        <div class="tip-arian-accueil tip-arian-2"><a href="#about"></a></div>
-        <div class="tip-arian-accueil tip-arian-3"><a href="#skills"></a></div>
-        <div class="tip-arian-accueil tip-arian-4"><a href="#achievements"></a></div>
-        <div class="tip-arian-accueil tip-arian-5"><a href="#end"></a></div>
-    </div>
-</div>
-<div id="fullpage">
-<div class="section">
-    <section id="accueil">
-        <div class="main-wrapper-accueil">
-            <div class="title-accueil">
-                <h1>Florian Michel, <strong class="bold-font">développeur web</strong></h1>
+    <div id="bloc-page">
+    <!--[if IE]>
+        <div class="filter-no-js"></div>
+        <div class="text-box-no-js">
+            <p>Site experimental - Ce site utilise des normes non supportées par votre navigateur</p>
+            <p>Téléchargez un des navigateurs ci-dessous ou mettez à jour votre navigateur pour naviguer sur mon site</p>
+            <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
+            <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
+        </div>
+    <![endif]-->
+        <noscript>
+            <div class="filter-no-js"></div>
+            <div class="text-box-no-js">
+                <p>Votre navigateur ne supporte pas javascript</p>
+                <p>Activez Javascript ou téléchargez un des navigateurs suivants qui utilisent cette technologie</p>
+                <a href="https://www.google.fr/chrome/browser/" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Chrome_Logo.svg/1024px-Chrome_Logo.svg.png" title="télécharger google chrome" alt="google chrome"/></a>
+                <a href="https://www.mozilla.org/fr/firefox/new/" target="_blank"><img src="http://blog.bad-wolf.fr/wp-content/uploads/2012/11/firefox-logo-3.5.png" title="télécharger Firefox" alt="Firefox"/></a>
+                <a href="http://windows.microsoft.com/fr-fr/internet-explorer/download-ie" target="_blank"><img src="http://www.criticmatters.com/wp-content/uploads/2014/09/ie9-10.png" title="télécharger Internet Explorer" alt="Internet Explorer"/></a>
             </div>
-            <div class="visit-site-button">
-                <a class="visit-button-link" title="commencer la visite" href="#about"><p>Commencer la visite</p><div class="content-triangle"></div></a>
+        </noscript>
+        <header>
+            <nav id="myMenu">
+                <input id="menu-button" type="checkbox" />
+                <a class="menu-item" href="#home" title="accueil">Accueil</a>
+                <a class="menu-item" href="#about" title="A propos">A propos</a>
+                <a class="menu-item" href="#skills" title="Compétences">Compétences</a>
+                <a class="menu-item" href="#achievements" title="Réalisations">Réalisations</a>
+                <a class="menu-item" href="#end" title="Contact">Contact</a>
+                <label class="close-menu" for="menu-button"></label>
+            </nav>
+        </header>
+        <div class="circle-cv">
+            <a href="http://en.florianmichel-online.com" title="English version">EN</a>
+            <p>|</p>
+            <a href="cv.pdf" title="Mon Curriculum Vitae">CV</a>
+        </div>
+        <div class="arian-content">
+            <div class="arian-fill-accueil">
+                <div class="tip-arian-accueil tip-arian-1 active-tip"><a href="#home"></a></div>
+                <div class="tip-arian-accueil tip-arian-2"><a href="#about"></a></div>
+                <div class="tip-arian-accueil tip-arian-3"><a href="#skills"></a></div>
+                <div class="tip-arian-accueil tip-arian-4"><a href="#achievements"></a></div>
+                <div class="tip-arian-accueil tip-arian-5"><a href="#end"></a></div>
             </div>
         </div>
-    </section>
-</div>
-<div class="section">
-    <section id="apropos">
-        <div class="main-wrapper-apropos">
-            <div class="main-text-bloc-apropos">
-                <div class="title-bloc-apropos">
-                    <h3>Qui suis-je ?</h3>
-                </div>
-                <div class="line-up"></div>
-                <div class="text-bloc-apropos">
-                    <p>
-                        Passionné de nouvelles technologies, je me suis ensuite orienté vers le web, et plus précisément <strong>l'intégration et le
-                        développement</strong>. Voulant créer une vitrine pour mes créations, je me suis
-                        rapidement pris au jeu et j'ai voulu en découvrir toujours davantage. Avec les
-                        langages <em class="em-style"><a href="http://www.alticreation.com/difference-developpeur-front-end-et-developpeur-back-end/" title="qu'est-ce que le Front-end" target="_blank">Front-End</a></em>,
-                        j'ai pu allier mes compétences de graphiste à mon fort intérêt
-                        pour le coté 'technique' du développement.
-                        Ce site est construit selon une logique de minimalisme. En effet, la clarté de
-                        l'information est pour moi une priorité lorsque l'on crée du contenu web. J'ai donc
-                        travaillé mon design autour de 3 axes : <em class="em-style">simplicité</em>,
-                        <em class="em-style">ergonomie</em> et <em class="em-style">clareté</em>. <br />
-                        Vous avez un projet web ? <em class="em-style"><a href="#end" title="contact">Contactez-moi</a></em> et parlons-en ensemble :) <br />
-                        Bonne visite !
-                    </p>
-                </div>
-            </div>
-            <div class="main-image-bloc-apropos">
-                <img src="images/moon.jpg" title="moon" alt="moon" />
-            </div>
-        </div>
-    </section>
-</div>
-<div class="section">
-    <section id="competences">
-        <div class="slide">
-            <div class="main-wrapper-dev">
-                <div class="main-text-bloc-dev">
-                    <div class="title-bloc-dev">
-                        <h2>Développement web</h2>
-                    </div>
-                    <div class="line-up"></div>
-                    <div class="text-bloc-dev">
-                        <p>
-                            Le <strong>développement web</strong>. Bien plus qu'un métier, une véritable passion !
-                            Alors en quoi consiste le métier de développeur web ?
-                            Prenez un café bien chaud, un clavier, et une bonne dose de motivation, car le
-                            développement ce n'est pas que du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Hypertext_Markup_Language" title="le HTML c'est quoi ?" target="_blank">HTML</a></em>
-                            ou du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" title="le CSS c'est quoi ?" target="_blank">CSS</a></em>. Si on peut concevoir qu'il existe de nombreux
-                            outils comme Wix qui permettent de créer facilement un site Internet, il est évident
-                            qu'ils connaissent également des limites. C'est là que nous, <strong>développeurs</strong>, intervenons en
-                            vous proposant des solutions sur mesure ou plus performantes.
-                            <span class="text-display">Quelques unes de mes <strong>compétences</strong> sont détaillées à droite.</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="main-image-bloc-dev">
-                    <div class="skill-bar-1">
-                                    <span class="skill-empty">
-                                        <span class="skill-progress"></span>
-                                    </span>
-                        <p>HTML / CSS</p>
-                    </div>
-                    <div class="skill-bar-2">
-                                    <span class="skill-empty">
-                                        <span class="skill-progress"></span>
-                                    </span>
-                        <p>Javascript</p>
-                    </div>
-                    <div class="skill-bar-3">
-                                    <span class="skill-empty">
-                                        <span class="skill-progress"></span>
-                                    </span>
-                        <p>PHP</p>
-                    </div>
-                    <div class="skill-bar-4">
-                                    <span class="skill-empty">
-                                        <span class="skill-progress"></span>
-                                    </span>
-                        <p>Ruby On Rails</p>
-                    </div>
-                    <div class="more-skills-button">
-                        <a href="#">Plus +</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="main-wrapper-design">
-                <div class="main-text-bloc-design">
-                    <div class="title-bloc-design">
-                        <h2>Ergonomie et design</h2>
-                    </div>
-                    <div class="line-up"></div>
-                    <div class="text-bloc-design">
-                        <p>
-                            Un site Internet ce n'est évidemment pas que le <strong>développement web</strong>.
-                            Il faut aussi prendre en compte deux éléments primordiaux : l'ergonomie et le design.
-                            <strong>L'ergonomie</strong>, c'est avant tout permettre à vos utilisateurs une navigation fluide et
-                            intuitive sur votre site. C'est aussi lui permettre de trouver immédiatement l'information
-                            qu'il recherche. N'avez-vous jamais quitté un site web 1 minute après y être entrer
-                            frustré de ne pas trouver ce que vous cherchiez facilement ? L'ergonomie sert à cela : faire
-                            en sorte que l'utilisateur reste sur votre site.
-                            Le <strong>design</strong> d'un site, est sans doute aussi important que l'ergonomie de celui-ci.
-                            En effet toute une réflexion doit être faite avant la phase de conception afin d'allier confort de
-                            navigation et attractivité.
-                        </p>
-                    </div>
-                </div>
-                <div class="main-image-bloc-design">
-                    <div class="skill-circle-1">
-                        <div class="skill-empty">
-                            <div class="circle-skill-progress" data-progress="1.86" data-progressfinal="0.5"></div>
-                            <p>70%</p>
+        <div id="fullpage">
+            <div class="section">
+                <section id="accueil">
+                    <div class="main-wrapper-accueil">
+                        <div class="title-accueil">
+                            <h1>Florian Michel, <strong class="bold-font">développeur web</strong></h1>
                         </div>
-                        <p>Photoshop</p>
-                    </div>
-                    <div class="skill-circle-2">
-                        <div class="skill-empty">
-                            <div class="circle-skill-progress" data-progress="1.6" data-progressfinal="0.5"></div>
-                            <p>60%</p>
+                        <div class="visit-site-button">
+                            <a class="visit-button-link" title="commencer la visite" href="#about"><p>Commencer la visite</p><div class="content-triangle"></div></a>
                         </div>
-                        <p>Illustrator</p>
+                        <p style="color: #8DBABA; font-size: 0.5em; margin-top: 10px">Beta 1.8 (compatible mobile / tablette)</p>
                     </div>
-                    <div class="skill-circle-3">
-                        <div class="skill-empty">
-                            <div class="circle-skill-progress" data-progress="2" data-progressfinal="0.5"></div>
-                            <p>75%</p>
-                        </div>
-                        <p>InDesign</p>
-                    </div>
-                </div>
+                </section>
             </div>
-        </div>
-        <div class="slide">
-            <div class="main-wrapper-responsive">
-                <div class="main-text-bloc-responsive">
-                    <div class="title-bloc-responsive">
-                        <h2>Responsive design</h2>
-                    </div>
-                    <div class="line-up"></div>
-                    <div class="text-bloc-responsive">
-                        <p>
-                            Qu'est-ce qu'un site <strong>responsive</strong>? Il s'agit d'un site qui permet
-                            une navigation sur de nombreux périphériques. En effet, en entrant dans l'ère
-                            numérique nous avons multiplié les façons de nous connecter à Internet, multiplier
-                            les usages. Le responsive design c'est dire "mon site est capable de s'adapter à
-                            tous ces périphériques, à toutes ces tailles d'écrans très différentes". Il est en
-                            effet important de penser qu'aujourd'hui de plus en plus d'internautes naviguent sur
-                            le web avec des tablettes ou des smartphones. Le web s'est adapté et la plupart des
-                            sites sérieux (et pour lesquels la navigation mobile est évidente) sont conçus
-                            pour être <strong>responsive</strong>. Par exemple ce site est conçu pour une navigation
-                            sur grand écran, sur laptop, tablette et mobile.
-                        </p>
-                    </div>
-                </div>
-                <div class="main-image-bloc-responsive">
-                    <img src="images/imac.png" title="illustration i-mac" alt="illustration responsive" />
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<div class="section">
-    <section id="realisations">
-        <div class="main-wrapper-rea">
-            <div class="main-text-bloc-rea">
-                <div class="title-bloc-rea">
-                    <h1>Réalisations</h1>
-                    <div class="line-up"></div>
-                </div>
-            </div>
-            <div class="container-rea">
-                <div class="rea-1">
-                    <div class="inner-rea">
-                        <img src="images/mmi-bordeaux.png" class="img-crea" alt="Logo MMI Bordeaux" title="Logo MMI Bordeaux" />
-                        <div class="content-rea">
-                            <div class="rea-desc">
-                                <h4>MMI Blog</h4>
+            <div class="section">
+                <section id="apropos">
+                    <div class="main-wrapper-apropos">
+                        <div class="main-text-bloc-apropos">
+                            <div class="title-bloc-apropos">
+                                <h3>Qui suis-je ?</h3>
+                            </div>
+                            <div class="line-up"></div>
+                            <div class="text-bloc-apropos">
                                 <p>
-                                    Il s'agit d'un projet réalisé en traveaux pratiques à l'IUT Michel de Montaigne
-                                    dans le cadre de ma formation. Je l'ai ensuite amélioré afin de faire
-                                    évoluer le code en structure MVC. Le design a été fait à l'aide de Bootstrap.
+                                    Passionné de nouvelles technologies, je me suis ensuite orienté vers le web, et plus précisément <strong>l'intégration et le
+                                    développement</strong>. Voulant créer une vitrine pour mes créations, je me suis
+                                    rapidement pris au jeu et j'ai voulu en découvrir toujours davantage. Avec les
+                                    langages <em class="em-style"><a href="http://www.alticreation.com/difference-developpeur-front-end-et-developpeur-back-end/" title="qu'est-ce que le Front-end" target="_blank">Front-End</a></em>,
+                                    j'ai pu allier mes compétences de graphiste à mon fort intérêt
+                                    pour le coté 'technique' du développement.
+                                    Ce site est construit selon une logique de minimalisme. En effet, la clarté de
+                                    l'information est pour moi une priorité lorsque l'on crée du contenu web. J'ai donc
+                                    travaillé mon design autour de 3 axes : <em class="em-style">simplicité</em>,
+                                    <em class="em-style">ergonomie</em> et <em class="em-style">clareté</em>. <br />
+                                    Vous avez un projet web ? <em class="em-style"><a href="#end" title="contact">Contactez-moi</a></em> et parlons-en ensemble :) <br />
+                                    Bonne visite !
                                 </p>
-                                <div class="button-more-rea">
-                                    <a href="http://mmiblog.florianmichel-online.com" target="_blank" title="en savoir plus">En savoir +</a>
+                            </div>
+                        </div>
+                        <div class="main-image-bloc-apropos">
+                            <img src="images/moon.jpg" title="moon" alt="moon" />
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section">
+                <section id="competences">
+                    <div class="slide">
+                        <div class="main-wrapper-dev">
+                            <div class="main-text-bloc-dev">
+                                <div class="title-bloc-dev">
+                                    <h2>Développement web</h2>
+                                </div>
+                                <div class="line-up"></div>
+                                <div class="text-bloc-dev">
+                                    <p>
+                                        Le <strong>développement web</strong>. Bien plus qu'un métier, une véritable passion !
+                                        Alors en quoi consiste le métier de développeur web ?
+                                        Prenez un café bien chaud, un clavier, et une bonne dose de motivation, car le
+                                        développement ce n'est pas que du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Hypertext_Markup_Language" title="le HTML c'est quoi ?" target="_blank">HTML</a></em>
+                                        ou du <em class="em-style"><a href="http://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" title="le CSS c'est quoi ?" target="_blank">CSS</a></em>. Si on peut concevoir qu'il existe de nombreux
+                                        outils comme Wix qui permettent de créer facilement un site Internet, il est évident
+                                        qu'ils connaissent également des limites. C'est là que nous, <strong>développeurs</strong>, intervenons en
+                                        vous proposant des solutions sur mesure ou plus performantes.
+                                        <span class="text-display">Quelques unes de mes <strong>compétences</strong> sont détaillées à droite.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="main-image-bloc-dev">
+                                <div class="skill-bar-1">
+                                    <span class="skill-empty">
+                                        <span class="skill-progress"></span>
+                                    </span>
+                                    <p>HTML / CSS</p>
+                                </div>
+                                <div class="skill-bar-2">
+                                    <span class="skill-empty">
+                                        <span class="skill-progress"></span>
+                                    </span>
+                                    <p>Javascript</p>
+                                </div>
+                                <div class="skill-bar-3">
+                                    <span class="skill-empty">
+                                        <span class="skill-progress"></span>
+                                    </span>
+                                    <p>PHP</p>
+                                </div>
+                                <div class="skill-bar-4">
+                                    <span class="skill-empty">
+                                        <span class="skill-progress"></span>
+                                    </span>
+                                    <p>Ruby On Rails</p>
+                                </div>
+                                <div class="more-skills-button">
+                                    <a href="#">Plus +</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="rea-2">
-                    <div class="inner-rea">
-                        <img src="images/florianmichel-online-maquette.jpg" class="img-crea" alt="Maquette florianmichel-online" title="Projet maquette de site" />
-                        <div class="content-rea">
-                            <div class="rea-desc">
-                                <h4>Maquette Site</h4>
-                                <p>
-                                    Avant de concevoir ce site web il me fallait le penser, le concevoir "sur papier".
-                                    Comme vous pourrez l'observer en cliquant sur le lien ci-dessous, le design a
-                                    évolué entre temps. En effet il y a toujours des changements à opérer lorsque
-                                    l'on passe de la maquette à l'intégration !
-                                </p>
-                                <div class="button-more-rea">
-                                    <a href="http://florianmichel-online.com/prototype/images/maquette.jpg" target="_blank" title="en savoir plus">En savoir +</a>
+                    <div class="slide">
+                        <div class="main-wrapper-design">
+                            <div class="main-text-bloc-design">
+                                <div class="title-bloc-design">
+                                    <h2>Ergonomie et design</h2>
+                                </div>
+                                <div class="line-up"></div>
+                                <div class="text-bloc-design">
+                                    <p>
+                                        Un site Internet ce n'est évidemment pas que le <strong>développement web</strong>.
+                                        Il faut aussi prendre en compte deux éléments primordiaux : l'ergonomie et le design.
+                                        <strong>L'ergonomie</strong>, c'est avant tout permettre à vos utilisateurs une navigation fluide et
+                                        intuitive sur votre site. C'est aussi lui permettre de trouver immédiatement l'information
+                                        qu'il recherche. N'avez-vous jamais quitté un site web 1 minute après y être entrer
+                                        frustré de ne pas trouver ce que vous cherchiez facilement ? L'ergonomie sert à cela : faire
+                                        en sorte que l'utilisateur reste sur votre site.
+                                        Le <strong>design</strong> d'un site, est sans doute aussi important que l'ergonomie de celui-ci.
+                                        En effet toute une réflexion doit être faite avant la phase de conception afin d'allier confort de
+                                        navigation et attractivité.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="main-image-bloc-design">
+                                <div class="skill-circle-1">
+                                    <div class="skill-empty">
+                                        <div class="circle-skill-progress" data-progress="1.86" data-progressfinal="0.5"></div>
+                                        <p>70%</p>
+                                    </div>
+                                    <p>Photoshop</p>
+                                </div>
+                                <div class="skill-circle-2">
+                                    <div class="skill-empty">
+                                        <div class="circle-skill-progress" data-progress="1.6" data-progressfinal="0.5"></div>
+                                        <p>60%</p>
+                                    </div>
+                                    <p>Illustrator</p>
+                                </div>
+                                <div class="skill-circle-3">
+                                    <div class="skill-empty">
+                                        <div class="circle-skill-progress" data-progress="2" data-progressfinal="0.5"></div>
+                                        <p>75%</p>
+                                    </div>
+                                    <p>InDesign</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="slide">
+                        <div class="main-wrapper-responsive">
+                            <div class="main-text-bloc-responsive">
+                                <div class="title-bloc-responsive">
+                                    <h2>Responsive design</h2>
+                                </div>
+                                <div class="line-up"></div>
+                                <div class="text-bloc-responsive">
+                                    <p>
+                                        Qu'est-ce qu'un site <strong>responsive</strong>? Il s'agit d'un site qui permet
+                                        une navigation sur de nombreux périphériques. En effet, en entrant dans l'ère
+                                        numérique nous avons multiplié les façons de nous connecter à Internet, multiplier
+                                        les usages. Le responsive design c'est dire "mon site est capable de s'adapter à
+                                        tous ces périphériques, à toutes ces tailles d'écrans très différentes". Il est en
+                                        effet important de penser qu'aujourd'hui de plus en plus d'internautes naviguent sur
+                                        le web avec des tablettes ou des smartphones. Le web s'est adapté et la plupart des
+                                        sites sérieux (et pour lesquels la navigation mobile est évidente) sont conçus
+                                        pour être <strong>responsive</strong>. Par exemple ce site est conçu pour une navigation
+                                        sur grand écran, sur laptop, tablette et mobile.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="main-image-bloc-responsive">
+                                <img src="images/imac.png" title="illustration i-mac" alt="illustration responsive" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section">
+                <section id="realisations">
+                <div id="overlay-warning-device">
+                    <div id="overlay-rea-content">
+                        <p>
+                            Cette section est encore en cours de développement pour une adaptation mobile <br />
+                            Il est possible que vous rencontriez des bugs, ou des problèmes d'affichage. <br />
+                            Vous pouvez me signaler tout problème via mon formulaire de contact, afin que je puisse améliorer
+                            votre expérience.
+                            <a href="#">OK</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="rea-3">
-                    <div class="inner-rea">
-                        <img src="images/site-gite-aubrac.jpg" class="img-crea" alt="site web gîte Aubrac" title="site web gîte Aubrac" />
-                        <div class="content-rea">
-                            <div class="rea-desc">
-                                <h4>Site - Gîte coeur d'Aubrac</h4>
-                                <p>
-                                    Projet réalisé au sein de l'IUT Michel de Montaigne à Bordeaux. L'objectif était de concevoir un site Internet
-                                    et de le référencer le mieux possible sur les mots clés "gîte Aubrac", "gîte coeur d'Aubrac" et gîte "Bradjville".
-                                </p>
-                                <div class="button-more-rea">
-                                    <a href="http://coeurdaubrac.fr/michel_florian/index.html" target="_blank" title="en savoir plus">En savoir +</a>
+                    <div class="slide">
+                        <div class="main-wrapper-realisations">
+                            <div class="title-rea">
+                                <div>
+                                    <h1>Réalisations</h1>
+                                    <p>Naviguez avec les flèches droite ou gauche</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="slide">
+                        <div class="main-wrapper-web-1">
+                            <div class="button-project-container-1">
+                                <div class="cell-button-1">
+                                    <h2>Développement web</h2>
+                                    <hr />
+                                    <a href="#" class="button-project button-project-1">Voir le projet</a>
+                                </div>
+                            </div>
+                            <div class="web-project-1">
+                                <div class="bck-web-1"></div>
+                                <div class="web-project-inner-1">
+                                    <div class="details-1">
+                                        <h3>Réalisation du site florianmichel-online.com</h3>
+                                        <hr />
+                                        <p>
+                                            Objectif: réaliser un site vitrine pour mes projets web et graphiques.
+                                        </p>
+                                        <div class="features">
+                                            <p>Couleurs utilisées :</p>
+                                            <div class="feature-1">
+                                                <div class="color-feature"></div>
+                                                <p>#99CCCC</p>
+                                            </div>
+                                            <div class="feature-2">
+                                                <div class="color-feature"></div>
+                                                <p>#696868</p>
+                                            </div>
+                                        </div>
+                                        <div class="zoom-gallery">
+                                            <!--
+
+                                            Width/height ratio of thumbnail and the main image must match to avoid glitches.
+
+                                            If ratios are different, you may add CSS3 opacity transition to the main image to make the change less noticable.
+
+                                             -->
+                                            <p>Illustrations du projet :</p>
+                                            <a href="images/florianmichel-online-maquette.jpg" title="Mockup florianmichel-online" data-source="images/florianmichel-online-maquette.jpg">
+                                                <img src="images/thumbnails/florianmichel-online-maquette-thumb.jpg" alt="Mockup florianmichel-online" />
+                                            </a>
+                                            <a href="images/maquette.jpg" title="Maquette florianmichel-online" data-source="images/maquette-source.jpg">
+                                                <img src="images/thumbnails/maquette-thumb.jpg" alt="Maquette florianmichel-online" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="skew-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="main-wrapper-web-2">
+                            <div class="button-project-container-2">
+                                <div class="cell-button-2">
+                                    <h2>Développement web</h2>
+                                    <hr />
+                                    <a href="#" class="button-project button-project-2">Voir le projet</a>
+                                </div>
+                            </div>
+                            <div class="web-project-2">
+                                <div class="bck-web-2"></div>
+                                <div class="web-project-inner-2">
+                                    <div class="details-2">
+                                        <h3>Réalisation du site gîte coeur d'Aubrac</h3>
+                                        <hr />
+                                        <p>
+                                            Objectif: réalisation et référencement d'un site dans le cadre d'un projet encadré à l'IUT
+                                            Michel de Montaigne à Bordeaux.
+                                        </p>
+                                        <div class="features">
+                                            <p>Couleurs utilisées :</p>
+                                            <div class="feature-1">
+                                                <div class="color-feature"></div>
+                                                <p>#000</p>
+                                            </div>
+                                            <div class="feature-2">
+                                                <div class="color-feature"></div>
+                                                <p>#fff</p>
+                                            </div>
+                                            <div class="feature-3">
+                                                <div class="color-feature"></div>
+                                                <p>#f0bc00</p>
+                                            </div>
+                                            <div class="feature-4">
+                                                <div class="color-feature"></div>
+                                                <p>#39d670</p>
+                                            </div>
+                                            <div class="feature-5">
+                                                <div class="color-feature"></div>
+                                                <p>#46bed8</p>
+                                            </div>
+                                        </div>
+                                        <div class="zoom-gallery">
+                                            <!--
+
+                                            Width/height ratio of thumbnail and the main image must match to avoid glitches.
+
+                                            If ratios are different, you may add CSS3 opacity transition to the main image to make the change less noticable.
+
+                                             -->
+                                            <p>Illustrations du projet :</p>
+                                            <a href="images/site-gite-aubrac.jpg" title="Mockup gîte Aubrac" data-source="images/site-gite-aubrac.jpg">
+                                                <img src="images/thumbnails/site-gite-aubrac-thumb.jpg" alt="Mockup gîte Aubrac" />
+                                            </a>
+                                        </div>
+                                        <a href="http://coeurdaubrac.fr/michel_florian/index.html" title="site gîte Coeur d'Aubrac" class="see-more-project" target="_blank">Voir le site</a>
+                                    </div>
+                                    <div class="skew-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="main-wrapper-web-3">
+                            <div class="button-project-container-3">
+                                <div class="cell-button-3">
+                                    <h2>Conception graphique</h2>
+                                    <hr />
+                                    <a href="#" class="button-project button-project-3">Voir le projet</a>
+                                </div>
+                            </div>
+                            <div class="web-project-3">
+                                <div class="bck-web-3"></div>
+                                <div class="web-project-inner-3">
+                                    <div class="details-3">
+                                        <h3>Réalisation d'un flyer - Ongles Magnolia</h3>
+                                        <hr />
+                                        <p>
+                                            Objectif: réalisation d'un flyer pour l'ouverture de l'enseigne Ongles Magnolia
+                                            à Neuville sur Saône
+                                        </p>
+                                        <div class="features">
+                                            <p>Couleurs utilisées :</p>
+                                            <div class="feature-1">
+                                                <div class="color-feature"></div>
+                                                <p>#000</p>
+                                            </div>
+                                            <div class="feature-2">
+                                                <div class="color-feature"></div>
+                                                <p>#fff</p>
+                                            </div>
+                                            <div class="feature-3">
+                                                <div class="color-feature"></div>
+                                                <p>#b31f24</p>
+                                            </div>
+                                        </div>
+                                        <div class="zoom-gallery">
+                                            <!--
+
+                                            Width/height ratio of thumbnail and the main image must match to avoid glitches.
+
+                                            If ratios are different, you may add CSS3 opacity transition to the main image to make the change less noticable.
+
+                                             -->
+                                            <p>Illustrations du projet :</p>
+                                            <a href="images/ongle-magnolia-flyer.jpg" title="Flyer Ongles Magnolia" data-source="images/ongle-magnolia-flyer.jpg">
+                                                <img src="images/thumbnails/ongle-magnolia-flyer-thumb.jpg" alt="Flyer Ongles Magnolia" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="skew-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="main-wrapper-web-4">
+                            <div class="button-project-container-4">
+                                <div class="cell-button-4">
+                                    <h2>Photographie</h2>
+                                    <hr />
+                                    <a href="#" class="button-project button-project-4">Voir le projet</a>
+                                </div>
+                            </div>
+                            <div class="web-project-4">
+                                <div class="bck-web-4"></div>
+                                <div class="web-project-inner-4">
+                                    <div class="details-4">
+                                        <p>
+                                            Photographe amateur à mes heures perdues, voici quelques une de mes créations !
+                                        </p>
+                                        <div class="zoom-gallery">
+                                            <!--
+
+                                            Width/height ratio of thumbnail and the main image must match to avoid glitches.
+
+                                            If ratios are different, you may add CSS3 opacity transition to the main image to make the change less noticable.
+
+                                             -->
+                                            <a href="images/photos/ble.jpg" title="Blés" data-source="images/photos/ble.jpg">
+                                                <img src="images/photos/thumbnails/ble_thumb.jpg" alt="Photo paysage blés" />
+                                            </a>
+                                            <a href="images/photos/fete_lumiere_lyon.jpg" title="Fete des lumières Lyon" data-source="images/photos/fete_lumiere_lyon.jpg">
+                                                <img src="images/photos/thumbnails/fete_lumiere_lyon_thumb.jpg" alt="Photo Fête des lumières Lyon" />
+                                            </a>
+                                            <a href="images/photos/flowers.jpg" title="flowers" data-source="images/photos/flowers.jpg">
+                                                <img src="images/photos/thumbnails/flowers_thumb.jpg" alt="Photo Fleurs cerisier" />
+                                            </a>
+                                            <a href="images/photos/frozen_lights.jpg" title="Frozen Lights" data-source="images/photos/frozen_lights.jpg">
+                                                <img src="images/photos/thumbnails/frozen_light_thumb.jpg" alt="Photo lumières froides" />
+                                            </a>
+                                            <a href="images/photos/jeunesse_doree.jpg" title="Jeunesse dorée" data-source="images/photos/jeunesse_doree.jpg">
+                                                <img src="images/photos/thumbnails/jeunesse_doree_thumb.jpg" alt="Photo coupe champagne" />
+                                            </a>
+                                            <a href="images/photos/nature_precieuse.jpg" title="Nature précieuse" data-source="images/photos/nature_precieuse.jpg">
+                                                <img src="images/photos/thumbnails/nature_precieuse_thumb.jpg" alt="Photo nature hiver" />
+                                            </a>
+                                            <a href="images/photos/red_purity.jpg" title="Red Purity" data-source="images/photos/red_purity.jpg">
+                                                <img src="images/photos/thumbnails/red_purity_thumb.jpg" alt="Photo rose" />
+                                            </a>
+                                            <a href="images/photos/relay.jpg" title="Relay" data-source="images/photos/relay.jpg">
+                                                <img src="images/photos/thumbnails/relay_thumb.jpg" alt="Photo relais" />
+                                            </a>
+                                            <a href="images/photos/the_letter.jpg" title="The Letter" data-source="images/photos/the_letter.jpg">
+                                                <img src="images/photos/thumbnails/the_letter_thumb.jpg" alt="Photo lettre" />
+                                            </a>
+                                            <a href="images/photos/thirteen_road.jpg" title="Thirteen Road" data-source="images/photos/thirteen_road.jpg">
+                                                <img src="images/photos/thumbnails/thirteen_road_thumb.jpg" alt="Photo route 13" />
+                                            </a>
+                                            <a href="images/photos/water_pryer.jpg" title="Water Pryer" data-source="images/photos/water_pryer.jpg">
+                                                <img src="images/photos/thumbnails/water_pryer_thumb.jpg" alt="Photo eau obturation lente" />
+                                            </a>
+                                            <a href="images/photos/blue_lady.jpg" title="Blue Lady" data-source="images/photos/blue_lady.jpg">
+                                                <img src="images/photos/thumbnails/blue_lady_thumb.jpg" alt="Photo libellule" />
+                                            </a>
+                                            <a href="images/photos/coucher_entreboise.jpg" title="couché entrecoupé" data-source="images/photos/coucher_entreboise.jpg">
+                                                <img src="images/photos/thumbnails/coucher_entreboise_thumb.jpg" alt="Photo couché de soleil" />
+                                            </a>
+                                            <a href="images/photos/couv.jpg" title="corbières" data-source="images/photos/couv.jpg">
+                                                <img src="images/photos/thumbnails/couv_thumb.jpg" alt="Photo Corbières" />
+                                            </a>
+                                            <a href="images/photos/eau_de_vie.jpg" title="Eau de vie" data-source="images/photos/eau_de_vie.jpg">
+                                                <img src="images/photos/thumbnails/eau_de_vie_thumb.jpg" alt="Photo Nature" />
+                                            </a>
+                                            <a href="images/photos/flower_yellow_red.jpg" title="Fleur jaune et rouge" data-source="images/photos/flower_yellow_red.jpg">
+                                                <img src="images/photos/thumbnails/flower_yellow_red_thumb.jpg" alt="Photo Fleur Jaune et Rouge" />
+                                            </a>
+                                            <a href="images/photos/sunshine.jpg" title="Sunshine" data-source="images/photos/sunshine.jpg">
+                                                <img src="images/photos/thumbnails/sunshine_thumb.jpg" alt="Photo couché de soleil" />
+                                            </a>
+                                            <a href="images/photos/two_worlds.jpg" title="Two Worlds" data-source="images/photos/two_worlds.jpg">
+                                                <img src="images/photos/thumbnails/two_worlds_thumb.jpg" alt="Photo light painting" />
+                                            </a>
+                                            <a href="images/photos/vulcan.jpg" title="Vulcan" data-source="images/photos/vulcan.jpg">
+                                                <img src="images/photos/thumbnails/vulcan_thumb.jpg" alt="Photo eau light painting" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="skew-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section">
+                <div id="overlay">
+                    <div class="confirm_mail">
+                        <p>
+                            Votre message a bien été envoyé, merci !
+                            <span id="xhrErr"></span>
+                            <a href="#" title="ok">OK</a>
+                        </p>
+                    </div>
                 </div>
+                <section id="contact">
+                    <div class="main-wrapper-contact">
+                        <div class="main-text-bloc-contact">
+                            <div class="title-bloc-contact">
+                                <h3>Contact</h3>
+                                <div class="line-up"></div>
+                            </div>
+                        </div>
+                        <div class="main-container-contact">
+                            <div class="form-container">
+                                <form method="post" id="contact_form">
+                                    <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" />
+                                    <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
+                                    <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" />
+                                    <span class="tooltip">Ce champ doit contenir un email valide de la forme "mail@mail.mail"</span>
+                                    <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" />
+                                    <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
+                                    <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message"></textarea>
+                                    <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
+                                    <input type="reset" class="form-input" id="reset_button" value="Réinitialiser" />
+                                    <input type="submit" class="form-input" id="submit_button" value="Envoyer" />
+                                </form>
+                                <div class="box">
+                                    <div class="loader1" id="mess_loader"></div>
+                                </div>
+                            </div>
+                            <footer class="ending-container">
+                                <div class="end-text-content">
+                                    <h4>Merci de votre visite !</h4>
+                                    <p>Retrouvez-moi également sur les réseaux sociaux</p>
+                                </div>
+                                <div class="socials">
+                                    <div class="social-icon-1">
+                                        <a href="https://plus.google.com/u/0/103291228904643799333/" target="_blank" title="profil Google Plus"><img src="images/g+-full.png" title="Google Plus" alt="icone Google Plus" /></a>
+                                    </div>
+                                    <div class="social-icon-2">
+                                        <a href="https://twitter.com/FlorianMICHEL69" target="_blank" title="profil Twitter"><img src="images/twitter-full.png" title="Twitter" alt="icone Twitter" /></a>
+                                    </div>
+                                    <div class="social-icon-3">
+                                        <a href="http://fr.linkedin.com/pub/florian-michel/88/860/b58/" target="_blank" title="profil Linkedin"><img src="images/linkedin-full.png" title="Linkedin" alt="icone Linkedin" /></a>
+                                    </div>
+                                </div>
+                                <div class="policy">
+                                    <p>Privacy policy - Florian Michel 2014 ©</p>
+                                    <p><a href="mailto:florian.michel69250@gmail.com">florian.michel69250@gmail.com</a></p>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="main-image-bloc-rea">
-                <img src="images/spray-brush.jpg" title="moon" alt="moon" />
-            </div>
-        </div>
-    </section>
-</div>
-<div class="section">
-    <div id="overlay">
-        <div class="confirm_mail">
-            <p>
-                Votre message a bien été envoyé, merci !
-                <span id="xhrErr"></span>
-                <a href="#" title="ok">OK</a>
-            </p>
         </div>
     </div>
-    <section id="contact">
-        <div class="main-wrapper-contact">
-            <div class="main-text-bloc-contact">
-                <div class="title-bloc-contact">
-                    <h3>Contact</h3>
-                    <div class="line-up"></div>
-                </div>
-            </div>
-            <div class="main-container-contact">
-                <div class="form-container">
-                    <form method="post" id="contact_form">
-                        <input type="text" class="form-input" name="user_name" id="user_name" placeholder="Nom" />
-                        <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
-                        <input type="text" class="form-input" name="user_mail" id="user_mail" placeholder="Email" />
-                        <span class="tooltip">Ce champ doit contenir un email valide de la forme "mail@mail.mail"</span>
-                        <input type="text" class="form-input" name="user_subject" id="user_subject" placeholder="Sujet" />
-                        <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
-                        <textarea class="form-input" name="user_mess" id="user_mess" placeholder="Message"></textarea>
-                        <span class="tooltip">Ce champ doit contenir au moins 2 caractères</span>
-                        <input type="reset" class="form-input" id="reset_button" value="Réinitialiser" />
-                        <input type="submit" class="form-input" id="submit_button" value="Envoyer" />
-                    </form>
-                </div>
-                <footer class="ending-container">
-                    <div class="end-text-content">
-                        <h4>Merci de votre visite !</h4>
-                        <p>Retrouvez-moi également sur les réseaux sociaux</p>
-                    </div>
-                    <div class="socials">
-                        <div class="social-icon-1">
-                            <a href="https://plus.google.com/u/0/103291228904643799333/" target="_blank" title="profil Google Plus"><img src="images/g+-full.png" title="Google Plus" alt="icone Google Plus" /></a>
-                        </div>
-                        <div class="social-icon-2">
-                            <a href="https://twitter.com/FlorianMICHEL69" target="_blank" title="profil Twitter"><img src="images/twitter-full.png" title="Twitter" alt="icone Twitter" /></a>
-                        </div>
-                        <div class="social-icon-3">
-                            <a href="http://fr.linkedin.com/pub/florian-michel/88/860/b58/" target="_blank" title="profil Linkedin"><img src="images/linkedin-full.png" title="Linkedin" alt="icone Linkedin" /></a>
-                        </div>
-                    </div>
-                    <div class="policy">
-                        <p>Privacy policy - Florian Michel 2014 ©</p>
-                        <p><a href="mailto:florian.michel69250@gmail.com">florian.michel69250@gmail.com</a></p>
-                    </div>
-                </footer>
-            </div>
-        </div>
-    </section>
-</div>
-</div>
-</div>
-<!-- Calling scripts -->
     <script type="text/javascript" src="javascript/app.js"></script>
     <script type="text/javascript" src="javascript/app2.js"></script>
-<!-- Google Analytics -->
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-50635783-1', 'florianmichel-online.com');
-        ga('require','displayfeatures');
-        ga('send', 'pageview');
-    </script>
-<!-- Google Analytics -->
-<!-- Ending calls -->
+    <script type="text/javascript" src="javascript/click_overlay_rea.js"></script>
 </body>
 </html>
