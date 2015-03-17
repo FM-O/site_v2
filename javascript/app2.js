@@ -54,7 +54,7 @@
         var user_mail = document.getElementById(id),
             tooltipStyle = getToolTip(user_mail).style;
 
-        if (user_mail.value.length >= 2 && /^[A-Za-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(user_mail.value)) {
+        if (user_mail.value.length >= 2 && /^[A-Za-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,6}$/.test(user_mail.value)) {
             user_mail.className = "form-input correct";
             tooltipStyle.display = "none";
             return true;
