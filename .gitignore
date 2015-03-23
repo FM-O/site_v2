@@ -2,6 +2,6 @@
 # Ignorer tous les fichiers nommés foo.txt
 Database.php
 .sass-cache
-config.rb
 push.bat
 .idea
+site_v2.iml
