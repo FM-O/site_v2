@@ -1,5 +1,5 @@
 // JavaScript Document
-
+// Created output
 (function(){
 
     function desactivateTooltips() {
