@@ -55,7 +55,7 @@ $arian-color: #989797
 
 // LIST BACKGROUDS REA
 
-$backgrounds: laptop, site-gite-aubrac, graphique, flowers
+$backgrounds: laptop, site-gite-aubrac, graphique, flowers, edible
 
 /******** MIXINS *********/
 
@@ -749,7 +749,7 @@ header
             margin: 10px
             color: $color-theme-2
             font-size: 0.6em
-@for $i from 1 through 4
+@for $i from 1 through 5
     .main-wrapper-web-#{$i}
         height: 100%
         width: 100%
@@ -815,7 +815,7 @@ header
                         top: 35%
                     @include respond-to(handhelds)
                         top: 10%
-                @else if $i == 2 // Special constraint for second slide
+                @else if $i == 2 or 5 // Special constraint for second and fifth slides
                     top: 15%
                     @include respond-to(touch-pad-portrait)
                         top: 35%
@@ -842,7 +842,7 @@ header
                     font-size: 0.8em
                     @if $i == 4 //Special constraint for fourth slide
                         margin-bottom: 20px
-                @if $i == 2 //Special constraint for second slide
+                @if $i == 1 or 2 or 5 //Special constraint for first, second and fifth slides
                     .see-more-project
                         display: block
                         color: #FFFFFF
@@ -855,6 +855,9 @@ header
                             color: $color-theme-2
                 .features
                     margin-top: 30px
+                    @if $i == 5 //Special constraint for fifth slide
+                        @include respond-to(handhelds)
+                            display: none
                     p
                         margin-bottom: 20px
                     //Conditionnal for each features lists
@@ -883,6 +886,16 @@ header
                             p
                                 display: inline-block
                                 vertical-align: baseline
+
+                @if $i == 5 //Special constraint for fifth slide
+                    @for $i from 1 through 4
+                        .feature-#{$i}
+                            display: inline-block
+                            padding-left: 10px
+                    #edible-proto
+                        font-size: 0.7em
+                        color: $error-color
+                        @include text-shadow(none)
                 .zoom-gallery
                     a
                         outline: none
@@ -905,6 +918,9 @@ header
                 height: 100%
                 bottom: 100%
                 background: url("../images/"+ nth($backgrounds, $i)+".jpg") left no-repeat
+                @if $i == 5 //Special constraint for fifth slide
+                    @include respond-to(handhelds)
+                        background-size: cover
 
 
 ///////////////////////////////////////////////**** Contact ****///////////////////////////////////////////////
@@ -1237,3 +1253,21 @@ header
     border-radius: 10px
     @include respond-to(handhelds)
         display: none !important
+
+
+////////////////////////////////////////////////////////
+////////// SPECIAL NEEDS //////////////////////////////
+///////////////////////////////////////////////////////
+
+.admissions
+    p
+        width: 50%
+        margin: 20px auto auto auto
+        font-size: 0.7em
+    a
+        display: block
+        text-decoration: underline
+        font-size: 0.6em
+        font-family: "helvetica neue light ext"
+        margin-top: 20px
+        color: $error-color
