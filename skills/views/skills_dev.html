@@ -17,6 +17,7 @@
         body{
             width: 50%;
             margin:auto;
+            padding-bottom: 10%;
         }
 
         h3{
@@ -38,7 +39,61 @@
             color: rgba(255,0,0,0.9);
             font-size: 0.8em;
         }
+
+        .button{
+            position:relative;
+            width: 160px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            padding: 10px 0 10px 0;
+            cursor: pointer;
+            -moz-user-select: -moz-none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        .button p {
+            margin: 0 15px 0 0;
+
+        }
+
+        .detail {
+            display: none;
+        }
+
+        .displayed {
+            display: block;
+        }
+
+        .cross-container{
+            margin-top: 11px;
+            position: absolute;
+            width: 25px !important;
+            height: 25px !important;
+            top: 0;
+            right: 0;
+        }
+        .cross{
+            background: black;
+            height: 20px !important;
+            position: relative;
+            width: 2px !important;
+        }
+        .cross:after{
+            background: black;
+            content: "";
+            height: 2px;
+            left: -8.5px;
+            position: absolute;
+            top: 8.5px;
+            width: 20px;
+        }
     </style>
+
 </head>
 
 <body>
@@ -54,74 +109,158 @@
     </em>
     <h2> Compétences développement front-end </h2>
     <h3> Javascript et frameworks associés </h3>
-    <p>
-        Mes compétences en Javascript s'améliorent de plus en plus étant donné qu'il s'agit aujourd'hui de mon langage
-        de prédilection. J'ai également de bonnes connaissances sur la librairie <strong>Jquery</strong>. Les implémentations
-        liées à mon site concernent principalement des ajouts d'animations, de filtres (calques au-dessus d'une page ou d'une partie de page),
-        ainsi que l'envoie de messages en <strong>Ajax</strong> (JS Natif).<br />
-        <em>Je compte aussi évoluer vers le Framework <strong>Angular JS</strong> une fois que la version 2 sera disponible, celle-ci s'éloignant de la version 1.x dans son fonctionnement.</em>
-    </p>
+    <div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Mes compétences en Javascript s'améliorent de plus en plus étant donné qu'il s'agit aujourd'hui de mon langage
+            de prédilection. J'ai également de bonnes connaissances sur la librairie <strong>Jquery</strong>. Les implémentations
+            liées à mon site concernent principalement des ajouts d'animations, de filtres (calques au-dessus d'une page ou d'une partie de page),
+            ainsi que l'envoie de messages en <strong>Ajax</strong> (JS Natif).<br />
+            <em>Je compte aussi évoluer vers le Framework <strong>Angular JS</strong> une fois que la version 2 sera disponible, celle-ci s'éloignant de la version 1.x dans son fonctionnement.</em>
+        </p>
+    </div>
     <h3> CSS, pré-processeurs et frameworks associés </h3>
-    <p>
-       Je possède à ce jour de bonnes compétences en CSS3 et sur le <strong>pré-processeur SASS</strong> et notamment le <strong>framework Compass</strong>.
-        Celui-ci facilite grandement l'écriture du CSS et ajoute de nombreuses mixins et fonctions utiles à SASS.
-        Actuellement, sur mon site, ce sont plus de <em>4000 lignes</em> de CSS générées à l'aide de Compass...
-    </p>
+    <div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Je possède à ce jour de bonnes compétences en CSS3 et sur le <strong>pré-processeur SASS</strong> et notamment le <strong>framework Compass</strong>.
+            Celui-ci facilite grandement l'écriture du CSS et ajoute de nombreuses mixins et fonctions utiles à SASS.
+            Actuellement, sur mon site, ce sont plus de <em>4000 lignes</em> de CSS générées à l'aide de Compass...
+        </p>
+    </div>
     <h3> HTML, et templating </h3>
-    <p>
-        Expérience sur le moteur de template PHP : <strong>Twig</strong>. Connaissances des bonnes pratiques <strong>W3C</strong>
-        ainsi que des <strong>meta Open Graph</strong> afin d'affiner le référencement naturel.
-        Connaissance de l'intégration Java J2EE (JSP, JSF).<br />
-        <em>Expérience sur les Canvas et les nouveautés HTML5 (balises videos, audios...).</em>
-    </p>
+    <div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Expérience sur le moteur de template PHP : <strong>Twig</strong>. Connaissances des bonnes pratiques <strong>W3C</strong>
+            ainsi que des <strong>meta Open Graph</strong> afin d'affiner le référencement naturel.
+            Connaissance de l'intégration Java J2EE (JSP, JSF).<br />
+            <em>Expérience sur les Canvas et les nouveautés HTML5 (balises videos, audios...).</em>
+        </p>
+    </div>
 
     <h2> Compétences développement back-end </h2>
     <h3> PHP Procédural et objet </h3>
-    <p>
-       Bonne maîtrise du PHP, je sais l'utiliser afin de réaliser par exemple un outil de blogging, des pages d'authentification,
-        ou de gérer la création d'un site entièrement sous ce langage. J'ai pour l'instant utilisé un seul framework PHP
-        créé par un collègue de projet (retrouvez le code du framework à cette adresse : <a href="https://github.com/Bewink/BeFeW" title="BeFeW" class="link-no-style" target="_blank">BeFeW</a>.
-        BeFeW s'inspire principalement de Symphony 2.
-        <br />
-        <a href="http://florianmichel-online.com/mmiblog/" title="mmiblog" target="_blank">Micro-blog réalisé en PHP procédural</a>
-        <br />
-        <a href="http://florianmichel-online.com/test" title="blog twig" target="_blank">Fil d'actualité type Twitter réalisé en PHP Objet et à l'aide de <strong>Twig</strong></a>
-    </p>
+    <div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Bonne maîtrise du PHP, je sais l'utiliser afin de réaliser par exemple un outil de blogging, des pages d'authentification,
+            ou de gérer la création d'un site entièrement sous ce langage. J'ai pour l'instant utilisé un seul framework PHP
+            créé par un collègue de projet (retrouvez le code du framework à cette adresse : <a href="https://github.com/Bewink/BeFeW" title="BeFeW" class="link-no-style" target="_blank">BeFeW</a>.
+            BeFeW s'inspire principalement de Symphony 2.
+            <br />
+            <a href="http://florianmichel-online.com/mmiblog/" title="mmiblog" target="_blank">Micro-blog réalisé en PHP procédural</a>
+            <br />
+            <a href="http://florianmichel-online.com/test" title="blog twig" target="_blank">Fil d'actualité type Twitter réalisé en PHP Objet et à l'aide de <strong>Twig</strong></a>
+        </p>
+    </div>
     <h3> Java J2EE, JSP, JSF </h3>
-    <p>
-        Je possède quelques bases en Java, travaillant essentiellement avec ce langage au sein de l'entreprise <strong>SQLI</strong>.
-        Mes compétences sont concentrées essentiellement autour de l'utilisation des JSP. Cependant, j'ai de bonnes notions,
-        sur l'articulation d'un projet d'application web créé avec J2EE.
-    </p>
-
+    <div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Je possède quelques bases en Java, travaillant essentiellement avec ce langage au sein de l'entreprise <strong>SQLI</strong>.
+            Mes compétences sont concentrées essentiellement autour de l'utilisation des JSP. Cependant, j'ai de bonnes notions,
+            sur l'articulation d'un projet d'application web créé avec J2EE.
+        </p>
+    </div>
     <h2> Compétences sur les CMS </h2>
     <h3> Prestashop </h3>
-    <p>
-        Maîtrise correcte de Prestashop, j'ai pu développer une partie d'un site sous ce CMS à cette adresse :
-        <a href="http://detecteurde-fumee.com/" class="link-no-style" target="_blank">voir le site</a>. Je possède aussi quelques compétences
-        sur le moteur de template <strong>Smarty</strong> de Prestashop.
-    </p>
+    <div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Maîtrise correcte de Prestashop, j'ai pu développer une partie d'un site sous ce CMS à cette adresse :
+            <a href="http://detecteurde-fumee.com/" class="link-no-style" target="_blank">voir le site</a>. Je possède aussi quelques compétences
+            sur le moteur de template <strong>Smarty</strong> de Prestashop.
+        </p>
+    </div>
     <h3> WordPress </h3>
-    <p>
-        Wordpress est le premier CMS vers lequel je me suis tourné. Pratique, facile d'utilisation, il permet aussi
-        de nombreuses personnalisations faciles à mettre en place. J'ai pu notamment créé des <strong>templates</strong> de page pour
-        faciliter l'édition d'un blog lié au précédent site (le blog n'existe plus à ce jour). Développer un site sous ce
-        CMS ne me pose donc aucun problème.
-    </p>
+    <div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Wordpress est le premier CMS vers lequel je me suis tourné. Pratique, facile d'utilisation, il permet aussi
+            de nombreuses personnalisations faciles à mettre en place. J'ai pu notamment créé des <strong>templates</strong> de page pour
+            faciliter l'édition d'un blog lié au précédent site (le blog n'existe plus à ce jour). Développer un site sous ce
+            CMS ne me pose donc aucun problème.
+        </p>
+    </div>
     <h3> Jahia </h3>
-    <p>
-        Jahia est un CMS récent très bien pensé. Il est orienté Java et s'utilise donc pour de nombreux cas d'application.
-        Je l'utilise actuellement au cours de mon stage au sein de <strong>SQLI Bordeaux</strong>. Le développement sous ce
-        CMS est plus difficile que sous Prestashop ou Wordpress. Dans le cas du projet que je poursuis en entreprise, il devra
-        servir de <em>portail applicatif permettant d'agréger plusieurs applications clientes</em>. <br />
-        Dans le cadre de mon projet, je participe aussi à la conférence <a href="http://www.jahiaone.com/home" title="Jahiaone" class="link-no-style" target="_blank">Jahiaone</a>
-        à Paris le 11 et 12 Juin 2015.
-    </p>
+    <div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Jahia est un CMS récent très bien pensé. Il est orienté Java et s'utilise donc pour de nombreux cas d'application.
+            Je l'utilise actuellement au cours de mon stage au sein de <strong>SQLI Bordeaux</strong>. Le développement sous ce
+            CMS est plus difficile que sous Prestashop ou Wordpress. Dans le cas du projet que je poursuis en entreprise, il devra
+            servir de <em>portail applicatif permettant d'agréger plusieurs applications clientes</em>. <br />
+            Dans le cadre de mon projet, je participe aussi à la conférence <a href="http://www.jahiaone.com/home" title="Jahiaone" class="link-no-style" target="_blank">Jahiaone</a>
+            à Paris le 11 et 12 Juin 2015.
+        </p>
+    </div>
 </div>
 <!--<div class="main-content">
     <h2> Book de créations Florian Michel (en cours d'édition / impression)</h2>
     <h3> Télécharger le document PDF </h3>
     <a href="book.pdf" id="link_2"> Book de créations </a>
 </div>-->
+
+<script type="text/javascript">
+    var detail = document.getElementsByClassName('detail'),
+            button = document.getElementsByClassName('button');
+
+
+    for (var i = 0 ; i < button.length ; i++) {
+        button[i].relatedDetail = detail[i];
+        button[i].onclick = function(e){
+            console.log(this.nextElementSibling.nodeName);
+            if(this.relatedDetail.classList.contains('displayed')) {
+                //detail[j].style.display = "none";
+                this.relatedDetail.classList.remove('displayed');
+            } else {
+                //detail[i].style.display = "block";
+                this.relatedDetail.classList.add('displayed');
+            }
+
+        };
+    }
+</script>
 </body>
 </html>
