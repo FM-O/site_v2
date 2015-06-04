@@ -155,7 +155,7 @@
 <h2> Compétences développement front-end </h2>
 <h3> Javascript et frameworks associés </h3>
 <div>
-    <p class="label-level">Niveau :</p>
+    <p class="label-level">Niveau estimé :</p>
     <div class="level js_fmk">
         <div class="tip1 tip">
         </div>
@@ -184,7 +184,7 @@
 </div>
 <h3> CSS, pré-processeurs et frameworks associés </h3>
 <div>
-    <p class="label-level">Niveau :</p>
+    <p class="label-level">Niveau estimé :</p>
     <div class="level css_sass">
         <div class="tip1 tip">
         </div>
@@ -211,8 +211,8 @@
 </div>
 <h3> HTML, et templating </h3>
 <div>
-    <p class="label-level">Niveau :</p>
-    <div class="level">
+    <p class="label-level">Niveau estimé :</p>
+    <div class="level html">
         <div class="tip1 tip">
         </div>
         <div class="tip2 tip">
@@ -241,8 +241,8 @@
 <h2> Compétences développement back-end </h2>
 <h3> PHP Procédural et objet </h3>
 <div>
-    <p class="label-level">Niveau :</p>
-    <div class="level">
+    <p class="label-level">Niveau estimé :</p>
+    <div class="level php">
         <div class="tip1 tip">
         </div>
         <div class="tip2 tip">
@@ -273,8 +273,8 @@
 </div>
 <h3> Java J2EE, JSP, JSF </h3>
 <div>
-    <p class="label-level">Niveau :</p>
-    <div class="level">
+    <p class="label-level">Niveau estimé :</p>
+    <div class="level java">
         <div class="tip1 tip">
         </div>
         <div class="tip2 tip">
@@ -301,8 +301,8 @@
 <h2> Compétences sur les CMS </h2>
 <h3> Prestashop </h3>
 <div>
-    <p class="label-level">Niveau :</p>
-    <div class="level">
+    <p class="label-level">Niveau estimé :</p>
+    <div class="level prestashop">
         <div class="tip1 tip">
         </div>
         <div class="tip2 tip">
@@ -328,8 +328,8 @@
 </div>
 <h3> WordPress </h3>
 <div>
-    <p class="label-level">Niveau :</p>
-    <div class="level">
+    <p class="label-level">Niveau estimé :</p>
+    <div class="level wordpress">
         <div class="tip1 tip">
         </div>
         <div class="tip2 tip">
@@ -356,8 +356,8 @@
 </div>
 <h3> Jahia </h3>
 <div>
-    <p class="label-level">Niveau :</p>
-    <div class="level">
+    <p class="label-level">Niveau estimé :</p>
+    <div class="level jahia">
         <div class="tip1 tip">
         </div>
         <div class="tip2 tip">
@@ -413,27 +413,66 @@
         }
     })();
 
-    function level(lvl, skill) {
-        var tips = document.querySelectorAll(skill+'> .tip');
-
-        for (var i = 0 ; i < lvl ; i++) {
-            tips[i].style.backgroundColor = "#000";
+    function Level(lvl) {
+        this.lvl = lvl;
+        this.tips = document.querySelectorAll('.js_fmk > .tip');
+        this.setLvl = function(lvl) {
+            this.lvl = lvl;
+        };
+        this.setSkill = function(skill) {
+            this.tips = document.querySelectorAll(skill+'> .tip');
+        };
+        this.call = function() {
+            for (var i = 0 ; i < this.lvl ; i++) {
+                this.tips[i].style.backgroundColor = "#000";
+            }
         }
+
     }
 
-    var obj =
-    {
-        fmk: { lvl: 5, skill: '.js_fmk'},
-        type: { name: "type.name"}
-    };
+    var obj = new Level(2);
 
-    obj.fmk.lvl = 2;
+    var obj2 = [
+        {
+            skill: '.js_fmk',
+            lvl: 3
+        },
+        {
+            skill: '.css_sass',
+            lvl: 4
+        },
+        {
+            skill: '.html',
+            lvl: 4
+        },
+        {
+            skill: '.php',
+            lvl: 3
+        },
+        {
+            skill: '.java',
+            lvl: 1
+        },
+        {
+            skill: '.prestashop',
+            lvl: 2
+        },
+        {
+            skill: '.wordpress',
+            lvl: 3
+        },
+        {
+            skill: '.jahia',
+            lvl: 3
+        }];
 
-    var obj2 =
-    {
-        fmk_func: level(obj.fmk.lvl, obj.fmk.skill)
+
+    for (var l in obj2) {
+        obj.setSkill(obj2[l].skill);
+        obj.setLvl(obj2[l].lvl);
+        obj.call();
+
     }
-
 </script>
 </body>
 </html>
