@@ -17,6 +17,7 @@
         body{
             width: 50%;
             margin:auto;
+            padding-bottom: 10%;
         }
 
         h3{
@@ -32,6 +33,103 @@
         .prevent-message{
             color: rgba(255,0,0,0.9);
             font-size: 0.8em;
+        }
+
+        .button{
+            position:relative;
+            width: 160px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            padding: 10px 0 10px 0;
+            cursor: pointer;
+            -moz-user-select: -moz-none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        .button p {
+            margin: 0 15px 0 0;
+
+        }
+
+        .detail {
+            display: none;
+        }
+
+        .displayed {
+            display: block;
+        }
+
+        .cross-container{
+            margin-top: 11px;
+            position: absolute;
+            width: 25px !important;
+            height: 25px !important;
+            top: 0;
+            right: 0;
+        }
+        .cross{
+            background: black;
+            height: 20px !important;
+            position: relative;
+            width: 2px !important;
+        }
+        .cross:after{
+            background: black;
+            content: "";
+            height: 2px;
+            left: -8.5px;
+            position: absolute;
+            top: 8.5px;
+            width: 20px;
+        }
+
+        .label-level {
+            display: inline-block;
+        }
+
+        .level {
+            display :inline-block;
+        }
+
+        .tip {
+            width: 10px;
+            background-color: #CCCCCC;
+            height: 50px;
+            display: inline-block;
+        }
+
+        .level .tip1 {
+            height: 10px;
+            background-color: #CCCCCC;
+        }
+
+        .level .tip2 {
+            background-color: #CCCCCC;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        .level .tip3 {
+            background-color: #CCCCCC;
+            height: 30px;
+            margin-left: 5px;
+        }
+
+        .level .tip4 {
+            background-color: #CCCCCC;
+            height: 40px;
+            margin-left: 5px;
+        }
+
+        .level .tip5 {
+            background-color: #CCCCCC;
+            height: 50px;
+            margin-left: 5px;
         }
     </style>
 </head>
@@ -49,61 +147,310 @@
     </em>
     <h2> Environnements de développement </h2>
     <h3> IntelliJ Idea </h3>
-    <p>
-        IntelliJ est un IDE très puissant développé par <strong>JetBrains</strong>. Je l'utilise pour la plupart de mes projets
-        et possède une bonne maîtrise de celui-ci. Il permet en effet de gérer de façon simplifiée les projets via plusieurs
-        plugins très utiles. On peut citer notamment l'intégration d'outils de versioning comme <strong>Git ou SVN</strong>.
-        J'utilise d'autres plugins utiles comme <strong>Ant</strong> qui me permet de faire de déployer un projet sur un dossier prévu pour une mise
-        en pré-production. J'utilise également <strong>YUI Compressor</strong> qui permet de minifier les fichiers JS.
-    </p>
+    <div>
+        <p class="label-level">Niveau estimé :</p>
+        <div class="level intellij">
+            <div class="tip1 tip">
+            </div>
+            <div class="tip2 tip">
+            </div>
+            <div class="tip3 tip">
+            </div>
+            <div class="tip4 tip">
+            </div>
+            <div class="tip5 tip">
+            </div>
+        </div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            IntelliJ est un IDE très puissant développé par <strong>JetBrains</strong>. Je l'utilise pour la plupart de mes projets
+            et possède une bonne maîtrise de celui-ci. Il permet en effet de gérer de façon simplifiée les projets via plusieurs
+            plugins très utiles. On peut citer notamment l'intégration d'outils de versioning comme <strong>Git ou SVN</strong>.
+            J'utilise d'autres plugins utiles comme <strong>Ant</strong> qui me permet de faire de déployer un projet sur un dossier prévu pour une mise
+            en pré-production. J'utilise également <strong>YUI Compressor</strong> qui permet de minifier les fichiers JS.
+        </p>
+    </div>
     <h3> Eclipse </h3>
-    <p>
-        J'utilise actuellement Eclipse au sein de SQLI pour le développement lié à mon projet. Je possède donc quelques maîtrises
-        basiques sur cet IDE.
-    </p>
+    <div>
+        <p class="label-level">Niveau estimé :</p>
+        <div class="level eclipse">
+            <div class="tip1 tip">
+            </div>
+            <div class="tip2 tip">
+            </div>
+            <div class="tip3 tip">
+            </div>
+            <div class="tip4 tip">
+            </div>
+            <div class="tip5 tip">
+            </div>
+        </div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            J'utilise actuellement Eclipse au sein de SQLI pour le développement lié à mon projet. Je possède donc quelques maîtrises
+            basiques sur cet IDE.
+        </p>
+    </div>
     <h3> SublimText </h3>
-    <p>
+    <p class="label-level">Niveau estimé :</p>
+    <div class="level sublim_text">
+        <div class="tip1 tip">
+        </div>
+        <div class="tip2 tip">
+        </div>
+        <div class="tip3 tip">
+        </div>
+        <div class="tip4 tip">
+        </div>
+        <div class="tip5 tip">
+        </div>
+    </div>
+    <div class="button">
+        <p>Détails</p>
+        <div class="cross-container">
+            <div class="cross"></div>
+        </div>
+    </div>
+    <p class="detail">
         SublimText me permet de par sa légereté de faire des modifications rapides sur certains fichiers de projet.
     </p>
     <h3> Dreamweaver </h3>
-    <p>
-        Il s'agit du premier IDE que j'utilisais pour le développement. Je possède donc une bonne maîtrise du logiciel.
-        Cependant j'ai préféré évoluer vers des outils plus puissants et moins orientés <em>WYSIWYG</em> afin de bénéficier
-        de plus de souplesse lors de l'écriture de mon code et surtout dans la gestion de mes différents projets.
-    </p>
+    <div>
+        <p class="label-level">Niveau estimé :</p>
+        <div class="level dreamweaver">
+            <div class="tip1 tip">
+            </div>
+            <div class="tip2 tip">
+            </div>
+            <div class="tip3 tip">
+            </div>
+            <div class="tip4 tip">
+            </div>
+            <div class="tip5 tip">
+            </div>
+        </div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Il s'agit du premier IDE que j'utilisais pour le développement. Je possède donc une bonne maîtrise du logiciel.
+            Cependant j'ai préféré évoluer vers des outils plus puissants et moins orientés <em>WYSIWYG</em> afin de bénéficier
+            de plus de souplesse lors de l'écriture de mon code et surtout dans la gestion de mes différents projets.
+        </p>
+    </div>
 
     <h2> Environnements de versioning </h2>
     <h3> Git / Github </h3>
-    <p>
-        Git est à ce jour le seul outil de versioning que j'utilise. J'en ai une assez bonne maîtrise. il me permet la plupart
-        du temps de gérer de façon plus souple les modifications que j'apporte à mes différents projets et de pouvoir accéder
-        à ceux-ci de n'importe où. La création de différentes branches sur un projet me permet également de prévoir <em>une version
-        de pré-production</em> et une <em>version de production</em> pour chaque projet, bénéficiant ainsi d'un projet toujours fonctionnel en
-        cas d'erreurs sur le développement de la branche "pré-production". <br />
-        D'autre part, il m'a permis à plusieurs reprise de pouvoir travailler de façon efficace <strong>en équipe</strong> sur le développement
-        d'applications ou de sites web.
-    </p>
+    <div>
+        <p class="label-level">Niveau estimé :</p>
+        <div class="level git">
+            <div class="tip1 tip">
+            </div>
+            <div class="tip2 tip">
+            </div>
+            <div class="tip3 tip">
+            </div>
+            <div class="tip4 tip">
+            </div>
+            <div class="tip5 tip">
+            </div>
+        </div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Git est à ce jour le seul outil de versioning que j'utilise. J'en ai une assez bonne maîtrise. il me permet la plupart
+            du temps de gérer de façon plus souple les modifications que j'apporte à mes différents projets et de pouvoir accéder
+            à ceux-ci de n'importe où. La création de différentes branches sur un projet me permet également de prévoir <em>une version
+            de pré-production</em> et une <em>version de production</em> pour chaque projet, bénéficiant ainsi d'un projet toujours fonctionnel en
+            cas d'erreurs sur le développement de la branche "pré-production". <br />
+            D'autre part, il m'a permis à plusieurs reprise de pouvoir travailler de façon efficace <strong>en équipe</strong> sur le développement
+            d'applications ou de sites web.
+        </p>
+    </div>
 
     <h2> Systèmes d'exploitation </h2>
     <h3> Windows </h3>
-    <p>
-        Bonne maîtrise - OS principal
-    </p>
+    <div>
+        <p class="label-level">Niveau estimé :</p>
+        <div class="level windows">
+            <div class="tip1 tip">
+            </div>
+            <div class="tip2 tip">
+            </div>
+            <div class="tip3 tip">
+            </div>
+            <div class="tip4 tip">
+            </div>
+            <div class="tip5 tip">
+            </div>
+        </div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Bonne maîtrise - OS principal
+        </p>
+    </div>
     <h3> Linux </h3>
-    <p>
-        Distributions : <strong>Debian</strong>, <strong>CentOS</strong>, <strong>Ubuntu</strong>
-        <br />
-        Maitrise moyenne à bonne - OS secondaire (dual boot)
-    </p>
+    <div>
+        <p class="label-level">Niveau estimé :</p>
+        <div class="level linux">
+            <div class="tip1 tip">
+            </div>
+            <div class="tip2 tip">
+            </div>
+            <div class="tip3 tip">
+            </div>
+            <div class="tip4 tip">
+            </div>
+            <div class="tip5 tip">
+            </div>
+        </div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Distributions : <strong>Debian</strong>, <strong>CentOS</strong>, <strong>Ubuntu</strong>
+            <br />
+            Maitrise moyenne à bonne - OS secondaire (dual boot)
+        </p>
+    </div>
     <h3>MAC OS</h3>
-    <p>
-        Maitrise basique
-    </p>
+    <div>
+        <p class="label-level">Niveau estimé :</p>
+        <div class="level mac">
+            <div class="tip1 tip">
+            </div>
+            <div class="tip2 tip">
+            </div>
+            <div class="tip3 tip">
+            </div>
+            <div class="tip4 tip">
+            </div>
+            <div class="tip5 tip">
+            </div>
+        </div>
+        <div class="button">
+            <p>Détails</p>
+            <div class="cross-container">
+                <div class="cross"></div>
+            </div>
+        </div>
+        <p class="detail">
+            Maitrise basique
+        </p>
+    </div>
 </div>
 <!--<div class="main-content">
     <h2> Book de créations Florian Michel (en cours d'édition / impression)</h2>
     <h3> Télécharger le document PDF </h3>
     <a href="book.pdf" id="link_2"> Book de créations </a>
 </div>-->
+<script type="text/javascript">
+    (function(){
+        var detail = document.getElementsByClassName('detail'),
+                button = document.getElementsByClassName('button');
+
+
+        for (var i = 0 ; i < button.length ; i++) {
+            button[i].relatedDetail = detail[i];
+            button[i].onclick = function(e){
+                console.log(this.nextElementSibling.nodeName);
+                if(this.relatedDetail.classList.contains('displayed')) {
+                    //detail[j].style.display = "none";
+                    this.relatedDetail.classList.remove('displayed');
+                } else {
+                    //detail[i].style.display = "block";
+                    this.relatedDetail.classList.add('displayed');
+                }
+
+            };
+        }
+    })();
+
+    function Level(lvl) {
+        this.lvl = lvl;
+        this.tips = document.querySelectorAll('.js_fmk > .tip');
+        this.setLvl = function(lvl) {
+            this.lvl = lvl;
+        };
+        this.setSkill = function(skill) {
+            this.tips = document.querySelectorAll(skill+'> .tip');
+        };
+        this.call = function() {
+            for (var i = 0 ; i < this.lvl ; i++) {
+                this.tips[i].style.backgroundColor = "#000";
+            }
+        }
+
+    }
+
+    var obj = new Level(2);
+
+    var obj2 = [
+        {
+            skill: '.intellij',
+            lvl: 4
+        },
+        {
+            skill: '.eclipse',
+            lvl: 2
+        },
+        {
+            skill: '.sublim_text',
+            lvl: 3
+        },
+        {
+            skill: '.dreamweaver',
+            lvl: 3
+        },
+        {
+            skill: '.git',
+            lvl: 4
+        },
+        {
+            skill: '.windows',
+            lvl: 5
+        },
+        {
+            skill: '.linux',
+            lvl: 3
+        },
+        {
+            skill: '.mac',
+            lvl: 1
+        }];
+
+
+    for (var l in obj2) {
+        obj.setSkill(obj2[l].skill);
+        obj.setLvl(obj2[l].lvl);
+        obj.call();
+
+    }
+</script>
 </body>
 </html>
