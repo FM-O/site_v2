@@ -253,20 +253,40 @@ $(document).ready(function() {
 
         $('.more-skills-button').click(function(){
 
-            var sector = $('.main-image-bloc-dev');
-            var $error = $('<p>Ce lien n\'est pas encore disponible</p>');
+            var $overlay = $('#more-skills');
 
-            $error.addClass('error-mess');
+            var $moreSkillsContainer = $('#more-skills-container div'),
+                $linkContainer = $('#more-skills-container div p'),
+                $cross = $('#cross-container');
 
-            $(sector).append($error);
-
-            setTimeout(function(){
-                $error.fadeOut(500);
-            }, 700);
+            $overlay.fadeIn(300);
+            $overlay.css('display', 'table');
 
             setTimeout(function(){
-                $error.remove();
-            }, 1400);
+
+                $moreSkillsContainer.css({
+                    'height' : '25rem',
+                    'width' : '40rem'
+                });
+
+                setTimeout(function(){
+                    $linkContainer.fadeIn(400);
+                    $linkContainer.css('display' ,'table-cell');
+
+                    $cross.fadeIn(400);
+
+                    $cross.click(function(){
+                        $overlay.fadeOut(200);
+                        $moreSkillsContainer.css({
+                           'height' : '0',
+                            'width' : '0'
+                        });
+                        $linkContainer.fadeOut(200);
+                        $cross.fadeOut(200);
+                    });
+                }, 200);
+
+            }, 500);
 
             return false;
         });
