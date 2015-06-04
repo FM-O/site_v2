@@ -408,10 +408,10 @@
 
     }
 
-    var obj = new Level(2);
+    var lvlObj = new Level(2);
 
-    var obj2 = [
-        {
+    var obj =
+        [{
             skill: '.intellij',
             lvl: 4
         },
@@ -445,11 +445,13 @@
         }];
 
 
-    for (var l in obj2) {
-        obj.setSkill(obj2[l].skill);
-        obj.setLvl(obj2[l].lvl);
-        obj.call();
+    for (var l in obj) {
 
+        if (obj.hasOwnProperty(l)) {
+            lvlObj.setSkill(obj[l].skill);
+            lvlObj.setLvl(obj[l].lvl);
+            lvlObj.call();
+        }
     }
 </script>
 </body>
