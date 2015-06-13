@@ -6,6 +6,7 @@ if((isset($_POST['param1']) AND !empty($_POST['param1']))
 
     $_POST['param2'] = htmlspecialchars($_POST['param2']);
     $_POST['param1'] = htmlspecialchars($_POST['param1']);
+    $_POST['param3'] = htmlspecialchars($_POST['param3']);
     $_POST['param4'] = htmlspecialchars($_POST['param4']);
 
     if (preg_match("#^[A-Za-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,6}$#", $_POST['param2'])){
