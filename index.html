@@ -33,10 +33,56 @@
     <script type="text/javascript" src="javascript/full-plug/jquery.fullPage.min.js"></script>
     <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
     <!-- STYLE FOR NO JS -->
+
+    <script type="text/javascript">
+        (function () {
+            function loadbar() {
+                var overlay = document.getElementById('load-overlay');
+                var prog = document.getElementById('load-progress-bar');
+                var stat = document.getElementById('load-progress-bar-status');
+                var imgs = document.images;
+                var c = 0;
+                var tot = imgs.length + 4;
+
+                function itemLoaded() {
+                    c += 1;
+                    var perc = Math.round((c / tot) * 100) + "%";
+                    prog.style.width = perc;
+                    stat.innerHTML = perc;
+                    console.log(perc);
+                    console.log(c);
+                    console.log(tot);
+                    if (c === tot) { return doneLoading(); }
+                }
+
+                function doneLoading() {
+                    $(overlay).fadeOut(500);
+                }
+
+                for (var i = 0 ; i < imgs.length ; i++) {
+
+                    var tImg = new Image();
+
+                    tImg.onload = itemLoaded;
+                    tImg.onerror = itemLoaded;
+                    tImg.src = imgs[i].src;
+                }
+
+                window.onload = function () {
+                    var fontLoaded = setInterval(itemLoaded, 300);
+                    if (c === tot) clearInterval(fontLoaded);
+                }
+            }
+
+
+            window.addEventListener("DOMContentLoaded", loadbar, false);
+
+        })();
+    </script>
     <style>
         .text-box-no-js{
             position: absolute;
-            z-index: 99;
+            z-index: 101;
             width: 50%;
             top: 40%;
             left: 20%;
@@ -57,7 +103,7 @@
         }
 
         .filter-no-js{
-            z-index: 99;
+            z-index: 101;
             position: absolute;
             height: 100%;
             width: 100%;
@@ -65,9 +111,20 @@
             opacity: 0.6
         }
 
+        img {
+            width: 200px;
+        }
+
     </style>
 </head>
 <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 10);">
+<div id="load-overlay" style="height: 100%; width: 100%; background: rgba(255,255,255,1); position: absolute; z-index: 100;">
+    <div style="font-family: Lato, sans-serif">
+        <p style="position: absolute; top: 52%; left: 15px; font-size: 1.5em;">Chargement...</p>
+        <p id="load-progress-bar-status" style="position: absolute; top: 46%; left: 15px; color: #99CCCC; font-size: 1.5em;"></p>
+    </div>
+    <div id="load-progress-bar" style="position: absolute; top: 50%; width: 0; height: 5px; background: #696868;"></div>
+</div>
     <div id="bloc-page">
     <!--[if IE]>
         <div class="filter-no-js"></div>
